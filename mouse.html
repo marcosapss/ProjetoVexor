@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A História do Mouse</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="js/accessibility.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <!-- CSS da história -->
+    <style>
+      :root {
+        --bg-color: #f4f7fa;
+        --primary-bg-color: #ffffff;
+        --secondary-bg-color: #1873bc;
+        --text-color: #212529;
+      }
+  
+      [data-theme="dark"] {
+        --bg-color: #1c1c24;
+        --primary-bg-color: #121212;
+        --secondary-bg-color: #3390ff;
+        --text-color: #f8f9fa;
+      }
+  
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Comic Neue", cursive, sans-serif;
+      }
+  
+      body {
+        background: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+  
+      header {
+        background: var(--secondary-bg-color);
+        color: var(--primary-bg-color);
+        padding: 20px;
+        text-align: center;
+      }
+  
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .carousel-container {
+        position: relative;
+        width: 90%;
+        max-width: 700px;
+        overflow: hidden;
+      }
+  
+      .carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+  
+      .slide {
+        min-width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+  
+      .slide img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+      }
+  
+      .slide p {
+        margin-top: 10px;
+        font-size: 1.2rem;
+      }
+  
+      button {
+        background-color: var(--secondary-bg-color);
+        color: var(--primary-bg-color);
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color 0.3s ease;
+      }
+  
+      button:hover {
+        background-color: #0c5f9f;
+      }
+  
+      .prev-btn {
+        left: 0;
+      }
+  
+      .next-btn {
+        right: 0;
+      }
+  
+      footer {
+        background: var(--secondary-bg-color);
+        color: var(--primary-bg-color);
+        text-align: center;
+        padding: 10px;
+        font-size: 0.85rem;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+  
+      @media (max-width: 768px) {
+        .slide img {
+          max-width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- JS Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- História do Mouse -->
+    <header>
+      <h1>A História do Mouse</h1>
+      <p>🐭 Clique para explorar a evolução do mouse!</p>
+    </header>
+  
+    <main>
+      <section class="carousel-container">
+        <div class="carousel">
+          <div class="slide">
+            <img src="https://cdn-icons-png.flaticon.com/512/375/375054.png" alt="Primeiro Mouse">
+            <p><strong>1964:</strong> O primeiro mouse foi inventado por Douglas Engelbart!</p>
+          </div>
+          <div class="slide">
+            <img src="https://cdn-icons-png.flaticon.com/512/4371/4371733.png" alt="Mouse clássico">
+            <p><strong>Anos 80:</strong> O mouse ganha popularidade com os computadores pessoais.</p>
+          </div>
+          <div class="slide">
+            <img src="https://cdn-icons-png.flaticon.com/512/5109/5109055.png" alt="Mouse Óptico">
+            <p><strong>1999:</strong> O mouse óptico substitui o modelo com bolinha!</p>
+          </div>
+          <div class="slide">
+            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331844.png" alt="Mouse da Apple">
+            <p><strong>Anos 2000:</strong> O mouse da Apple se torna icônico!</p>
+          </div>
+          <div class="slide">
+            <img src="https://cdn-icons-png.flaticon.com/512/1587/1587110.png" alt="Mouse Gamer RGB">
+            <p><strong>Hoje:</strong> Mouses gamer RGB e sem fio para todos os gostos!</p>
+          </div>
+        </div>
+  
+        <button class="prev-btn" id="prev-slide">⬅️ Voltar</button>
+        <button class="next-btn" id="next-slide">Próxima ➡️</button>
+      </section>
+    </main>
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const prevBtn = document.getElementById("prev-slide");
+        const nextBtn = document.getElementById("next-slide");
+        const carousel = document.querySelector(".carousel");
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+  
+        // Função para atualizar a posição do carrossel
+        const updateCarousel = () => {
+          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+  
+          // Desabilitar os botões conforme a posição
+          prevBtn.disabled = currentSlide === 0;
+          nextBtn.disabled = currentSlide === slides.length - 1;
+        };
+  
+        // Navegar para a próxima página
+        nextBtn.addEventListener("click", () => {
+          if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            updateCarousel();
+          }
+        });
+  
+        // Voltar para a página anterior
+        prevBtn.addEventListener("click", () => {
+          if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+          }
+        });
+  
+        // Inicializa o carrossel
+        updateCarousel();
+      });
+    </script>
+    
+  </body>
+</html>

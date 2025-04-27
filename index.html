@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vexor</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/promotion.css" />
+    <!-- JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="/Vexor/js/accessibility.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/promotion.js" defer></script>
+    <script src="js/footer.js" defer></script>
+  </head>
+  <body>
+    <!-- JS Navbar -->
+    <div id="navbar-container"></div>
+    <!-- Banner -->
+    <div
+      class="carousel slide"
+      id="slider"
+      data-bs-ride="carousel"
+      data-bs-touch="true"
+      data-bs-interval="3000"
+    >
+      <!-- Bolinhas -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+
+      <!-- Imagens do banner -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="img/banner1.png"
+            class="d-block w-100 img-fluid"
+            alt="Banner 1"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/banner2.png"
+            class="d-block w-100 img-fluid"
+            alt="Banner 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/banner3.png"
+            class="d-block w-100 img-fluid"
+            alt="Banner 3"
+          />
+        </div>
+      </div>
+
+      <!-- Botões de próximo/anterior -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#slider"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#slider"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+    <!-- Produtos em Promoção -->
+    <section class="container my-5">
+      <h2 class="text-center mb-4">
+        <span class="fire-emoji">🔥</span> Produtos em Promoção <span class="fire-emoji">🔥</span>
+      </h2>
+      <div class="row" id="promotion-grid">
+        <!-- JS vai colocar os cards aqui -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+  </body>
+</html>

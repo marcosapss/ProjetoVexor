@@ -1,0 +1,333 @@
+:root {
+  /* Tema Claro */
+  --bg-color: #f4f7fa;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #1873bc;
+  --text-color: #212529;
+  --muted-text-color: #6c757d;
+  --span-bg-color: red;
+}
+
+[data-theme="dark"] {
+  /* Tema Escuro */
+  --bg-color: #1c1c24;
+  --primary-bg-color: linear-gradient(135deg, #0d1b2a, #1b263b);
+  --secondary-bg-color: #3390ff;
+  --text-color: #f8f9fa;
+  --muted-text-color: #b5b5b5;
+  --span-bg-color: red;
+}
+
+/* Reset básico */
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Cores principais */
+.primary-bg-color {
+  background-color: var(--primary-bg-color);
+}
+
+.secondary-bg-color {
+  background-color: var(--secondary-bg-color);
+}
+
+.primary-color {
+  color: var(--secondary-bg-color);
+}
+
+.secondary-color {
+  background-color: #626262;
+}
+
+/* NAVBAR */
+#navbar .navbar-nav {
+  flex-direction: row;
+  justify-content: end;
+}
+
+#navbar .navbar-nav li {
+  margin-left: 1em;
+}
+
+#navbar a,
+#navbar button {
+  color: var(--text-color);
+}
+
+#navbar li {
+  position: relative;
+}
+
+#navbar i {
+  font-size: 20px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    text-align: left;
+  }
+}
+
+#navbar-items {
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  #navbar-items {
+    min-width: 80%;
+    display: flex;
+  }
+}
+
+/* Botão de pesquisa */
+#navbar .btn {
+  border: 2px solid var(--secondary-bg-color);
+  background-color: transparent;
+  color: var(--secondary-bg-color);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#navbar .btn:hover {
+  background-color: var(--secondary-bg-color);
+  color: white;
+}
+
+/* Formulário de Busca */
+#search-form {
+  width: 100%;
+  margin: 2em 0;
+  border: 2px solid #626262;
+  padding: 5px 15px;
+}
+
+@media (min-width: 768px) {
+  #search-form {
+    width: 50%;
+    margin: 0;
+  }
+}
+
+#search-form input {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+}
+
+#search-form input::placeholder {
+  color: var(--text-color);
+  opacity: 1;
+}
+
+#search-form input:focus {
+  box-shadow: none;
+}
+
+/* Navbar Inferior */
+#bottom-navbar-container .container {
+  justify-content: flex-end;
+}
+
+#bottom-navbar-container a {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.navbar-toggler {
+  font-size: 1.5em;
+}
+
+/* Footer */
+#footer {
+  background: var(--primary-bg-color);
+  color: var(--text-color);
+  margin-top: 80px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.footer-top-line {
+  height: 3px;
+  background: var(--secondary-bg-color);
+  margin-bottom: 40px;
+}
+
+.footer-main {
+  padding: 0 40px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--secondary-bg-color);
+  margin: 8px auto 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-bg-color);
+  transform: translateX(5px);
+}
+
+/* Newsletter */
+.newsletter {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.newsletter h6 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.newsletter input {
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.newsletter button {
+  border-radius: 5px;
+}
+
+/* Redes sociais */
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 2rem;
+  color: var(--text-color);
+  transition: transform 0.4s, text-shadow 0.4s, color 0.4s;
+}
+
+.social-icons a:hover {
+  animation: pulse 1s infinite alternate;
+  text-shadow: 0 0 10px var(--secondary-bg-color), 0 0 20px var(--secondary-bg-color);
+  color: var(--secondary-bg-color);
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+/* Frase Pensadora */
+.footer-quote blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--muted-text-color);
+  margin: 0;
+}
+
+.footer-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--secondary-bg-color);
+}
+
+/* Copyright */
+.footer-bottom p {
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+/* Responsividade Footer */
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 0 20px;
+  }
+  .footer-title, .footer-text, .store-phone, .newsletter h6, .footer-bottom p, .footer-quote blockquote, .footer-quote cite {
+    text-align: center;
+  }
+}
+
+/* Botão de acessibilidade */
+#accessibility-toggle {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+#accessibility-toggle:hover {
+  background-color: #0c5f9f;
+}
+
+/* Menu de opções de acessibilidade */
+#accessibility-options {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: var(--primary-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+  transition: all 0.3s ease;
+}
+
+/* Botão de fechar animado */
+#close-accessibility {
+  position: absolute;
+  top: -15px;
+  right: -25px;
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 9999;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#close-accessibility:hover {
+  color: darkred;
+  transform: rotate(180deg) scale(1.3);
+}

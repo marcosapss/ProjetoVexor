@@ -1,0 +1,257 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarHTML = `
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg primary-bg-color py-4 px-2" id="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">Vexor</a>
+    <div id="navbar-items">
+      <div></div>
+      <form class="d-flex position-relative" id="search-form" autocomplete="off">
+        <i class="bi bi-search primary-color"></i>
+        <input type="search" class="form-control me-2" id="search-input" placeholder="Busque seu Mouse gamer..." aria-label="Search">
+        <div id="search-results" class="search-dropdown d-none"></div>
+        <button class="btn search-btn" type="submit">Pesquisar</button>
+      </form>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="login.html" class="nav-link"><i class="bi bi-person-fill"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="favorite.html" class="nav-link position-relative">
+            <i id="favorites-icon" class="bi bi-star-fill"></i>
+            <span id="favorites-qty" class="qty-info" style="display:none;">0</span>
+          </a>
+        </li>
+        <li class="nav-item" id="bag-item">
+          <a href="cart.html" class="nav-link position-relative">
+            <i class="bi bi-cart-fill position-relative">
+              <span id="cart-qty-badge" class="qty-info">0</span>
+            </i>
+            <strong id="cart-total-price" class="ms-2">R$ 0,00</strong>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navbar Inferior -->
+<nav class="navbar navbar-expand-lg secondary-bg-color p-2" id="bottom-navbar-container">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bottom-navbar">
+      <i class="bi bi-list"></i>
+    </button>
+    <ul class="navbar-nav mb-2 mb-lg-0 collapse navbar-collapse" id="bottom-navbar">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="product.html" class="nav-link">Produtos</a></li>
+      <li class="nav-item"><a href="mouse.html" class="nav-link">O que é um Mouse?</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+`;
+
+  const style = document.createElement("style");
+  style.textContent = `
+/* Search dropdown */
+#search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--primary-bg-color);
+  border: 1px solid var(--muted-text-color);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#search-results.show {
+  display: block;
+  opacity: 1;
+}
+
+#search-results a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--muted-text-color);
+}
+
+#search-results a img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+#search-results a:hover {
+  background-color: var(--secondary-bg-color);
+  color: white;
+}
+
+/* Botão de Pesquisa */
+.search-btn {
+  border: 2px solid var(--secondary-bg-color);
+  background-color: transparent;
+  color: var(--secondary-bg-color);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--secondary-bg-color);
+  color: white;
+}
+
+/* Quantidade de carrinho/favoritos */
+.qty-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: var(--secondary-bg-color);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 50%;
+  display: none;
+  min-width: 20px;
+  text-align: center;
+  z-index: 5;
+}
+
+/* Animações */
+@keyframes badge-bounce {
+  0%, 100% { transform: translate(50%, -50%) scale(1); }
+  50% { transform: translate(50%, -50%) scale(1.4); }
+}
+
+.qty-info.animate {
+  animation: badge-bounce 0.5s;
+}
+
+@keyframes pulse-navbar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.pulse-navbar {
+  animation: pulse-navbar 0.4s ease;
+}
+`;
+
+  document.head.appendChild(style);
+
+  const navbarContainer = document.getElementById("navbar-container");
+  if (navbarContainer) {
+    navbarContainer.innerHTML = navbarHTML;
+    initializeSearch();
+    updateCartNavbar();
+    updateFavoritesNavbar();
+  }
+});
+
+// Atualizar Carrinho
+function updateCartNavbar() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalQty = 0;
+  let totalPrice = 0;
+
+  cart.forEach((product) => {
+    totalQty += product.quantity;
+    totalPrice += product.quantity * product.pricePromo;
+  });
+
+  const qtyBadge = document.getElementById("cart-qty-badge");
+  const totalPriceElem = document.getElementById("cart-total-price");
+
+  if (qtyBadge && totalPriceElem) {
+    if (totalQty > 0) {
+      qtyBadge.style.display = "inline-block";
+      qtyBadge.textContent = totalQty;
+      totalPriceElem.textContent = `R$ ${totalPrice.toFixed(2)}`;
+      qtyBadge.classList.add("animate");
+      setTimeout(() => qtyBadge.classList.remove("animate"), 500);
+    } else {
+      qtyBadge.style.display = "none";
+      totalPriceElem.textContent = "R$ 0,00";
+    }
+  }
+}
+
+// Atualizar Favoritos
+function updateFavoritesNavbar() {
+  const likes = JSON.parse(localStorage.getItem("likes")) || {};
+  const favoriteIds = Object.keys(likes).filter(
+    (id) => !id.includes("-liked") && likes[id] > 0
+  );
+
+  const favoritesBadge = document.getElementById("favorites-qty");
+  const favoritesIcon = document.getElementById("favorites-icon");
+
+  if (favoritesBadge && favoritesIcon) {
+    if (favoriteIds.length > 0) {
+      favoritesBadge.textContent = favoriteIds.length;
+      favoritesBadge.style.display = "inline-block";
+      favoritesIcon.classList.add("pulse-navbar");
+      setTimeout(() => favoritesIcon.classList.remove("pulse-navbar"), 400);
+    } else {
+      favoritesBadge.style.display = "none";
+    }
+  }
+}
+
+// Inicializar busca
+function initializeSearch() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  let products = [];
+
+  fetch('db/products-database.json')
+    .then(response => response.json())
+    .then(data => { products = data; });
+
+  searchInput.addEventListener('input', function () {
+    const query = this.value.trim().toLowerCase();
+    searchResults.innerHTML = '';
+
+    if (query.length === 0) {
+      searchResults.classList.remove('show');
+      return;
+    }
+
+    const filtered = products.filter(product =>
+      product.name.toLowerCase().includes(query)
+    );
+
+    if (filtered.length > 0) {
+      filtered.slice(0, 5).forEach(product => {
+        const a = document.createElement('a');
+        a.href = `product-page.html?id=${product.id}`;
+        a.innerHTML = `<img src="${product.imgMain}" alt="${product.name}"> ${product.name}`;
+        searchResults.appendChild(a);
+      });
+      searchResults.classList.add('show');
+    } else {
+      const noResult = document.createElement('div');
+      noResult.textContent = 'Nenhum produto encontrado.';
+      noResult.style.padding = '10px';
+      searchResults.appendChild(noResult);
+      searchResults.classList.add('show');
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!searchResults.contains(e.target) && e.target !== searchInput) {
+      searchResults.classList.remove('show');
+    }
+  });
+}

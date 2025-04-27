@@ -1,0 +1,121 @@
+/* Promo Cards - Estilo geral */
+.promo-card {
+  width: 18rem;
+  background-color: var(--primary-bg-color, #212529);
+  color: var(--text-color, #fff);
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f, #00f)
+    1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promo-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+/* Área controlada da imagem */
+.image-container {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--muted-text-color, #444);
+  position: relative;
+}
+
+.image-container img {
+  max-height: 100%;
+  width: auto;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom suave na imagem */
+.image-container:hover img {
+  transform: scale(1.08);
+}
+
+/* Estilo de Texto */
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+/* Skeleton enquanto carrega */
+.skeleton-card {
+  width: 18rem;
+  height: 320px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skeleton-image {
+  height: 250px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.skeleton-text {
+  width: 70%;
+  height: 20px;
+  margin: 10px auto;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.skeleton-text.short {
+  width: 40%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400% 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .promo-card {
+    width: 16rem;
+  }
+}
+
+
+/* Animação para o fogo 🔥 */
+.fire-emoji {
+    display: inline-block;
+    animation: flameFlicker 1s infinite alternate;
+  }
+  
+  @keyframes flameFlicker {
+    0% {
+      transform: scale(1) rotate(0deg);
+      text-shadow: 0 0 5px orange, 0 0 15px red, 0 0 25px yellow;
+    }
+    50% {
+      transform: scale(1.1) rotate(-2deg);
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    }
+    100% {
+      transform: scale(1) rotate(2deg);
+      text-shadow: 0 0 5px orange, 0 0 15px red, 0 0 25px yellow;
+    }
+  }
+  

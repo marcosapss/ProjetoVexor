@@ -1,169 +1,96 @@
-# Vexor - Documentação Avançada e Completa
+# Vexor - Documentação Oficial do Projeto
 
-Bem-vindo ao projeto **Vexor**!
-
-Este projeto é uma loja virtual focada na venda de mouses gamers. Abaixo você encontra uma descrição extremamente detalhada sobre cada parte do projeto, explicando também o funcionamento interno dos JavaScripts e a estrutura dos CSS.
+Seja bem-vindo à documentação do **Vexor**, uma loja virtual especializada em mouses gamers. Este projeto foi desenvolvido com foco em boas práticas de organização de arquivos, responsividade e experiência do usuário, buscando aprender e aplicar conceitos de HTML, CSS e JavaScript de forma prática.
 
 ---
 
-# 📄 HTMLs
+## 📄 Estrutura de Páginas HTML
 
-- `index.html` - Página principal da loja.
-- `base-page.html` - Template base para outras páginas.
-- `cart.html` - Página de carrinho de compras.
-- `favorite.html` - Página de produtos favoritos.
-- `login.html` - Página de login de usuário.
-- `register.html` - Página de cadastro de novos usuários.
-- `product.html` - Listagem de produtos.
-- `product-page.html` - Detalhes de um produto.
-- `mouse.html` - Página dedicada exclusivamente para mouses.
+- `index.html` — Página principal da loja.
+- `base-page.html` — Template base para reaproveitamento de layout.
+- `cart.html` — Carrinho de compras.
+- `favorite.html` — Lista de produtos favoritados.
+- `login.html` — Tela de login.
+- `register.html` — Tela de cadastro.
+- `product.html` — Catálogo de produtos.
+- `product-page.html` — Detalhes de um produto específico.
+- `mouse.html` — Página dedicada à categoria de mouses.
 
-Essas páginas se utilizam de componentes dinâmicos como Footer e Navbar, que são gerados por JavaScript para garantir manutenção mais fácil e evitar repetição de código.
-
----
-
-# 🎨 CSSs
-
-- `styles.css` - Controla o visual global: navbar, rodapé, tipografia, cores principais, responsividade e elementos comuns (botões, inputs, margens, espaçamentos).
-- `cart.css` - Estilos aplicados apenas para o carrinho de compras: disposição dos produtos, organização dos preços e botões de remoção.
-- `favorite.css` - Estilos para a página de produtos favoritados, semelhante ao carrinho mas com variações visuais específicas.
-- `product-page.css` - Estilos para a exibição dos detalhes de produtos individuais: imagens maiores, descrições, preços destacados.
-- `promotion.css` - Estilos para cards de promoção: utiliza bordas animadas (efeito RGB) para destacar produtos em oferta.
-
-Cada página importa apenas os CSSs necessários para manter performance otimizada.
+> Observação: O projeto utiliza componentes dinâmicos para Navbar e Footer, evitando repetição de código.
 
 ---
 
-# 🛠️ JavaScript
+## 🌈 Folhas de Estilo (CSS)
 
-## `accessibility.js`
-**Objetivo:** Melhorar a acessibilidade geral do site.
+- `styles.css` — Estilos globais (tipografia, navbar, rodapé, responsividade geral).
+- `cart.css` — Estilos específicos para o carrinho.
+- `favorite.css` — Estilos específicos para a página de favoritos.
+- `product-page.css` — Estilização dos detalhes de produto.
+- `promotion.css` — Estilos de produtos em promoção (com efeitos especiais).
 
-- Permite aumentar ou diminuir o tamanho da fonte (`fontSize`) usando `em`, garantindo acessibilidade.
-- Alterna entre tema claro e escuro manipulando o atributo `data-theme` diretamente no `<html>`.
-- Salva as preferências do usuário (tamanho da fonte, tema) no `localStorage` para persistir entre sessões.
-- Permite ocultar o botão de acessibilidade, melhorando a limpeza da interface para usuários que não necessitam.
-
-[Referência](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-
-## `cart.js`
-**Objetivo:** Gerenciar produtos no carrinho de compras.
-
-- Armazena os produtos adicionados usando `localStorage`.
-- Funções para adicionar (`addToCart`) e remover (`removeFromCart`) produtos.
-- Atualiza a exibição visual gerando dinamicamente elementos HTML para cada produto listado no carrinho.
-- Se o carrinho estiver vazio, exibe uma mensagem padrão.
-
-## `favorite.js`
-**Objetivo:** Gerenciar produtos marcados como favoritos.
-
-- Armazena a lista de produtos favoritados no `localStorage`.
-- Permite adicionar/remover produtos favoritos.
-- Gera visualmente a lista de favoritos criando cards dinamicamente.
-
-## `footer.js`
-**Objetivo:** Criar o rodapé da página de forma dinâmica.
-
-- Gera o HTML do footer usando `innerHTML`.
-- As classes aplicadas já são definidas no `styles.css`.
-- Permite alterar o conteúdo do rodapé em todas as páginas alterando apenas este arquivo.
-
-**Justificativa Técnica:**
-Facilita a manutenção do projeto, economizando tempo e evitando duplicação de código em cada página HTML.
-
-## `login.js`
-**Objetivo:** Validação de login de usuários.
-
-- Captura dados de formulário de login.
-- Verifica as credenciais usando informações simuladas do arquivo `users-database.json`.
-- Se o login for bem-sucedido, o estado é salvo no `localStorage`.
-
-## `navbar.js`
-**Objetivo:** Tornar a barra de navegação responsiva ao comportamento do usuário.
-
-- Detecta rolagem (`scroll`) e altera dinamicamente as classes da navbar.
-- A navbar diminui de tamanho e altera sua aparência ao rolar a página, melhorando a usabilidade.
-
-[Referência](https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp)
-
-## `password-strength.js`
-**Objetivo:** Avaliar a força da senha durante o cadastro.
-
-- Analisa o tamanho da senha e a diversidade de caracteres (letras, números, símbolos).
-- Atualiza o nível de força (`fraca`, `média`, `forte`) conforme o usuário digita.
-- Exibe avisos dinâmicos para o usuário melhorar sua senha.
-
-[Referência](https://github.com/dropbox/zxcvbn)
-
-## `product-page.js`
-**Objetivo:** Exibir os detalhes de um produto individual.
-
-- Obtém o `productId` da URL ou evento.
-- Busca informações no `products-database.json`.
-- Preenche a página gerando o HTML dinamicamente (imagem, nome, preço, descrição, botões de compra).
-
-## `product.js`
-**Objetivo:** Listar os produtos da loja.
-
-- Carrega todos os produtos a partir do banco de dados (`products-database.json`).
-- Para cada produto, gera dinamicamente um card HTML contendo imagem, nome, preço e botões.
-
-## `promotion.js`
-**Objetivo:** Gerar promoções aleatórias de produtos.
-
-- Seleciona uma quantidade aleatória de produtos para exibição.
-- Gera cards especiais de promoções com destaque visual (bordas RGB animadas definidas pelo `promotion.css`).
-
-## `register.js`
-**Objetivo:** Registrar novos usuários na plataforma.
-
-- Valida dados do formulário (nome, email, senha).
-- Verifica se o email já existe (simulado).
-- Se tudo estiver correto, salva o novo usuário no `localStorage`.
+> Cada página carrega apenas o CSS necessário, visando otimização de desempenho.
 
 ---
 
-# 🗂️ Databases (JSON)
+## 🛠️ Scripts JavaScript
 
-- `products-database.json` - Armazena todos os dados de produtos, como nome, preço, imagem, descrição.
-- `users-database.json` - Simula um banco de dados de usuários para validação de login.
+- `accessibility.js` — Permite alterar o tema do site (claro/escuro), ajustar tamanho de fonte e esconder o menu de acessibilidade. As preferências são salvas no `localStorage`.
+
+- `cart.js` — Controla o carrinho de compras, adicionando, listando e removendo produtos usando o `localStorage`.
+
+- `favorite.js` — Gerencia produtos favoritados, permitindo adicionar e remover favoritos de forma persistente.
+
+- `footer.js` — Gera dinamicamente o rodapé em todas as páginas.
+
+- `login.js` — Faz a validação de login, simulando uma autenticação com base em um banco de dados local.
+
+- `navbar.js` — Torna a navbar responsiva, mudando seu comportamento com base no scroll da página.
+
+- `product.js` — Lista os produtos do banco de dados e gera seus respectivos cards na página.
+
+- `product-page.js` — Exibe dinamicamente as informações de um produto individual.
+
+- `promotion.js` — Exibe promoções de produtos aleatoriamente, com efeitos visuais especiais.
+
+- `register.js` — Faz a validação e cadastro de novos usuários localmente.
+
+- `search.js` — Permite a busca de produtos cadastrados de forma simples e eficaz.
+
+> Todos os scripts utilizam boas práticas de DOM manipulation e persistência de dados básica com `localStorage`.
 
 ---
 
-# 🖼️ Imagens
+## 📂 Banco de Dados Simulados (JSON)
 
-- `banner1.png`, `banner2.png`, `banner3.png` - Imagens promocionais usadas em carrosséis ou seções de destaque.
-- `favicon.ico` - Ícone que aparece na aba do navegador.
-- `login.png` - Ilustração para página de login.
-- `register.png` - Ilustração para página de cadastro.
+- `products-database.json` — Contém as informações dos produtos (nome, preço, imagem, descrição).
+- `users-database.json` — Simula uma base de usuários para fins de login e registro.
 
 ---
 
-# 🔄 HTML + JS Dinâmico
+## 🖼️ Recursos Visuais (Imagens)
 
-- **Navbar e Footer:**
-  - Implementados via JavaScript (`navbar.js` e `footer.js`) para evitar redundância.
-  - Permite que qualquer alteração seja refletida automaticamente em todas as páginas.
+- `banner1.png`, `banner2.png`, `banner3.png` — Imagens promocionais principais.
+- `favicon.ico` — Ícone do site.
+- `login.png`, `register.png` — Ilustrações para as telas de login e cadastro.
+- `gamer-mouse.png` — Arte genérica para mouses gamers.
+- `mousehist/` — Pasta com imagens sobre a história dos mouses, desde o primeiro modelo com bolinha até os sensores ópticos modernos.
 
-- **Produtos, Favoritos, Carrinho:**
-  - Todos gerados dinamicamente.
-  - Mantém estrutura leve e fácil de atualizar sem alterar manualmente HTMLs individuais.
+> O projeto preza por imagens otimizadas para manter a performance.
 
 ---
 
-# 📊 Resumo Visual
+## 📊 Resumo Rápido
 
-| Arquivo | Função Principal | Observações |
+| Arquivo | Função | Observação |
 |:---|:---|:---|
-| `accessibility.js` | Acessibilidade do site | Tema, fonte, esconder botão |
-| `cart.js` | Carrinho de compras | LocalStorage e HTML dinâmico |
-| `favorite.js` | Gerenciar Favoritos | LocalStorage |
-| `footer.js` | Rodapé dinâmico | HTML criado via JS |
-| `login.js` | Validação de Login | Integração com banco simulado |
-| `navbar.js` | Navbar dinâmico | Efeito de scroll |
-| `password-strength.js` | Força de senha | Avaliação dinâmica |
-| `product-page.js` | Página de Produto | Criação de detalhes via JS |
-| `product.js` | Listagem de Produtos | Geração de cards |
-| `promotion.js` | Promoções aleatórias | Destaque visual |
-| `register.js` | Cadastro de Usuário | LocalStorage |
-
+| `accessibility.js` | Acessibilidade | Tema, fonte, menu |
+| `cart.js` | Carrinho | `localStorage`, dinâmico |
+| `favorite.js` | Favoritos | Gestão de favoritos |
+| `footer.js` | Rodapé dinâmico | Atualização automática |
+| `login.js` | Login | Simula login local |
+| `navbar.js` | Navbar responsiva | Comportamento no scroll |
+| `product.js` | Listagem de produtos | Cards dinâmicos |
+| `product-page.js` | Detalhes do produto | Info carregadas dinâmicas |
+| `promotion.js` | Promoções | Cards aleatórios |
+| `register.js` | Cadastro | Validação e criação de usuário |
+| `search.js` | Busca de produtos | Filtro dinâmico |

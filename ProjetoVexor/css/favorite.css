@@ -1,117 +1,117 @@
 #favorite-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Container dos cards */
-  #favorites-container {
-    flex: 1;
-  }
-  
-  /* Card lindo */
-  .favorite-card {
-    background-color: var(--primary-bg-color);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-  }
-  
-  .favorite-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .favorite-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-  }
-  
-  .favorite-card img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Nome do produto */
-  .favorite-card h5 {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  
-  /* Preço */
-  .favorite-card p {
-    color: var(--secondary-bg-color);
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  /* Botões alinhados */
-  .favorite-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .favorite-buttons .btn {
-    flex: 1;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-  
-  .favorite-buttons .btn-remove {
-    background-color: var(--error-color);
-    color: white;
-    border: none;
-    background-color: #c82333;
-  }
-  
-  /* Mensagem de sem favoritos */
-  .no-favorites-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: var(--muted-text-color);
-    padding: 20px;
-    z-index: 2;
-  }
-  
-  .no-favorites-message i {
-    font-size: 5rem;
-    margin-bottom: 15px;
-  }
-  
-  .no-favorites-message h3 {
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .no-favorites-message p {
-    font-size: 1rem;
-  }
-  
-  /* Toast */
-  .toast-notification {
-    display: none;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--success-color);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    z-index: 9999;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container dos cards */
+#favorites-container {
+  flex: 1;
+}
+
+/* Card lindo */
+.favorite-card {
+  background-color: var(--primary-bg-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding: 16px;
+  position: relative;
+}
+
+.favorite-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.favorite-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Nome do produto */
+.favorite-card h5 {
+  margin-top: 15px;
+  font-size: 17.6px;
+  font-weight: bold;
+}
+
+/* Preço */
+.favorite-card p {
+  color: var(--secondary-bg-color);
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Botões alinhados */
+.favorite-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite-buttons .btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14.4px;
+}
+
+.favorite-buttons .btn-remove {
+  background-color: var(--error-color);
+  color: white;
+  border: none;
+  background-color: #c82333;
+}
+
+/* Mensagem de sem favoritos */
+.no-favorites-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--muted-text-color);
+  padding: 20px;
+  z-index: 2;
+}
+
+.no-favorites-message i {
+  font-size: 80px;
+  margin-bottom: 15px;
+}
+
+.no-favorites-message h3 {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.no-favorites-message p {
+  font-size: 16px;
+}
+
+/* Toast */
+.toast-notification {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--success-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

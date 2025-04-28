@@ -39,121 +39,44 @@
     <script src="js/footer.js" defer></script>
     <!-- CSS da história -->
     <style>
-      :root {
-        --bg-color: #f4f7fa;
-        --primary-bg-color: #ffffff;
-        --secondary-bg-color: #1873bc;
-        --text-color: #212529;
-      }
-  
-      [data-theme="dark"] {
-        --bg-color: #1c1c24;
-        --primary-bg-color: #121212;
-        --secondary-bg-color: #3390ff;
-        --text-color: #f8f9fa;
-      }
-  
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Comic Neue", cursive, sans-serif;
-      }
-  
-      body {
-        background: var(--bg-color);
-        color: var(--text-color);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-  
-      header {
-        background: var(--secondary-bg-color);
-        color: var(--primary-bg-color);
-        padding: 20px;
-        text-align: center;
-      }
-  
-      main {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  
-      .carousel-container {
-        position: relative;
-        width: 90%;
-        max-width: 700px;
-        overflow: hidden;
-      }
-  
-      .carousel {
-        display: flex;
-        transition: transform 0.5s ease;
-      }
-  
-      .slide {
-        min-width: 100%;
-        padding: 20px;
-        text-align: center;
-      }
-  
-      .slide img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 10px;
-      }
-  
-      .slide p {
-        margin-top: 10px;
-        font-size: 1.2rem;
-      }
-  
-      button {
-        background-color: var(--secondary-bg-color);
-        color: var(--primary-bg-color);
-        border: none;
-        padding: 10px 20px;
-        font-size: 1.2rem;
-        border-radius: 8px;
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: background-color 0.3s ease;
-      }
-  
-      button:hover {
-        background-color: #0c5f9f;
-      }
-  
-      .prev-btn {
-        left: 0;
-      }
-  
-      .next-btn {
-        right: 0;
-      }
-  
-      footer {
-        background: var(--secondary-bg-color);
-        color: var(--primary-bg-color);
-        text-align: center;
-        padding: 10px;
-        font-size: 0.85rem;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-      }
-  
-      @media (max-width: 768px) {
-        .slide img {
-          max-width: 80%;
-        }
-      }
+    h1, h2 {
+      text-align: center;
+      color: #1873bc;
+    }
+    p {
+      max-width: 900px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    .history-image {
+      width: 100%;
+      max-width: 800px; /* ou 700px se quiser mais compacto */
+      height: 400px; /* fixa a altura */
+      object-fit: cover; /* mantém o visual bonito sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: block;
+      margin: 20px auto;
+}
+    .section {
+      margin-top: 60px;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .credit {
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+      margin-top: 10px;
+    }
     </style>
   </head>
   <body>
@@ -161,78 +84,122 @@
     <div id="navbar-container"></div>
 
     <!-- História do Mouse -->
-    <header>
-      <h1>A História do Mouse</h1>
-      <p>🐭 Clique para explorar a evolução do mouse!</p>
-    </header>
-  
-    <main>
-      <section class="carousel-container">
-        <div class="carousel">
-          <div class="slide">
-            <img src="https://cdn-icons-png.flaticon.com/512/375/375054.png" alt="Primeiro Mouse">
-            <p><strong>1964:</strong> O primeiro mouse foi inventado por Douglas Engelbart!</p>
-          </div>
-          <div class="slide">
-            <img src="https://cdn-icons-png.flaticon.com/512/4371/4371733.png" alt="Mouse clássico">
-            <p><strong>Anos 80:</strong> O mouse ganha popularidade com os computadores pessoais.</p>
-          </div>
-          <div class="slide">
-            <img src="https://cdn-icons-png.flaticon.com/512/5109/5109055.png" alt="Mouse Óptico">
-            <p><strong>1999:</strong> O mouse óptico substitui o modelo com bolinha!</p>
-          </div>
-          <div class="slide">
-            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331844.png" alt="Mouse da Apple">
-            <p><strong>Anos 2000:</strong> O mouse da Apple se torna icônico!</p>
-          </div>
-          <div class="slide">
-            <img src="https://cdn-icons-png.flaticon.com/512/1587/1587110.png" alt="Mouse Gamer RGB">
-            <p><strong>Hoje:</strong> Mouses gamer RGB e sem fio para todos os gostos!</p>
-          </div>
-        </div>
-  
-        <button class="prev-btn" id="prev-slide">⬅️ Voltar</button>
-        <button class="next-btn" id="next-slide">Próxima ➡️</button>
-      </section>
-    </main>
-  
+    <h1>🖱️ A História e a Evolução do Mouse</h1>
+
+    <p class="fade-in">
+      O mouse, um dos dispositivos mais icônicos da computação, revolucionou a
+      maneira como interagimos com os computadores. Desde suas origens simples
+      até os designs avançados de hoje, o mouse percorreu uma jornada
+      extraordinária de inovação e importância.
+    </p>
+
+    <div class="section fade-in">
+      <h2>📜 As Origens: O Primeiro Mouse</h2>
+      <p>
+        O primeiro mouse foi inventado em 1964 por Douglas Engelbart, no
+        Stanford Research Institute. Era feito de madeira e utilizava dois
+        discos ortogonais para detectar o movimento. O dispositivo foi projetado
+        para facilitar a navegação em interfaces gráficas, uma ideia
+        revolucionária para a época.
+      </p>
+      <img
+        src="/ProjetoVexor/img/mousehist/primeiromouse.jpg" class="history-image"
+        alt="Primeiro Mouse de Madeira"
+      />
+      <div class="credit">
+        Imagem: Douglas Engelbart com o primeiro mouse - Wikimedia Commons
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <h2>🔵 A Era dos Mouses de Bolinha</h2>
+      <p>
+        Na década de 1980, os mouses com bola mecânica se popularizaram. Esses
+        modelos usavam uma esfera para detectar movimentos em todas as direções,
+        rolando sobre duas rodas internas. Era comum ter que limpar a bolinha
+        regularmente para manter o funcionamento adequado.
+      </p>
+      <img
+        src="/ProjetoVexor/img/mousehist/mousebolinha.jpg" class="history-image"
+        alt="Mouse de Bolinha"
+      />
+      <div class="credit">
+        Imagem: Bola de mouse mecânico
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <h2>🔬 Sensores Ópticos e a Revolução da Precisão</h2>
+      <p>
+        No final da década de 1990, surgiram os mouses ópticos, substituindo a
+        esfera mecânica por sensores de luz LED e tecnologia de imagem. Eles
+        eliminavam a necessidade de manutenção constante e ofereciam maior
+        precisão e durabilidade. A Microsoft lançou um dos primeiros modelos
+        populares, o IntelliMouse Explorer.
+      </p>
+      <img
+        src="/ProjetoVexor/img/mousehist/mouseoptico.webp" class="history-image"
+        alt="Mouse Óptico"
+      />
+      <div class="credit">
+        Imagem: Mouse Óptico
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <h2>🚀 Mouses a Laser e a Nova Geração Gamer</h2>
+      <p>
+        Com o avanço das tecnologias, surgiram os mouses a laser, capazes de
+        rastrear movimentos em praticamente qualquer superfície. Paralelamente,
+        o mundo dos games impulsionou a criação de mouses com DPI ajustável,
+        botões extras programáveis e iluminação RGB personalizável, elevando o
+        nível de performance e estética.
+      </p>
+      <img
+        src="/ProjetoVexor/img/mousehist/mousegamer.avif" class="history-image"
+        alt="Mouse Gamer Atual"
+      />
+      <div class="credit">Imagem: Corsair Scimitar PRO</div>
+    </div>
+
+    <div class="section fade-in">
+      <h2>🔮 O Futuro dos Mouses</h2>
+      <p>
+        Atualmente, os mouses continuam a evoluir com tecnologias como sensores
+        ultrafinos, ergonomia adaptativa, carregamento sem fio e até sensores
+        biométricos. Enquanto novas interfaces surgem, o mouse permanece
+        essencial para produtividade e jogos, mostrando que mesmo após décadas,
+        ele ainda é insubstituível.
+      </p>
+      <img
+        src="/ProjetoVexor/img/mousehist/mousefuturista.webp" class="history-image"
+        alt="Mouse Moderno Logitech MX"
+      />
+      <div class="credit">
+        Imagem: Logitech MX
+      </div>
+    </div>
+
     <script>
+      // Animações suaves ao rolar a página
       document.addEventListener("DOMContentLoaded", () => {
-        const prevBtn = document.getElementById("prev-slide");
-        const nextBtn = document.getElementById("next-slide");
-        const carousel = document.querySelector(".carousel");
-        const slides = document.querySelectorAll(".slide");
-        let currentSlide = 0;
-  
-        // Função para atualizar a posição do carrossel
-        const updateCarousel = () => {
-          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-  
-          // Desabilitar os botões conforme a posição
-          prevBtn.disabled = currentSlide === 0;
-          nextBtn.disabled = currentSlide === slides.length - 1;
-        };
-  
-        // Navegar para a próxima página
-        nextBtn.addEventListener("click", () => {
-          if (currentSlide < slides.length - 1) {
-            currentSlide++;
-            updateCarousel();
-          }
-        });
-  
-        // Voltar para a página anterior
-        prevBtn.addEventListener("click", () => {
-          if (currentSlide > 0) {
-            currentSlide--;
-            updateCarousel();
-          }
-        });
-  
-        // Inicializa o carrossel
-        updateCarousel();
+        const elements = document.querySelectorAll(".fade-in");
+
+        function checkVisibility() {
+          elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+              el.classList.add("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", checkVisibility);
+        checkVisibility();
       });
     </script>
-    
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
   </body>
 </html>

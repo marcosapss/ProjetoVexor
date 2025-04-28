@@ -1,130 +1,130 @@
 .container-cart {
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .cart-items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .cart-item {
-    background: var(--primary-bg-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .cart-item img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .cart-item-details {
-    flex: 1;
-  }
-  
-  .cart-item-details h3 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  .cart-item-details p {
-    margin: 5px 0;
-    color: var(--muted-text-color);
-  }
-  
-  .cart-item-quantity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .cart-item-quantity button {
-    border: none;
-    background: var(--secondary-bg-color);
-    color: white;
-    padding: 6px 10px;
-    border-radius: 50%;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .cart-item-quantity button:hover {
-    background: #0c5f9f;
-  }
-  
-  .cart-item-remove {
-    cursor: pointer;
-    color: red;
-    font-size: 1.5rem;
-    margin-left: 20px;
-  }
-  
-  .cart-summary {
-    margin-top: 40px;
-    text-align: center;
-  }
-  
-  .cart-summary h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .cart-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .btn-primary {
-    background-color: var(--secondary-bg-color);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0c5f9f;
-  }
-  
-  .btn-secondary {
-    background-color: transparent;
-    color: var(--secondary-bg-color);
-    padding: 10px 20px;
-    border: 2px solid var(--secondary-bg-color);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
-  }
-  
-  .btn-secondary:hover {
-    background-color: var(--secondary-bg-color);
-    color: white;
-  }
-  
-  .empty-cart {
-    text-align: center;
-    margin-top: 100px;
-    display: none;
-  }
-  
-  .empty-cart h2 {
-    margin-bottom: 20px;
-  }
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  background: var(--primary-bg-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 19.2px;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  color: var(--muted-text-color);
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-quantity button {
+  border: none;
+  background: var(--secondary-bg-color);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-item-quantity button:hover {
+  background: #0c5f9f;
+}
+
+.cart-item-remove {
+  cursor: pointer;
+  color: red;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.cart-summary {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.cart-summary h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary {
+  background-color: var(--secondary-bg-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #0c5f9f;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--secondary-bg-color);
+  padding: 10px 20px;
+  border: 2px solid var(--secondary-bg-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-bg-color);
+  color: white;
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 100px;
+  display: none;
+}
+
+.empty-cart h2 {
+  margin-bottom: 20px;
+}

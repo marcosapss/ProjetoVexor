@@ -35,14 +35,17 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="/Vexor/js/accessibility.js" defer></script>
+    <script src="js/accessibility.js" defer></script>
     <script src="js/navbar.js" defer></script>
-    <script src="js/promotion.js" defer></script>
+    <script src="js/product.js" defer></script>
+    <script src="js/search.js" defer></script>
     <script src="js/footer.js" defer></script>
+    
   </head>
   <body>
     <!-- JS Navbar -->
     <div id="navbar-container"></div>
+
     <!-- Banner -->
     <div
       class="carousel slide"
@@ -120,18 +123,83 @@
         <span class="visually-hidden">Próximo</span>
       </button>
     </div>
+    <!-- Mini Banner -->
+    <section class="promo-strip text-center">
+      <p>🚀 Frete Grátis para compras acima de R$199! 🚚</p>
+    </section>
+    <section class="container my-5" id="why-choose-us">
+      <div class="row align-items-center">
+        <!-- Imagem -->
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <img
+            src="img/gamer-mouse.png"
+            alt="Gamer usando mouse RGB"
+            class="img-why"
+          />
+        </div>
+
+        <!-- Texto -->
+        <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+          <h2 class="mb-4 text-highlight">Por que comprar na Vexor? 🎮🛒</h2>
+          <p class="lead">
+            Aqui você encontra muito mais do que produtos, você encontra uma
+            verdadeira experiência gamer! 🧠🔥
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              ✅ <strong>Preços Insanos</strong> — o melhor custo-benefício do
+              mercado!
+            </li>
+            <li>
+              🚚 <strong>Entrega Ultra Rápida</strong> — receba seu equipamento
+              em tempo recorde.
+            </li>
+            <li>
+              🎯 <strong>Produtos Originais</strong> — qualidade e procedência
+              garantidas.
+            </li>
+            <li>
+              📞 <strong>Suporte Premium</strong> — atendimento rápido e
+              eficiente.
+            </li>
+          </ul>
+          <p class="mt-4">
+            💥 Potencialize sua gameplay com o melhor em Mouses.<strong
+              >Vexor</strong
+            >
+            é o seu aliado para a vitória!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const highlight = document.querySelector(".text-highlight");
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              highlight.classList.add("animate-highlight");
+            }
+          });
+        });
+
+        observer.observe(highlight);
+      });
+    </script>
+
     <!-- Produtos em Promoção -->
     <section class="container my-5">
       <h2 class="text-center mb-4">
-        <span class="fire-emoji">🔥</span> Produtos em Promoção <span class="fire-emoji">🔥</span>
+        <span class="fire-emoji">🔥</span> Produtos em Promoção
+        <span class="fire-emoji">🔥</span>
       </h2>
       <div class="row" id="promotion-grid">
         <!-- JS vai colocar os cards aqui -->
       </div>
     </section>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
     <!-- Footer -->
     <div id="footer-container"></div>
   </body>

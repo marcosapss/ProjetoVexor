@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <ul class="footer-links">
           <li><i class="bi bi-caret-right-fill"></i> <a href="index.html">Home</a></li>
           <li><i class="bi bi-caret-right-fill"></i> <a href="product.html">Produtos</a></li>
-          <li><i class="bi bi-caret-right-fill"></i> <a href="#">Promoções</a></li>
+          <li><i class="bi bi-caret-right-fill"></i> <a href="index.html#promotion-grid">Promoções</a></li>
           <li><i class="bi bi-caret-right-fill"></i> <a href="#">Contato</a></li>
         </ul>
       </div>

@@ -35,15 +35,17 @@
       defer
     ></script>
     <script src="js/accessibility.js" defer></script>
-    <script src="js/register.js" defer></script>
     <script src="js/navbar.js" defer></script>
+    <script src="js/register.js" defer></script>
+    <script src="js/product.js" defer></script>
+    <script src="js/search.js" defer></script>
     <script src="js/footer.js" defer></script>
   </head>
   <body>
     <!-- JS Navbar -->
     <div id="navbar-container"></div>
     <!-- Registro -->
-    <section class="login-section">
+    <section class="login-section mt-5">
       <div class="container login-container">
         <div class="row align-items-center">
           <!-- Imagem -->
@@ -56,208 +58,240 @@
           </div>
 
           <!-- Formulário de Cadastro -->
-          <div class="col-md-6 col-12">
+          <div class="col-12 col-md-6">
             <div class="card p-4 shadow-sm">
               <h2 class="mb-4 text-center">Crie sua conta</h2>
+
+              <!-- Abas -->
+              <ul class="nav nav-tabs mb-3" id="registerTab" role="tablist">
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#personal-tab-pane"
+                  >
+                    Pessoal
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#contact-tab-pane"
+                  >
+                    Contato
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#address-tab-pane"
+                  >
+                    Endereço
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#account-tab-pane"
+                  >
+                    Conta
+                  </button>
+                </li>
+              </ul>
+
+              <!-- Formulário -->
               <form id="registerForm">
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="fullName"
-                    placeholder="Nome Completo"
-                    required
-                  />
-                  <label for="fullName">Nome completo</label>
-                </div>
+                <div class="tab-content">
+                  <!-- Informações pessoais -->
+                  <div class="tab-pane fade show active" id="personal-tab-pane">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fullName"
+                        placeholder="Nome Completo"
+                        required
+                      />
+                      <label for="fullName">Nome completo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="birthDate"
+                        required
+                      />
+                      <label for="birthDate">Data de Nascimento</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="gender" required>
+                        <option value="">Selecione</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outro</option>
+                      </select>
+                      <label for="gender">Sexo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="motherName"
+                        required
+                      />
+                      <label for="motherName">Nome Materno</label>
+                    </div>
+                    <div class="mb-3 position-relative">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control pe-5"
+                          id="cpf"
+                          placeholder="CPF"
+                          required
+                        />
+                        <label for="cpf">CPF</label>
+                      </div>
+                      <span
+                        id="cpf-valid-icon"
+                        class="position-absolute top-50 end-0 translate-middle-y me-3"
+                      ></span>
+                    </div>
 
-                <div class="form-floating mb-3">
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="birthDate"
-                    placeholder="Data de Nascimento"
-                    required
-                  />
-                  <label for="birthDate">Data de Nascimento</label>
-                </div>
+                    <button
+                      type="button"
+                      class="btn btn-primary float-end next-tab"
+                    >
+                      Próximo
+                    </button>
+                  </div>
 
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="gender" required>
-                    <option value="">Selecione</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                    <option value="Outro">Outro</option>
-                  </select>
-                  <label for="gender">Sexo</label>
-                </div>
+                  <!-- Contato -->
+                  <div class="tab-pane fade" id="contact-tab-pane">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                      <label for="email">E-mail</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="cellPhone"
+                        required
+                      />
+                      <label for="cellPhone">Telefone Celular</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="tel" class="form-control" id="homePhone" />
+                      <label for="homePhone">Telefone Fixo</label>
+                    </div>
+                    <button type="button" class="btn btn-secondary prev-tab">
+                      Anterior
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary float-end next-tab"
+                    >
+                      Próximo
+                    </button>
+                  </div>
 
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="motherName"
-                    placeholder="Nome Materno"
-                    required
-                  />
-                  <label for="motherName">Nome Materno</label>
-                </div>
+                  <!-- Endereço -->
+                  <div class="tab-pane fade" id="address-tab-pane">
+                    <div class="mb-3 position-relative">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control pe-5"
+                          id="cep"
+                          placeholder="CEP"
+                          required
+                        />
+                        <label for="cep">CEP</label>
+                      </div>
+                      <span
+                        id="cep-valid-icon"
+                        class="position-absolute top-50 end-0 translate-middle-y me-3"
+                      ></span>
+                      <div id="cep-error" class="small text-danger mt-1"></div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="logradouro" />
+                      <label for="logradouro">Logradouro</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="bairro" />
+                      <label for="bairro">Bairro</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="cidade" />
+                      <label for="cidade">Cidade</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="estado" />
+                      <label for="estado">Estado</label>
+                    </div>
+                    <button type="button" class="btn btn-secondary prev-tab">
+                      Anterior
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary float-end next-tab"
+                    >
+                      Próximo
+                    </button>
+                  </div>
 
-                <div class="form-floating mb-3 position-relative">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cpf"
-                    placeholder="CPF"
-                    required
-                  />
-                  <label for="cpf">CPF</label>
-                  <span
-                    id="cpf-valid-icon"
-                    class="position-absolute top-50 end-0 translate-middle-y me-3"
-                  ></span>
-                </div>
+                  <!-- Conta -->
+                  <div class="tab-pane fade" id="account-tab-pane">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="loginUser"
+                        required
+                      />
+                      <label for="loginUser">Login</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="passwordUser" placeholder="Senha" required minlength="8" maxlength="8" pattern="[A-Za-z]{8}">
+                      <label for="passwordUser">Senha (8 letras)</label>
+                      <div id="password-strength" class="mt-2 small"></div>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Senha" required minlength="8" maxlength="8" pattern="[A-Za-z]{8}">
+                      <label for="confirmPassword">Confirmar Senha</label>
+                      <div id="password-match-error" class="small text-danger mt-1"></div>
+                    </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary prev-tab">
+                      Anterior
+                    </button>
 
-                <div class="form-floating mb-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="E-mail"
-                    required
-                  />
-                  <label for="email">E-mail</label>
-                </div>
+                    <!-- Mensagem de erro ou sucesso -->
+                    <div id="register-message" class="text-center mt-3"></div>
 
-                <div class="form-floating mb-3">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="cellPhone"
-                    placeholder="Telefone Celular"
-                    required
-                  />
-                  <label for="cellPhone">Telefone Celular</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="homePhone"
-                    placeholder="Telefone Fixo"
-                  />
-                  <label for="homePhone">Telefone Fixo</label>
-                </div>
-
-                <div class="form-floating mb-3 position-relative">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cep"
-                    placeholder="CEP"
-                    required
-                  />
-                  <label for="cep">CEP</label>
-                  <div id="cep-error" class="small"></div>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="logradouro"
-                    placeholder="Logradouro"
-                    required
-                  />
-                  <label for="logradouro">Logradouro</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="bairro"
-                    placeholder="Bairro"
-                    required
-                  />
-                  <label for="bairro">Bairro</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cidade"
-                    placeholder="Cidade"
-                    required
-                  />
-                  <label for="cidade">Cidade</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="estado"
-                    placeholder="Estado"
-                    required
-                  />
-                  <label for="estado">Estado</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="loginUser"
-                    placeholder="Login"
-                    required
-                  />
-                  <label for="loginUser">Login</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="passwordUser"
-                    placeholder="Senha"
-                    required
-                  />
-                  <label for="passwordUser">Senha</label>
-                  <div id="password-strength" class="mt-2"></div>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="confirmPassword"
-                    placeholder="Confirmação da Senha"
-                    required
-                  />
-                  <label for="confirmPassword">Confirmação da Senha</label>
-                  <div
-                    id="password-match-error"
-                    class="small text-danger mt-1"
-                  ></div>
-                </div>
-
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">
-                    Cadastrar
-                  </button>
-                  <button type="reset" class="btn btn-outline-secondary">
-                    Limpar
-                  </button>
+                    <button type="submit" class="btn btn-success float-end">
+                      Cadastrar
+                    </button>
+                  </div>
                 </div>
               </form>
 
-              <div class="text-center mt-3">
-                <span
-                  >Já tem uma conta?
-                  <a href="login.html" class="link-primary">Faça login</a></span
+              <!-- Já tem conta? -->
+              <div class="text-center mt-4">
+                Já tem uma conta?
+                <a href="login.html" class="link-primary fw-semibold"
+                  >Faça login</a
                 >
               </div>
             </div>
@@ -279,6 +313,8 @@
       class="position-fixed bottom-0 end-0 p-3"
       style="z-index: 9999"
     ></div>
+    <!-- Toast de erro -->
+    <div id="toast-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;"></div>
     <!-- Footer -->
     <div id="footer-container"></div>
   </body>

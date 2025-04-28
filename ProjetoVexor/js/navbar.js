@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     <a href="index.html" class="navbar-brand">Vexor</a>
     <div id="navbar-items">
       <div></div>
-      <form class="d-flex position-relative" id="search-form" autocomplete="off">
-        <i class="bi bi-search primary-color"></i>
-        <input type="search" class="form-control me-2" id="search-input" placeholder="Busque seu Mouse gamer..." aria-label="Search">
-        <div id="search-results" class="search-dropdown d-none"></div>
-        <button class="btn search-btn" type="submit">Pesquisar</button>
-      </form>
+        <form class="d-flex position-relative" id="search-form" autocomplete="off">
+          <i class="bi bi-search primary-color"></i>
+          <input type="search" class="form-control me-2" id="search-input" placeholder="Busque seu Mouse..." aria-label="Search">
+          <div id="search-results" class="d-none"></div>
+          <button class="btn search-btn" type="submit">Pesquisar</button>
+        </form>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a href="login.html" class="nav-link"><i class="bi bi-person-fill"></i></a>
@@ -153,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarContainer = document.getElementById("navbar-container");
   if (navbarContainer) {
     navbarContainer.innerHTML = navbarHTML;
-    initializeSearch();
     updateCartNavbar();
     updateFavoritesNavbar();
   }
@@ -207,51 +206,4 @@ function updateFavoritesNavbar() {
       favoritesBadge.style.display = "none";
     }
   }
-}
-
-// Inicializar busca
-function initializeSearch() {
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
-  let products = [];
-
-  fetch('db/products-database.json')
-    .then(response => response.json())
-    .then(data => { products = data; });
-
-  searchInput.addEventListener('input', function () {
-    const query = this.value.trim().toLowerCase();
-    searchResults.innerHTML = '';
-
-    if (query.length === 0) {
-      searchResults.classList.remove('show');
-      return;
-    }
-
-    const filtered = products.filter(product =>
-      product.name.toLowerCase().includes(query)
-    );
-
-    if (filtered.length > 0) {
-      filtered.slice(0, 5).forEach(product => {
-        const a = document.createElement('a');
-        a.href = `product-page.html?id=${product.id}`;
-        a.innerHTML = `<img src="${product.imgMain}" alt="${product.name}"> ${product.name}`;
-        searchResults.appendChild(a);
-      });
-      searchResults.classList.add('show');
-    } else {
-      const noResult = document.createElement('div');
-      noResult.textContent = 'Nenhum produto encontrado.';
-      noResult.style.padding = '10px';
-      searchResults.appendChild(noResult);
-      searchResults.classList.add('show');
-    }
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!searchResults.contains(e.target) && e.target !== searchInput) {
-      searchResults.classList.remove('show');
-    }
-  });
 }

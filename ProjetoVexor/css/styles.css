@@ -52,7 +52,7 @@ body {
 }
 
 #navbar .navbar-nav li {
-  margin-left: 1em;
+  margin-left: 16px;
 }
 
 #navbar a,
@@ -91,6 +91,105 @@ body {
   }
 }
 
+/* Carousel Index */
+#slider {
+  max-width: 1200px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  max-height: 550px; /* altura máxima */
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    max-height: 250px;
+  }
+
+  .carousel-inner img {
+    height: 250px;
+    border-radius: 0px;
+  }
+}
+
+/* Mini Banner */
+
+.promo-strip {
+  background: var(--secondary-bg-color);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+#why-choose-us {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  line-height: 1.8;
+}
+
+.img-why {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.text-highlight {
+  color: var(--secondary-bg-color);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#why-choose-us ul li {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+#why-choose-us .lead {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .img-why {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+.animate-highlight {
+  animation: pulseColor 2s ease infinite;
+}
+
+@keyframes pulseColor {
+  0% {
+    color: var(--secondary-bg-color);
+    transform: scale(1);
+  }
+  50% {
+    color: #0c5f9f;
+    transform: scale(1.05);
+  }
+  100% {
+    color: var(--secondary-bg-color);
+    transform: scale(1);
+  }
+}
+
 /* Botão de pesquisa */
 #navbar .btn {
   border: 2px solid var(--secondary-bg-color);
@@ -108,7 +207,7 @@ body {
 /* Formulário de Busca */
 #search-form {
   width: 100%;
-  margin: 2em 0;
+  margin: 32px 0;
   border: 2px solid #626262;
   padding: 5px 15px;
 }
@@ -146,7 +245,7 @@ body {
 }
 
 .navbar-toggler {
-  font-size: 1.5em;
+  font-size: 24px;
 }
 
 /* Footer */
@@ -171,7 +270,7 @@ body {
 }
 
 .footer-title {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
   position: relative;
@@ -214,7 +313,7 @@ body {
 }
 
 .newsletter h6 {
-  font-size: 1.2rem;
+  font-size: 19px;
   margin-bottom: 20px;
 }
 
@@ -231,26 +330,31 @@ body {
 .social-icons a {
   display: inline-block;
   margin: 0 10px;
-  font-size: 2rem;
+  font-size: 32px;
   color: var(--text-color);
   transition: transform 0.4s, text-shadow 0.4s, color 0.4s;
 }
 
 .social-icons a:hover {
   animation: pulse 1s infinite alternate;
-  text-shadow: 0 0 10px var(--secondary-bg-color), 0 0 20px var(--secondary-bg-color);
+  text-shadow: 0 0 10px var(--secondary-bg-color),
+    0 0 20px var(--secondary-bg-color);
   color: var(--secondary-bg-color);
 }
 
 @keyframes pulse {
-  from { transform: scale(1); }
-  to { transform: scale(1.2); }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 
 /* Frase Pensadora */
 .footer-quote blockquote {
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 18px;
   color: var(--muted-text-color);
   margin: 0;
 }
@@ -258,13 +362,13 @@ body {
 .footer-quote cite {
   display: block;
   margin-top: 8px;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: var(--secondary-bg-color);
 }
 
 /* Copyright */
 .footer-bottom p {
-  font-size: 0.95rem;
+  font-size: 15px;
   margin-top: 20px;
 }
 
@@ -273,7 +377,13 @@ body {
   .footer-main {
     padding: 0 20px;
   }
-  .footer-title, .footer-text, .store-phone, .newsletter h6, .footer-bottom p, .footer-quote blockquote, .footer-quote cite {
+  .footer-title,
+  .footer-text,
+  .store-phone,
+  .newsletter h6,
+  .footer-bottom p,
+  .footer-quote blockquote,
+  .footer-quote cite {
     text-align: center;
   }
 }
@@ -320,7 +430,7 @@ body {
   background: transparent;
   border: none;
   color: red;
-  font-size: 1.8rem;
+  font-size: 29px;
   cursor: pointer;
   line-height: 1;
   z-index: 9999;
@@ -331,3 +441,103 @@ body {
   color: darkred;
   transform: rotate(180deg) scale(1.3);
 }
+
+/* Dropdown de busca */
+#search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--primary-bg-color, #ffffff);
+  border: 1px solid var(--muted-text-color, #ccc);
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 5px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#search-results.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#search-results a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: var(--text-color, #212529);
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 0.95rem;
+}
+
+#search-results a:hover {
+  background-color: var(--secondary-bg-color, #1873bc);
+  color: #ffffff;
+}
+
+#search-results img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Registro */
+#cpf-valid-icon i {
+  font-size: 22px;
+  pointer-events: none;
+}
+
+#cpf.is-valid,
+#cpf.is-invalid,
+#cep.is-valid,
+#cep.is-invalid {
+  background-image: none !important;
+}
+
+/* Login */ 
+/* Animação Shake para campos inválidos */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+/* Fade-in para as mensagens de alerta */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Deixa o botão "Cadastrar" mais suave */
+button[type="submit"] {
+  transition: all 0.3s ease;
+}
+
+/* Quando botão está carregando */
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Melhorias gerais nos alerts */
+.alert {
+  margin-top: 15px;
+  animation: fadeIn 0.5s ease;
+}
+

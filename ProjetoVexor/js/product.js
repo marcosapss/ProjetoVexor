@@ -1,9 +1,5 @@
-const productsContainer = document.getElementById(
-  "productpage_productsContainer"
-);
-const itemsPerPageSelect = document.getElementById(
-  "productpage_itemsPerPage"
-) || { value: 12 };
+const productsContainer = document.getElementById("productpage_productsContainer");
+const itemsPerPageSelect = document.getElementById("productpage_itemsPerPage") || { value: 12 };
 const pagination = document.getElementById("productpage_pagination");
 const gridViewBtn = document.getElementById("productpage_gridView");
 const listViewBtn = document.getElementById("productpage_listView");
@@ -19,23 +15,23 @@ let currentPage = 1;
 let itemsPerPage = parseInt(itemsPerPageSelect.value) || 12;
 let viewMode = "grid"; // grid ou list
 
-// Buscar produtos do arquivo JSON
-fetch("db/products-database.json")
-  .then((response) => response.json())
-  .then((data) => {
-    productpage_products = data;
-    populateFilters();
-    renderProducts();
-  })
-  .catch((error) => console.error("Erro ao carregar produtos:", error));
+if (productsContainer) {
+  // Buscar produtos do arquivo JSON
+  fetch('db/products-database.json')
+    .then((response) => response.json())
+    .then((data) => {
+      productpage_products = data;
+      populateFilters();
+      renderProducts();
+    })
+    .catch((error) => console.error("Erro ao carregar produtos:", error));
+}
 
 function populateFilters() {
   const brands = [...new Set(productpage_products.map((p) => p.brand))];
   const sensors = [...new Set(productpage_products.map((p) => p.sensor))];
   const lightings = [...new Set(productpage_products.map((p) => p.lighting))];
-  const connectivities = [
-    ...new Set(productpage_products.map((p) => p.connectivity)),
-  ];
+  const connectivities = [...new Set(productpage_products.map((p) => p.connectivity))];
 
   brands.forEach((brand) => {
     filterBrand.innerHTML += `<option value="${brand}">${brand}</option>`;
@@ -53,21 +49,15 @@ function populateFilters() {
 
 function applyFilters(products) {
   let filtered = [...products];
-  if (filterBrand.value)
-    filtered = filtered.filter((p) => p.brand === filterBrand.value);
-  if (filterSensor.value)
-    filtered = filtered.filter((p) => p.sensor === filterSensor.value);
-  if (filterLighting.value)
-    filtered = filtered.filter((p) => p.lighting === filterLighting.value);
-  if (filterConnectivity.value)
-    filtered = filtered.filter(
-      (p) => p.connectivity === filterConnectivity.value
-    );
+  if (filterBrand?.value) filtered = filtered.filter((p) => p.brand === filterBrand.value);
+  if (filterSensor?.value) filtered = filtered.filter((p) => p.sensor === filterSensor.value);
+  if (filterLighting?.value) filtered = filtered.filter((p) => p.lighting === filterLighting.value);
+  if (filterConnectivity?.value) filtered = filtered.filter((p) => p.connectivity === filterConnectivity.value);
 
-  if (sortPrice.value === "asc") {
-    filtered.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-  } else if (sortPrice.value === "desc") {
-    filtered.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  if (sortPrice?.value === "asc") {
+    filtered.sort((a, b) => parseFloat(a.pricePromo) - parseFloat(b.pricePromo));
+  } else if (sortPrice?.value === "desc") {
+    filtered.sort((a, b) => parseFloat(b.pricePromo) - parseFloat(a.pricePromo));
   }
 
   return filtered;
@@ -75,10 +65,33 @@ function applyFilters(products) {
 
 function renderProducts() {
   productsContainer.innerHTML = "";
-  const filteredProducts = applyFilters(productpage_products);
+
+  // Pega o parâmetro "search" da URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get('search')?.toLowerCase() || '';
+
+  let filteredProducts = applyFilters(productpage_products);
+
+  // Se tiver busca, filtra o que bater com o nome do produto
+  if (searchQuery) {
+    filteredProducts = filteredProducts.filter(product =>
+      product.name.toLowerCase().includes(searchQuery)
+    );
+  }
+
   const start = (currentPage - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const visibleProducts = filteredProducts.slice(start, end);
+
+  if (visibleProducts.length === 0) {
+    productsContainer.innerHTML = `
+      <div class="col-12 text-center">
+        <h4 class="text-muted">Nenhum produto encontrado.</h4>
+      </div>
+    `;
+    pagination.innerHTML = '';
+    return;
+  }
 
   visibleProducts.forEach((product) => {
     const col = document.createElement("div");
@@ -92,7 +105,7 @@ function renderProducts() {
         <div class="card-body text-center">
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text text-success fw-bold">R$ ${product.pricePromo}</p>
-          <a href="product-page.html?id=${product.id}" class="btn productpage-btn-primary btn-sm">Ver Produto</a>
+          <a href="product-page.html?id=${product.id}" class="btn btn-primary btn-sm">Ver Produto</a>
         </div>
       </div>
     `;
@@ -101,6 +114,7 @@ function renderProducts() {
 
   renderPagination(filteredProducts.length);
 }
+
 
 function renderPagination(totalItems) {
   pagination.innerHTML = "";
@@ -118,23 +132,34 @@ function renderPagination(totalItems) {
   }
 }
 
-filterBrand.addEventListener("change", () => {
-  currentPage = 1;
-  renderProducts();
-});
-filterSensor.addEventListener("change", () => {
-  currentPage = 1;
-  renderProducts();
-});
-filterLighting.addEventListener("change", () => {
-  currentPage = 1;
-  renderProducts();
-});
-filterConnectivity.addEventListener("change", () => {
-  currentPage = 1;
-  renderProducts();
-});
-sortPrice.addEventListener("change", () => {
-  currentPage = 1;
-  renderProducts();
-});
+// Proteção nos filtros e ordenação
+if (filterBrand) {
+  filterBrand.addEventListener("change", () => {
+    currentPage = 1;
+    renderProducts();
+  });
+}
+if (filterSensor) {
+  filterSensor.addEventListener("change", () => {
+    currentPage = 1;
+    renderProducts();
+  });
+}
+if (filterLighting) {
+  filterLighting.addEventListener("change", () => {
+    currentPage = 1;
+    renderProducts();
+  });
+}
+if (filterConnectivity) {
+  filterConnectivity.addEventListener("change", () => {
+    currentPage = 1;
+    renderProducts();
+  });
+}
+if (sortPrice) {
+  sortPrice.addEventListener("change", () => {
+    currentPage = 1;
+    renderProducts();
+  });
+}

@@ -22,14 +22,25 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentPane = document.querySelector('.tab-pane.active');
       const requiredFields = currentPane.querySelectorAll('input[required], select[required]');
       let valid = true;
-  
+
       requiredFields.forEach(input => {
         if (!input.value.trim()) {
           valid = false;
           animarErro(input);
         }
       });
-  
+      // Aba Anterior
+      document.querySelectorAll('.prev-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const currentPane = document.querySelector('.tab-pane.active');
+          const prevTab = document.querySelector('.nav-link.active').parentElement.previousElementSibling?.querySelector('.nav-link');
+          if (prevTab) {
+            new bootstrap.Tab(prevTab).show();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+
       // Validação CPF (se existir nessa aba)
       const cpfField = currentPane.querySelector('#cpf');
       if (cpfField) {
@@ -39,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
           animarErro(cpfField);
         }
       }
-  
+
       // Validação CEP (se existir nessa aba)
       const cepField = currentPane.querySelector('#cep');
       if (cepField) {
@@ -49,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
           animarErro(cepField);
         }
       }
-  
+
       if (valid) {
         const nextTab = document.querySelector('.nav-link.active').parentElement.nextElementSibling?.querySelector('.nav-link');
         if (nextTab) {
@@ -61,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-  
-  
+
+
 
   // Máscaras de entrada
   cpfInput.addEventListener('input', maskCPF);
@@ -159,14 +170,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function maskCellPhone() {
     let value = cellPhoneInput.value.replace(/\D/g, '').slice(0, 11);
-    if (value.length > 2) value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+    if (value.length > 2) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
     if (value.length > 9) value = value.replace(/(\(\d{2}\) \d{5})(\d{4})/, '$1-$2');
     cellPhoneInput.value = value;
   }
 
   function maskHomePhone() {
     let value = homePhoneInput.value.replace(/\D/g, '').slice(0, 10);
-    if (value.length > 2) value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+    if (value.length > 2) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
     if (value.length > 8) value = value.replace(/(\(\d{2}\) \d{4,5})(\d{4})/, '$1-$2');
     homePhoneInput.value = value;
   }
@@ -193,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function verificarSenhasIguais() {
     const senha = passwordInput.value.trim();
     const confirmarSenha = confirmPasswordInput.value.trim();
-  
+
     if (confirmarSenha && senha !== confirmarSenha) {
       passwordMatchError.textContent = 'As senhas não coincidem.';
       confirmPasswordInput.classList.add('is-invalid');
@@ -207,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const submitBtn = form.querySelector('[type=submit]');
-    
+
     const username = loginInput.value.trim().toLowerCase();
     const password = passwordInput.value.trim();
     const confirmPassword = confirmPasswordInput.value.trim();
@@ -265,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function animarErro(campo) {
     campo.classList.add('is-invalid', 'shake');
-    
+
     setTimeout(() => {
       campo.classList.remove('shake');
       campo.classList.remove('is-invalid'); // Depois de 2 segundos, limpa o vermelho
@@ -289,16 +300,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function mostrarMensagem(texto, tipo) {
     const toastContainer = document.getElementById('toast-container');
-  
+
     const corFundo = tipo === 'success' ? 'bg-success' : 'bg-danger';
     const icone = tipo === 'success' ? '✅' : '❌';
-  
+
     const toast = document.createElement('div');
     toast.className = `toast align-items-center text-white ${corFundo} border-0 show mb-2`;
     toast.setAttribute('role', 'alert');
     toast.setAttribute('aria-live', 'assertive');
     toast.setAttribute('aria-atomic', 'true');
-  
+
     toast.innerHTML = `
       <div class="d-flex">
         <div class="toast-body">
@@ -307,14 +318,14 @@ document.addEventListener('DOMContentLoaded', function () {
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
       </div>
     `;
-  
+
     toastContainer.appendChild(toast);
-  
+
     // Remover o toast depois de 4 segundos
     setTimeout(() => {
       toast.remove();
     }, 4000);
   }
-  
-  
+
+
 });

@@ -1,18 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navbarHTML = `
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg primary-bg-color py-4 px-2" id="navbar">
-  <div class="container">
-    <a href="index.html" class="navbar-brand">Vexor</a>
-    <div id="navbar-items">
-      <div></div>
-        <form class="d-flex position-relative" id="search-form" autocomplete="off">
-          <i class="bi bi-search primary-color"></i>
-          <input type="search" class="form-control me-2" id="search-input" placeholder="Busque seu Mouse..." aria-label="Search">
-          <div id="search-results" class="d-none"></div>
-          <button class="btn search-btn" type="submit">Pesquisar</button>
-        </form>
-      <ul class="navbar-nav mb-2 mb-lg-0">
+<nav class="navbar primary-bg-color py-3" id="navbar">
+  <div class="container d-flex flex-wrap flex-md-nowrap align-items-center justify-content-between gap-3">
+    <a href="index.html" class="navbar-brand flex-shrink-0" style="max-width: 100px;">Vexor</a>
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-md-flex justify-content-between align-items-center w-100 mt-3 mt-md-0" id="navbarMain">
+      <form class="d-flex position-relative flex-grow-1 me-3" id="search-form" autocomplete="off">
+        <i class="bi bi-search primary-color"></i>
+        <input type="search" class="form-control me-2" id="search-input" placeholder="Busque seu Mouse..." aria-label="Search">
+        <div id="search-results"></div>
+        <button class="btn search-btn" type="submit">Pesquisar</button>
+      </form>
+      <ul class="navbar-nav flex-row gap-3 align-items-center mb-0">
         <li class="nav-item">
           <a href="login.html" class="nav-link"><i class="bi bi-person-fill"></i></a>
         </li>
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
         </li>
         <li class="nav-item" id="bag-item">
-          <a href="cart.html" class="nav-link position-relative">
+          <a href="cart.html" class="nav-link position-relative d-flex align-items-center">
             <i class="bi bi-cart-fill position-relative">
               <span id="cart-qty-badge" class="qty-info">0</span>
             </i>
@@ -35,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 
-<!-- Navbar Inferior -->
 <nav class="navbar navbar-expand-lg secondary-bg-color p-2" id="bottom-navbar-container">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bottom-navbar">
@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const style = document.createElement("style");
   style.textContent = `
-/* Search dropdown */
 #search-results {
   position: absolute;
   top: 100%;
@@ -68,12 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
   opacity: 0;
   transition: all 0.3s ease;
 }
-
 #search-results.show {
   display: block;
   opacity: 1;
 }
-
 #search-results a {
   display: flex;
   align-items: center;
@@ -82,20 +79,16 @@ document.addEventListener("DOMContentLoaded", function () {
   text-decoration: none;
   border-bottom: 1px solid var(--muted-text-color);
 }
-
 #search-results a img {
   width: 40px;
   height: 40px;
   object-fit: contain;
   margin-right: 10px;
 }
-
 #search-results a:hover {
   background-color: var(--secondary-bg-color);
   color: white;
 }
-
-/* Botão de Pesquisa */
 .search-btn {
   border: 2px solid var(--secondary-bg-color);
   background-color: transparent;
@@ -103,13 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .search-btn:hover {
   background-color: var(--secondary-bg-color);
   color: white;
 }
-
-/* Quantidade de carrinho/favoritos */
 .qty-info {
   position: absolute;
   top: 0;
@@ -126,23 +116,18 @@ document.addEventListener("DOMContentLoaded", function () {
   text-align: center;
   z-index: 5;
 }
-
-/* Animações */
 @keyframes badge-bounce {
   0%, 100% { transform: translate(50%, -50%) scale(1); }
   50% { transform: translate(50%, -50%) scale(1.4); }
 }
-
 .qty-info.animate {
   animation: badge-bounce 0.5s;
 }
-
 @keyframes pulse-navbar {
   0% { transform: scale(1); }
   50% { transform: scale(1.3); }
   100% { transform: scale(1); }
 }
-
 .pulse-navbar {
   animation: pulse-navbar 0.4s ease;
 }
@@ -158,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Atualizar Carrinho
 function updateCartNavbar() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   let totalQty = 0;
@@ -186,7 +170,6 @@ function updateCartNavbar() {
   }
 }
 
-// Atualizar Favoritos
 function updateFavoritesNavbar() {
   const likes = JSON.parse(localStorage.getItem("likes")) || {};
   const favoriteIds = Object.keys(likes).filter(

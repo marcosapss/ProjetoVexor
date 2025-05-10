@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         promotionGrid.appendChild(col);
       });
     })
+
     .catch(error => {
       console.error('Erro ao carregar produtos promocionais:', error);
       promotionGrid.innerHTML = '<p class="text-center text-danger">Erro ao carregar produtos.</p>';

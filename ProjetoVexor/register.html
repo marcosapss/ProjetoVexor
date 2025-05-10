@@ -4,36 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-    <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-      defer
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous" defer></script>
     <script src="js/accessibility.js" defer></script>
     <script src="js/navbar.js" defer></script>
     <script src="js/register.js" defer></script>
@@ -42,151 +20,144 @@
     <script src="js/footer.js" defer></script>
   </head>
   <body>
-    <!-- JS Navbar -->
     <div id="navbar-container"></div>
-    <!-- Registro -->
     <section class="login-section mt-5">
       <div class="container login-container">
         <div class="row align-items-center">
-          <!-- Imagem -->
           <div class="col-md-6 d-none d-md-flex justify-content-center">
             <img src="img/register.png" alt="Imagem Cadastro" class="img-fluid" />
           </div>
-    
-          <!-- Formulário de Cadastro -->
+
           <div class="col-12 col-md-6">
             <div class="card p-4 shadow-sm">
               <h2 class="mb-4 text-center">Crie sua conta</h2>
-    
               <form id="registerForm">
-                <!-- Dados Pessoais -->
                 <div class="register-section mb-4">
                   <h5 class="section-title">Dados Pessoais</h5>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="fullName" placeholder="Nome Completo" required />
-                    <label for="fullName">Nome completo</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="fullName" placeholder="Informe seu Nome" required />
+                    <label for="fullName" class="styled-label">Nome completo</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="birthDate" required />
-                    <label for="birthDate">Data de Nascimento</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="date" class="form-control styled-input" id="birthDate" placeholder="Informe sua data de Nascimento" required />
+                    <label for="birthDate" class="styled-label">Data de Nascimento</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="gender" required>
-                      <option value="">Selecione</option>
+
+                  <div class="form-group mb-3 position-relative">
+                    <select class="form-select styled-input" id="gender" required>
+                      <option value="" disabled selected hidden>Informe seu Sexo</option>
                       <option>Masculino</option>
                       <option>Feminino</option>
                       <option>Outro</option>
                     </select>
-                    <label for="gender">Sexo</label>
+                    <label for="gender" class="styled-label">Sexo</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="motherName" required />
-                    <label for="motherName">Nome Materno</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="motherName" placeholder="Informe o Nome da sua Mãe" required />
+                    <label for="motherName" class="styled-label">Nome Materno</label>
                   </div>
-                  <div class="mb-3 position-relative">
-                    <div class="form-floating">
-                      <input type="text" class="form-control pe-5" id="cpf" placeholder="CPF" required />
-                      <label for="cpf">CPF</label>
-                    </div>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input pe-5" id="cpf" placeholder="Informe seu CPF" required />
+                    <label for="cpf" class="styled-label">CPF</label>
                     <span id="cpf-valid-icon" class="position-absolute top-50 end-0 translate-middle-y me-3"></span>
                   </div>
                 </div>
-    
-                <!-- Contato -->
+
                 <div class="register-section mb-4">
                   <h5 class="section-title">Contato</h5>
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" required />
-                    <label for="email">E-mail</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="email" class="form-control styled-input" id="email" placeholder="Informe seu E-mail" required />
+                    <label for="email" class="styled-label">E-mail</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="tel" class="form-control" id="cellPhone" required />
-                    <label for="cellPhone">Telefone Celular</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="tel" class="form-control styled-input" id="cellPhone" placeholder="Informe seu Telefone Celular" required />
+                    <label for="cellPhone" class="styled-label">Telefone Celular</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="tel" class="form-control" id="homePhone" />
-                    <label for="homePhone">Telefone Fixo</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="tel" class="form-control styled-input" id="homePhone" placeholder="Informe seu Telefone Fixo" />
+                    <label for="homePhone" class="styled-label">Telefone Fixo</label>
                   </div>
                 </div>
-    
-                <!-- Endereço -->
+
                 <div class="register-section mb-4">
                   <h5 class="section-title">Endereço</h5>
-                  <div class="mb-3 position-relative">
-                    <div class="form-floating">
-                      <input type="text" class="form-control pe-5" id="cep" placeholder="CEP" required />
-                      <label for="cep">CEP</label>
-                    </div>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input pe-5" id="cep" placeholder="Informe seu CEP" required />
+                    <label for="cep" class="styled-label">CEP</label>
                     <span id="cep-valid-icon" class="position-absolute top-50 end-0 translate-middle-y me-3"></span>
                     <div id="cep-error" class="small text-danger mt-1"></div>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="logradouro" />
-                    <label for="logradouro">Logradouro</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="logradouro" placeholder="Informe sua Rua" />
+                    <label for="logradouro" class="styled-label">Logradouro</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="bairro" />
-                    <label for="bairro">Bairro</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="bairro" placeholder="Informe seu Bairro" />
+                    <label for="bairro" class="styled-label">Bairro</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="cidade" />
-                    <label for="cidade">Cidade</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="cidade" placeholder="Informe sua Cidade" />
+                    <label for="cidade" class="styled-label">Cidade</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="estado" />
-                    <label for="estado">Estado</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="estado" placeholder="Informe seu Estado" />
+                    <label for="estado" class="styled-label">Estado</label>
                   </div>
                 </div>
-    
-                <!-- Conta -->
+
                 <div class="register-section mb-4">
                   <h5 class="section-title">Conta</h5>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="loginUser" required />
-                    <label for="loginUser">Login</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="text" class="form-control styled-input" id="loginUser" placeholder="Informe seu Login" required />
+                    <label for="loginUser" class="styled-label">Login</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="passwordUser" placeholder="Senha" required minlength="8" maxlength="8" pattern="[A-Za-z]{8}" />
-                    <label for="passwordUser">Senha (8 letras)</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="password" class="form-control styled-input" id="passwordUser" placeholder="Informe sua Senha" required />
+                    <label for="passwordUser" class="styled-label">Senha (8 letras)</label>
                     <div id="password-strength" class="mt-2 small"></div>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Senha" required minlength="8" maxlength="8" pattern="[A-Za-z]{8}" />
-                    <label for="confirmPassword">Confirmar Senha</label>
+
+                  <div class="form-group mb-3 position-relative">
+                    <input type="password" class="form-control styled-input" id="confirmPassword" placeholder="Confirme sua senha" required />
+                    <label for="confirmPassword" class="styled-label">Confirmar Senha</label>
                     <div id="password-match-error" class="small text-danger mt-1"></div>
                   </div>
                 </div>
-    
-                <!-- Botão -->
+
                 <div class="text-end">
                   <button type="submit" class="btn btn-success">Cadastrar</button>
                 </div>
                 <div id="register-message" class="text-center mt-3"></div>
               </form>
-    
-              <!-- Link login -->
+
               <div class="text-center mt-4">
                 Já tem uma conta?
                 <a href="login.html" class="link-primary fw-semibold">Faça login</a>
               </div>
             </div>
           </div>
-    
-          <!-- Imagem para mobile -->
+
           <div class="col-12 d-md-none mt-4">
             <img src="img/register.png" alt="Imagem Cadastro" class="img-fluid" />
           </div>
         </div>
       </div>
-    </section>    
-    <div
-      id="toast-container"
-      class="position-fixed bottom-0 end-0 p-3"
-      style="z-index: 9999"
-    ></div>
-    <!-- Toast de erro -->
-    <div id="toast-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;"></div>
-    <!-- Footer -->
+    </section>
+    <div id="toast-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999"></div>
     <div id="footer-container"></div>
   </body>
 </html>

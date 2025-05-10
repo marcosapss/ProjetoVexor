@@ -507,6 +507,7 @@ body {
   padding-bottom: 5px;
   color: var(--secondary-bg-color);
 }
+
 #cpf-valid-icon i {
   font-size: 22px;
   pointer-events: none;
@@ -593,4 +594,51 @@ button[type="submit"]:disabled {
     text-align: center;
     gap: 10px;
   }
+}
+
+/* Focus clean nos inputs */
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--secondary-bg-color);
+}
+
+.styled-input {
+  border: 1px solid var(--muted-text-color);
+  border-radius: 4px;
+  padding: 22px 12px 8px; /* padding extra no topo pro label */
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.styled-label {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  background-color: var(--primary-bg-color);
+  color: var(--secondary-bg-color);
+  font-size: 12px;
+  padding: 0 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Força selects e datas a terem o mesmo estilo */
+.form-floating.always-float > label {
+  transform: scale(0.85) translateY(-24px) translateX(4px);
+  opacity: 1;
+  background-color: var(--primary-bg-color);
+  padding: 0 4px;
+  z-index: 2;
+}
+
+/* Esconde o placeholder ao focar no input */
+.styled-input:focus::placeholder {
+  color: transparent;
 }

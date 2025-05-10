@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordMatchError = document.getElementById('password-match-error');
   const cellPhoneInput = document.getElementById('cellPhone');
   const homePhoneInput = document.getElementById('homePhone');
+  const fullNameInput = document.getElementById('fullName');
 
   const mostrarMensagem = (texto, tipo) => {
     const toastContainer = document.getElementById('toast-container');
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toast.innerHTML = `
       <div class="d-flex">
         <div class="toast-body">
-          <strong style="font-size: 1.2rem;">${icone}</strong> ${texto}
+          <strong style="font-size: 19px;">${icone}</strong> ${texto}
         </div>
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
       </div>`;
@@ -34,73 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => toast.remove(), 4000);
   };
 
-  const validarFormularioCompleto = () => {
-    const requiredInputs = form.querySelectorAll('input[required], select[required]');
-    let valido = true;
-    let primeiroInvalido = null;
-
-    requiredInputs.forEach(input => {
-      const id = input.id;
-      const value = input.value.trim();
-
-      if (!value) {
-        valido = false;
-        input.classList.add('is-invalid');
-        if (!primeiroInvalido) primeiroInvalido = input;
-      } else {
-        input.classList.remove('is-invalid');
-        input.classList.add('is-valid');
-      }
-
-      if (id === 'cpf' && !validarCPF(value)) {
-        valido = false;
-        input.classList.add('is-invalid');
-        mostrarMensagem('Campo CPF é inválido.', 'danger');
-        if (!primeiroInvalido) primeiroInvalido = input;
-      }
-
-      if (id === 'cep' && cepIcon.innerHTML.includes('x-circle')) {
-        valido = false;
-        input.classList.add('is-invalid');
-        mostrarMensagem('Campo CEP é inválido.', 'danger');
-        if (!primeiroInvalido) primeiroInvalido = input;
-      }
-
-      if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-        valido = false;
-        input.classList.add('is-invalid');
-        mostrarMensagem('Campo E-mail é inválido.', 'danger');
-        if (!primeiroInvalido) primeiroInvalido = input;
-      }
-    });
-
-    return { valido, primeiroInvalido };
-  };
-
-  const maskCPF = () => {
-    let value = cpfInput.value.replace(/\D/g, '').slice(0, 11);
-    value = value.replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-    cpfInput.value = value;
-    if (value.replace(/\D/g, '').length === 11) validarCPFInstant(value);
-    else {
-      cpfIcon.innerHTML = '';
-      cpfInput.classList.remove('is-valid', 'is-invalid');
-    }
-  };
-
   const validarCPF = (cpf) => {
     const num = cpf.replace(/\D/g, '');
     if (num.length !== 11 || /^([0-9])\1{10}$/.test(num)) return false;
     let soma = 0;
-    for (let i = 0; i < 9; i++) soma += Number.parseInt(num[i]) * (10 - i);
+    for (let i = 0; i < 9; i++) soma += parseInt(num[i]) * (10 - i);
     let resto = 11 - (soma % 11);
     if (resto >= 10) resto = 0;
-    if (resto !== Number.parseInt(num[9])) return false;
+    if (resto !== parseInt(num[9])) return false;
     soma = 0;
-    for (let i = 0; i < 10; i++) soma += Number.parseInt(num[i]) * (11 - i);
+    for (let i = 0; i < 10; i++) soma += parseInt(num[i]) * (11 - i);
     resto = 11 - (soma % 11);
     if (resto >= 10) resto = 0;
-    return resto === Number.parseInt(num[10]);
+    return resto === parseInt(num[10]);
   };
 
   const validarCPFInstant = (cpf) => {
@@ -112,6 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
       cpfIcon.innerHTML = '<i class="bi bi-x-circle-fill text-danger"></i>';
       cpfInput.classList.add('is-invalid');
       cpfInput.classList.remove('is-valid');
+    }
+  };
+
+  const maskCPF = () => {
+    let value = cpfInput.value.replace(/\D/g, '').slice(0, 11);
+    value = value.replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    cpfInput.value = value;
+    if (value.replace(/\D/g, '').length === 11) validarCPFInstant(value);
+    else {
+      cpfIcon.innerHTML = '';
+      cpfInput.classList.remove('is-valid', 'is-invalid');
     }
   };
 
@@ -166,18 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
     cepError.textContent = '';
   };
 
-  const maskCellPhone = () => {
-    let value = cellPhoneInput.value.replace(/\D/g, '').slice(0, 11);
-    if (value.length > 2) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-    if (value.length > 9) value = value.replace(/(\(\d{2}\) \d{5})(\d{4})/, '$1-$2');
-    cellPhoneInput.value = value;
-  };
-
-  const maskHomePhone = () => {
-    let value = homePhoneInput.value.replace(/\D/g, '').slice(0, 10);
-    if (value.length > 2) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-    if (value.length > 8) value = value.replace(/(\(\d{2}\) \d{4,5})(\d{4})/, '$1-$2');
-    homePhoneInput.value = value;
+  const maskPhone = (input, mobile = true) => {
+    let value = input.value.replace(/\D/g, '');
+    value = value.slice(0, mobile ? 13 : 12);
+    if (value.length > 2) value = `(+55)${value.slice(0, 2)}-${value.slice(2)}`;
+    input.value = value;
   };
 
   const limitarSenha = (event) => {
@@ -189,13 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const senha = passwordInput.value;
     if (senha.length <= 3) {
       passwordStrength.textContent = 'Senha Fraca';
-      passwordStrength.className = 'text-danger small';
+      passwordStrength.className = 'text-danger';
     } else if (senha.length <= 5) {
       passwordStrength.textContent = 'Senha Média';
-      passwordStrength.className = 'text-warning small';
+      passwordStrength.className = 'text-warning';
     } else {
       passwordStrength.textContent = 'Senha Forte';
-      passwordStrength.className = 'text-success small';
+      passwordStrength.className = 'text-success';
     }
   };
 
@@ -212,21 +163,99 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const validarFormulario = () => {
+    let valido = true;
+    let primeiroInvalido = null;
+
+    const requiredInputs = form.querySelectorAll('input[required], select[required]');
+
+    requiredInputs.forEach(input => {
+      const id = input.id;
+      const value = input.value.trim();
+      input.classList.remove('is-invalid');
+
+      if (!value) {
+        valido = false;
+        input.classList.add('is-invalid');
+        if (!primeiroInvalido) primeiroInvalido = input;
+        return;
+      }
+
+      if (id === 'fullName' && !/^[a-zA-ZÀ-ü ]{15,80}$/.test(value)) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('Nome deve conter de 15 a 80 caracteres alfabéticos.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if (id === 'cpf' && !validarCPF(value)) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('CPF inválido.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if (id === 'cep' && cepIcon.innerHTML.includes('x-circle')) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('CEP inválido.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('Email inválido.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if ((id === 'cellPhone' || id === 'homePhone') && !/^\(\+55\)\d{2}-\d{8,9}$/.test(value)) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('Telefone deve ter o formato (+55)XX-XXXXXXXX.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if (id === 'loginUser' && !/^[a-zA-Z]{6}$/.test(value)) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('Login deve conter exatamente 6 letras.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if (id === 'passwordUser' && !/^[a-zA-Z]{8}$/.test(value)) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('Senha deve conter exatamente 8 letras.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+
+      if (id === 'confirmPassword' && value !== passwordInput.value.trim()) {
+        valido = false;
+        input.classList.add('is-invalid');
+        mostrarMensagem('As senhas não coincidem.', 'danger');
+        if (!primeiroInvalido) primeiroInvalido = input;
+      }
+    });
+
+    return { valido, primeiroInvalido };
+  };
+
+  // Eventos
   cpfInput.addEventListener('input', maskCPF);
   cepInput.addEventListener('input', maskCEP);
+  cellPhoneInput.addEventListener('input', () => maskPhone(cellPhoneInput));
+  homePhoneInput.addEventListener('input', () => maskPhone(homePhoneInput, false));
   loginInput.addEventListener('input', () => loginInput.value = loginInput.value.replace(/[^a-zA-Z]/g, '').slice(0, 6));
   passwordInput.addEventListener('input', limitarSenha);
   confirmPasswordInput.addEventListener('input', limitarSenha);
   passwordInput.addEventListener('input', verificarSenhasIguais);
   confirmPasswordInput.addEventListener('input', verificarSenhasIguais);
-  cellPhoneInput.addEventListener('input', maskCellPhone);
-  homePhoneInput.addEventListener('input', maskHomePhone);
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const { valido, primeiroInvalido } = validarFormularioCompleto();
+    const { valido, primeiroInvalido } = validarFormulario();
     if (!valido) {
-      mostrarMensagem('Preencha todos os campos obrigatórios.', 'danger');
       primeiroInvalido?.focus();
       return;
     }

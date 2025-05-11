@@ -116,3 +116,23 @@
     text-shadow: 0 0 5px orange, 0 0 15px red, 0 0 25px yellow;
   }
 }
+
+/* Cards promocionais mobile */
+@media (max-width: 768px) {
+  .limit-on-mobile > * {
+    display: none !important;
+  }
+
+  .limit-on-mobile[data-limit="1"] > *:nth-child(-n+1),
+  .limit-on-mobile[data-limit="2"] > *:nth-child(-n+2),
+  .limit-on-mobile[data-limit="3"] > *:nth-child(-n+3),
+  .limit-on-mobile[data-limit="4"] > *:nth-child(-n+4),
+  .limit-on-mobile[data-limit="5"] > *:nth-child(-n+5),
+  .limit-on-mobile[data-limit="6"] > *:nth-child(-n+6),
+  .limit-on-mobile[data-limit="7"] > *:nth-child(-n+7),
+  .limit-on-mobile[data-limit="8"] > *:nth-child(-n+8),
+  .limit-on-mobile[data-limit="9"] > *:nth-child(-n+9),
+  .limit-on-mobile[data-limit="10"] > *:nth-child(-n+10) {
+    display: flex !important;
+  }
+}

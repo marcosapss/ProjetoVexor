@@ -28,6 +28,23 @@ body {
   color: var(--text-color);
 }
 
+@media (max-width: 768px) {
+  body, .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  p, li, .lead {
+    font-size: 15px;
+  }
+}
+
 /* Cores principais */
 .primary-bg-color {
   background-color: var(--primary-bg-color);
@@ -91,6 +108,16 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-collapse .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
 /* Carousel Index */
 #slider {
   max-width: 1200px;
@@ -110,13 +137,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  .carousel-inner {
-    max-height: 250px;
+  .carousel-inner img {
+    object-fit: cover;
+    height: 200px;
   }
 
-  .carousel-inner img {
-    height: 250px;
-    border-radius: 0px;
+  .carousel {
+    margin-top: 10px;
+  }
+
+  .carousel-indicators {
+    bottom: 10px;
   }
 }
 
@@ -162,6 +193,27 @@ body {
 #why-choose-us .lead {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  #why-choose-us {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  #why-choose-us ul {
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .text-highlight {
+    font-size: 22px;
+  }
+
+  #why-choose-us .lead {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -491,6 +543,23 @@ body {
 }
 
 /* Registro */
+.registro-section {
+  background: var(--primary-bg-color);
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary-bg-color);
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  color: var(--secondary-bg-color);
+}
+
 #cpf-valid-icon i {
   font-size: 22px;
   pointer-events: none;
@@ -541,3 +610,173 @@ button[type="submit"]:disabled {
   animation: fadeIn 0.5s ease;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+
+  /* Imagens do carrossel se ajustam */
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Containers com menos padding */
+  .container, .row, .col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Cards ocupam 100% da largura */
+  .card, .promo-card {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* Rodapé em coluna */
+  footer .row {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Focus clean nos inputs */
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--secondary-bg-color);
+}
+
+.styled-input {
+  border: 1px solid var(--muted-text-color);
+  border-radius: 4px;
+  padding: 22px 12px 8px; /* padding extra no topo pro label */
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.styled-label {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  background-color: var(--primary-bg-color);
+  color: var(--secondary-bg-color);
+  font-size: 12px;
+  padding: 0 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Força selects e datas a terem o mesmo estilo */
+.form-floating.always-float > label {
+  transform: scale(0.85) translateY(-24px) translateX(4px);
+  opacity: 1;
+  background-color: var(--primary-bg-color);
+  padding: 0 4px;
+  z-index: 2;
+}
+
+/* Esconde o placeholder ao focar no input */
+.styled-input:focus::placeholder {
+  color: transparent;
+}
+
+
+/* Painel de Usuário - Vexor */
+/* Sidebar mobile por padrão em cima */
+.sidebar {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar h4 {
+  color: #1873bc;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar .nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  background-color: #e9f2fc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background-color: #cde4fb;
+  color: #1873bc;
+}
+
+/* Conteúdo principal abaixo da sidebar */
+.main-content {
+  padding: 20px;
+}
+
+/* Cartões e formulários */
+.config-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+/* Versão desktop */
+@media (min-width: 768px) {
+  .container-fluid {
+    display: flex;
+  }
+
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  .main-content {
+    margin-left: 250px;
+    padding: 40px;
+    width: 100%;
+  }
+
+  .sidebar .nav {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar .nav-link {
+    margin-bottom: 10px;
+  }
+}

@@ -115,3 +115,20 @@
   z-index: 9999;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+@media (max-width: 768px) {
+  #favorite-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    flex-direction: column;
+  }
+
+  .no-favorites-message {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

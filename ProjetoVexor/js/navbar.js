@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="product.html" class="nav-link">Produtos</a></li>
       <li class="nav-item"><a href="mouse.html" class="nav-link">O que é um Mouse?</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contato</a></li>
     </ul>
   </div>
 </nav>

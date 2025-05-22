@@ -745,10 +745,14 @@ textarea:focus,
 
 /* Campos claros ao focar/hover no tema escuro */
 @media (prefers-color-scheme: dark) {
-  input.form-control:focus,
-  input.form-control:hover,
-  textarea.form-control:focus,
-  textarea.form-control:hover {
+ #contact-nome:focus,
+  #contact-tel:focus,
+  #contact-email:focus,
+  #contact-comentario:focus,
+  #contact-submit:focus,
+  #password:focus,
+  #login:focus,
+  #seuemail:focus{
     background-color: #f8f9fa !important; /* branco Bootstrap */
     color: #212529 !important;            /* texto escuro */
     border-color: #4c89c6df;

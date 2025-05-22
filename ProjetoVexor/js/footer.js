@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-md-3 d-flex flex-column align-items-center text-center mb-3 mb-md-0 footer-vexor-central">
         <h5 class="footer-title footer-title-vexor">Receba novidades</h5>
         <form class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2 mb-2 newsletter">
-          <input type="email" class="form-control" placeholder="Seu e-mail" required style="max-width:300px;min-width:180px;width:100%;">
+          <input type="email" class="form-control" id="seuemail" placeholder="Seu e-mail" required style="max-width:300px;min-width:180px;width:100%;">
           <button type="submit" class="btn secondary-bg-color btn-sm">Cadastrar</button>
         </form>
         <div class="footer-social mb-2">

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="collapse navbar-collapse d-md-flex justify-content-between align-items-center w-100 mt-3 mt-md-0" id="navbarMain">
       <form class="d-flex position-relative flex-grow-1 me-3" id="search-form" autocomplete="off">
-        <i class="bi bi-search primary-color"></i>
+        <i class="bi bi-search primary-color" id=lupa></i>
         <input type="search" class="form-control me-2" id="search-input" placeholder="Busque seu Mouse..." aria-label="Search">
         <div id="search-results"></div>
         <button class="btn search-btn" type="submit">Pesquisar</button>

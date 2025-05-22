@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
   color: var(--text-color);
 }
 .container.footer-main {
-  max-width: 1100px;
+  max-width: 87%;
 }
 @media (max-width: 991px) {
   .footer-about {

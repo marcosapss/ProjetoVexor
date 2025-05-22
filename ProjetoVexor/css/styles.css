@@ -20,8 +20,8 @@
 
 /* Estilo para o card no tema escuro */
 [data-theme="dark"] .card {
-  background-color: #2c2c2c; /* Fundo cinza claro */
-  color: var(--text-color); /* Texto claro */
+  background-color: #2c2c2c;/* Fundo cinza claro */
+  color: var(--text-color) !important; /* Texto claro */
 }
 
 /* Estilo para os placeholders no tema escuro */
@@ -743,6 +743,25 @@ textarea:focus,
   color: transparent;
 }
 
+/* Campos claros ao focar/hover no tema escuro */
+@media (prefers-color-scheme: dark) {
+  input.form-control:focus,
+  input.form-control:hover,
+  textarea.form-control:focus,
+  textarea.form-control:hover {
+    background-color: #f8f9fa !important; /* branco Bootstrap */
+    color: #212529 !important;            /* texto escuro */
+    border-color: #4c89c6df;
+  }
+
+  /* Botão submit claro ao hover/focus */
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #e9ecef !important;
+    color: #212529 !important;
+    border-color: #4c89c6df;
+  }
+}
 
 /* Painel de Usuário - Vexor */
 /* Sidebar mobile por padrão em cima */

@@ -1,8 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Adiciona a fonte 'Orbitron' para dar personalidade ao logo Vexor
+  if (!document.getElementById('orbitron-font-link')) {
+    const link = document.createElement('link');
+    link.id = 'orbitron-font-link';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap';
+    document.head.appendChild(link);
+  }
+
   const navbarHTML = `
 <nav class="navbar primary-bg-color py-3" id="navbar">
   <div class="container d-flex flex-wrap flex-md-nowrap align-items-center justify-content-between gap-3">
-    <a href="index.html" class="navbar-brand flex-shrink-0" style="max-width: 100px;">Vexor</a>
+    <a href="index.html" class="navbar-brand flex-shrink-0" style="max-width: 180px; font-family: 'Orbitron', 'Montserrat', 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 2.2rem; letter-spacing: 2px;">Vexor</a>
     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,6 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 `;
+
+  // Adiciona a fonte Montserrat se ainda não estiver presente
+  if (!document.getElementById('montserrat-font-link')) {
+    const link = document.createElement('link');
+    link.id = 'montserrat-font-link';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap';
+    document.head.appendChild(link);
+  }
 
   const style = document.createElement("style");
   style.textContent = `

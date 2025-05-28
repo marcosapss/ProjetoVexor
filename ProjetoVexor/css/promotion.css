@@ -1,18 +1,75 @@
+/* css/promotion.css */
+
 /* Promo Cards - Estilo geral */
 .promo-card {
   width: 288px;
   background-color: var(--primary-bg-color, #212529);
   color: var(--text-color, #fff);
-  border: 2px solid;
-  border-image: linear-gradient(45deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f, #00f) 1;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+  padding: 2px; 
+}
+
+.promo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit; 
+  padding: 2px; 
+  background: linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 300% 300%; 
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: subtract; 
+  animation: animatedRgbBorder 3s linear infinite;
+  z-index: -1; 
+}
+
+.promo-card > *:not(::before) { 
+  position: relative; 
+  z-index: 2; 
+}
+
+.promo-card-content-wrapper {
+    background-color: var(--primary-bg-color); 
+    color: var(--text-color);
+    border-radius: calc(10px - 2px); 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+[data-theme="dark"] .promo-card-content-wrapper {
+    background-color: var(--card-bg-dark); 
+}
+
+
+@keyframes animatedRgbBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .promo-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5); 
 }
 
 /* Área controlada da imagem */
@@ -39,7 +96,6 @@
 }
 
 /* Estilo de Texto */
-
 .card-title {
   font-size: 16px;
   font-weight: bold;
@@ -54,44 +110,63 @@
 /* Skeleton enquanto carrega */
 .skeleton-card {
   width: 288px;
-  height: 320px;
-  background-color: #e0e0e0;
+  height: 320px; /* Altura total do card, incluindo a borda implícita */
+  background-color: #e0e0e0; /* Cor de fundo do skeleton */
   border-radius: 10px;
   overflow: hidden;
+  padding: 2px; /* Simula o padding para a borda falsa */
 }
-
+.skeleton-card-content { /* Novo wrapper para o conteúdo do skeleton */
+    background-color: #e9ecef; /* Cor de fundo interna do skeleton */
+    border-radius: calc(10px - 2px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 .skeleton-image {
-  height: 250px;
-  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  height: 250px; /* Altura da área da imagem */
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); /* Gradiente mais suave */
   background-size: 400% 100%;
-  animation: shimmer 1.2s infinite;
+  animation: shimmer 1.5s infinite linear; /* Animação mais suave */
+  /* border-bottom: 1px solid #ddd; */ /* Linha sutil abaixo da imagem no skeleton */
 }
-
+.skeleton-text-container { /* Container para os textos do skeleton */
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .skeleton-text {
-  width: 70%;
+  width: 80%; /* Ajuste de largura */
   height: 20px;
-  margin: 10px auto;
-  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  margin: 5px auto; /* Ajuste de margem */
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 400% 100%;
-  animation: shimmer 1.2s infinite;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px; /* Bordas arredondadas para o texto */
 }
-
 .skeleton-text.short {
-  width: 40%;
+  width: 50%; /* Ajuste de largura para texto curto */
+  height: 16px; /* Altura menor para texto curto */
 }
 
 @keyframes shimmer {
   0% {
-    background-position: -400% 0;
+    background-position: -1000px 0; /* Posição inicial maior para melhor efeito */
   }
   100% {
-    background-position: 400% 0;
+    background-position: 1000px 0; /* Posição final maior */
   }
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .promo-card {
+    width: 256px;
+  }
+  .skeleton-card {
     width: 256px;
   }
 }
@@ -101,7 +176,6 @@
   display: inline-block;
   animation: flameFlicker 1s infinite alternate;
 }
-
 @keyframes flameFlicker {
   0% {
     transform: scale(1) rotate(0deg);
@@ -122,7 +196,6 @@
   .limit-on-mobile > * {
     display: none !important;
   }
-
   .limit-on-mobile[data-limit="1"] > *:nth-child(-n+1),
   .limit-on-mobile[data-limit="2"] > *:nth-child(-n+2),
   .limit-on-mobile[data-limit="3"] > *:nth-child(-n+3),

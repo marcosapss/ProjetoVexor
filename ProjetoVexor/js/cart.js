@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="cart-item-details">
             <h3>${product.name}</h3>
             <p>Preço Unitário: R$ ${parseFloat(product.pricePromo).toFixed(
-              2
-            )}</p>
+        2
+      )}</p>
             <div class="cart-item-quantity">
               <button class="decrease" data-index="${index}">-</button>
               <span>${product.quantity}</span>

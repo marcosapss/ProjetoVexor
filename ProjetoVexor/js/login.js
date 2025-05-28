@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const loginMessage = document.getElementById('login-message');
@@ -16,18 +15,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function realizarLogin() {
-    const usernameInput = document.getElementById('login').value.trim();
-    const passwordInput = document.getElementById('password').value.trim();
+    const usernameInputElem = document.getElementById('login');
+    const passwordInputElem = document.getElementById('password');
 
-    if (!usernameInput || !passwordInput) {
-      mostrarMensagem('Por favor, preencha todos os campos.', 'danger');
+    const username = usernameInputElem.value.trim();
+    const password = passwordInputElem.value.trim();
+
+    // Limpa feedback visual anterior
+    usernameInputElem.classList.remove('is-invalid', 'shake');
+    passwordInputElem.classList.remove('is-invalid', 'shake');
+    loginMessage.innerHTML = ''; // Limpa mensagens anteriores
+
+    if (!username) {
+      usernameInputElem.classList.add('is-invalid', 'shake');
+      mostrarMensagem('Por favor, preencha o campo de login.', 'danger', 'login');
+      return;
+    }
+    if (!password) {
+      passwordInputElem.classList.add('is-invalid', 'shake');
+      mostrarMensagem('Por favor, preencha o campo de senha.', 'danger', 'login');
       return;
     }
 
     // Verificação direta para admin
-    if (usernameInput === "admin" && passwordInput === "admin") {
+    if (username === "admin" && password === "admin") {
       localStorage.setItem("loggedUser", "admin");
-      mostrarMensagem('✅ Bem-vindo, administrador! Redirecionando...', 'success');
+      mostrarMensagem('✅ Bem-vindo, administrador! Redirecionando...', 'success', 'login');
       setTimeout(() => {
         window.location.href = "usuario.html";
       }, 1500);
@@ -39,36 +52,38 @@ document.addEventListener('DOMContentLoaded', () => {
       const users = await response.json();
 
       const userFound = users.find(user =>
-        user.username.toLowerCase() === usernameInput.toLowerCase() &&
-        user.password === passwordInput
+        user.username.toLowerCase() === username.toLowerCase() &&
+        user.password === password
       );
 
       if (userFound) {
         localStorage.setItem("loggedUser", userFound.username);
-        mostrarMensagem(`✅ Bem-vindo, ${userFound.username}! Redirecionando...`, 'success');
+        mostrarMensagem(`✅ Bem-vindo, ${userFound.username}! Redirecionando...`, 'success', 'login');
         setTimeout(() => {
           window.location.href = "usuario.html";
         }, 1500);
       } else {
         const usuariosLocais = JSON.parse(localStorage.getItem('usuariosLocais')) || [];
         const userLocal = usuariosLocais.find(user =>
-          user.username.toLowerCase() === usernameInput.toLowerCase() &&
-          user.password === passwordInput
+          user.username.toLowerCase() === username.toLowerCase() &&
+          user.password === password
         );
 
         if (userLocal) {
           localStorage.setItem("loggedUser", userLocal.username);
-          mostrarMensagem(`✅ Bem-vindo, ${userLocal.username}! Cadastro Local encontrado!`, 'success');
+          mostrarMensagem(`✅ Bem-vindo, ${userLocal.username}! Cadastro Local encontrado!`, 'success', 'login');
           setTimeout(() => {
             window.location.href = "usuario.html";
           }, 1500);
         } else {
-          mostrarMensagem('❌ Usuário ou senha incorretos. Por favor, tente novamente.', 'danger');
+          usernameInputElem.classList.add('is-invalid', 'shake');
+          passwordInputElem.classList.add('is-invalid', 'shake');
+          mostrarMensagem('❌ Usuário ou senha incorretos. Por favor, tente novamente.', 'danger', 'login');
         }
       }
     } catch (error) {
       console.error('Erro ao tentar fazer login:', error);
-      mostrarMensagem('Não foi possível acessar o banco de dados de usuários.', 'danger');
+      mostrarMensagem('Não foi possível acessar o banco de dados de usuários.', 'danger', 'login');
     }
   }
 
@@ -107,12 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (confirm('Tem certeza que deseja apagar todos os cadastros locais?')) {
         localStorage.removeItem('usuariosLocais');
         listaCadastros.innerHTML = '';
-        mostrarMensagem('Todos os cadastros locais foram apagados.', 'success');
+        mostrarMensagem('Todos os cadastros locais foram apagados.', 'success', 'offcanvas');
       }
     });
   }
 
-  function mostrarMensagem(texto, tipo) {
+  // Modificada para aceitar um parâmetro 'target' para exibir a mensagem em locais diferentes
+  function mostrarMensagem(texto, tipo, target = 'login') {
+    let container;
+    if (target === 'login') {
+      container = loginMessage;
+    } else { // Para mensagens dentro do offcanvas, por exemplo
+      container = listaCadastros.parentNode; // Ou um elemento específico dentro do offcanvas
+    }
+
     let corFundo, corTexto;
 
     if (tipo === 'success') {
@@ -123,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       corTexto = '#ff0000';
     }
 
-    loginMessage.innerHTML = `
+    container.innerHTML = `
       <div style="
         display: inline-block;
         padding: 12px 20px;
@@ -137,6 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ${texto}
       </div>
     `;
+
+    // Remove a classe 'shake' após a animação para permitir que ela seja acionada novamente
+    if (tipo === 'danger') {
+      setTimeout(() => {
+        usernameInputElem.classList.remove('shake');
+        passwordInputElem.classList.remove('shake');
+      }, 500); // Duração da animação shake
+    }
 
     if (!document.getElementById('fadeIn-style')) {
       const style = document.createElement('style');

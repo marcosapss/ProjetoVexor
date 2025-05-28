@@ -1,0 +1,125 @@
+.contact-page-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.contact-header h1 {
+  color: var(--secondary-bg-color);
+}
+
+/* Cards de Informação (Canais de Contato) */
+.contact-info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background-color: var(--primary-bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--card-shadow-light);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px var(--card-shadow-light);
+  border-color: var(--secondary-bg-color);
+}
+
+.contact-info-card .icon-circle {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary-bg-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.contact-info-card .info-text h5 {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.contact-info-card .info-text p {
+  color: var(--muted-text-color);
+  margin-bottom: 0;
+}
+
+.contact-info-card .info-text a {
+  text-decoration: none;
+  color: var(--secondary-bg-color);
+  transition: color 0.2s;
+}
+
+.contact-info-card .info-text a:hover {
+  text-decoration: underline;
+  color: #0c5f9f;
+}
+
+/* Ícones de redes sociais */
+.social-icons-contact a {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: var(--muted-text-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons-contact a:hover {
+  color: var(--secondary-bg-color);
+  transform: scale(1.1);
+}
+
+/* Wrapper do Formulário */
+.form-wrapper {
+  background-color: var(--primary-bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--card-shadow-light);
+  border: 1px solid transparent;
+}
+
+/* Garante que o textarea tenha uma altura mínima e possa ser redimensionado */
+#contact-comentario {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Adaptação para Tema Escuro */
+[data-theme="dark"] .contact-info-card {
+  box-shadow: 0 4px 15px var(--card-shadow-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .contact-info-card:hover {
+  box-shadow: 0 6px 20px var(--card-shadow-dark);
+}
+
+[data-theme="dark"] .form-wrapper {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 4px 20px var(--card-shadow-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Botão de Envio */
+#contact-submit {
+  background-color: var(--secondary-bg-color);
+  border-color: var(--secondary-bg-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#contact-submit:hover {
+  background-color: #0c5f9f;
+  border-color: #0c5f9f;
+  transform: scale(1.02);
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+  .contact-page-container {
+    padding-top: 1rem;
+  }
+}

@@ -1,205 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A História do Mouse</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="js/accessibility.js" defer></script>
-    <script src="js/navbar.js" defer></script>
-    <script src="js/footer.js" defer></script>
-    <!-- CSS da história -->
-    <style>
-    h1, h2 {
-      text-align: center;
-      color: #1873bc;
-    }
-    p {
-      max-width: 900px;
-      margin: 20px auto;
-      line-height: 1.8;
-      font-size: 1.1rem;
-    }
-    .history-image {
-      width: 100%;
-      max-width: 800px; /* ou 700px se quiser mais compacto */
-      height: 400px; /* fixa a altura */
-      object-fit: cover; /* mantém o visual bonito sem distorcer */
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      display: block;
-      margin: 20px auto;
-}
-    .section {
-      margin-top: 60px;
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .credit {
-      font-size: 0.8rem;
-      color: #777;
-      text-align: center;
-      margin-top: 10px;
-    }
-    </style>
-  </head>
-  <body>
-    <!-- JS Navbar -->
-    <div id="navbar-container"></div>
 
-    <!-- História do Mouse -->
-    <h1>🖱️ A História e a Evolução do Mouse</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A História do Mouse</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/mouse.css">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
+    defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/mouse.js" defer></script>
+</head>
 
-    <p class="fade-in">
-      O mouse, um dos dispositivos mais icônicos da computação, revolucionou a
-      maneira como interagimos com os computadores. Desde suas origens simples
-      até os designs avançados de hoje, o mouse percorreu uma jornada
-      extraordinária de inovação e importância.
-    </p>
+<body class="history-page-body">
+  <!-- JS Navbar -->
+  <div id="navbar-container"></div>
 
-    <div class="section fade-in">
-      <h2>📜 As Origens: O Primeiro Mouse</h2>
-      <p>
-        O primeiro mouse foi inventado em 1964 por Douglas Engelbart, no
-        Stanford Research Institute. Era feito de madeira e utilizava dois
-        discos ortogonais para detectar o movimento. O dispositivo foi projetado
-        para facilitar a navegação em interfaces gráficas, uma ideia
-        revolucionária para a época.
+  <!-- História do Mouse -->
+  <header class="history-hero">
+    <div class="container">
+      <i class="bi bi-mouse2-fill hero-icon"></i>
+      <h1 class="main-title">A JORNADA DO MOUSE</h1>
+      <p class="subtitle">
+        De uma simples caixa de madeira à ferramenta de precisão definitiva dos e-sports. Explore a incrível evolução do dispositivo que mudou para sempre nossa interação com o mundo digital.
       </p>
-      <img
-        src="./img/mousehist/primeiromouse.jpg" class="history-image"
-        alt="Primeiro Mouse de Madeira"
-      />
-      <div class="credit">
-        Imagem: Douglas Engelbart com o primeiro mouse - Wikimedia Commons
+    </div>
+  </header>
+
+  <section class="timeline-section">
+    <div class="container">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-time">1964</span>
+          <h2>O Início de Tudo</h2>
+          <img src="./img/mousehist/primeiromouse.jpg" class="timeline-img" alt="O primeiro mouse de madeira" />
+          <p class="timeline-text">
+            Criado por Douglas Engelbart, o primeiro "mouse" era uma caixa de madeira com duas rodas metálicas. Ele foi apresentado como um "Indicador de Posição X-Y para um Sistema com Display", revolucionando a ideia de interação gráfica.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-time">Anos 80</span>
+          <h2>A Era da Bolinha</h2>
+          <img src="./img/mousehist/mousebolinha.jpg" class="timeline-img" alt="Mouse de bolinha" />
+          <p class="timeline-text">
+            Os mouses se popularizam com a introdução da esfera mecânica. Essa bolinha rolava sobre a superfície e girava dois roletes internos para rastrear o movimento. Quem não se lembra de ter que abri-lo para limpar a sujeira acumulada?
+          </p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-time">1999</span>
+          <h2>A Revolução Óptica</h2>
+          <img src="./img/mousehist/mouseoptico.webp" class="timeline-img" alt="Mouse óptico" />
+          <p class="timeline-text">
+            A Microsoft lança o IntelliMouse Explorer. O sensor óptico substitui a bolinha, usando um LED e uma câmera para capturar milhares de imagens por segundo. O resultado? Mais precisão, menos manutenção e o fim dos mousepads obrigatórios.
+          </p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-time">Anos 2000</span>
+          <h2>Laser, DPI e o Mundo Gamer</h2>
+          <img src="./img/mousehist/mousegamer.avif" class="timeline-img" alt="Mouse gamer moderno" />
+          <p class="timeline-text">
+            A tecnologia a laser aprimora ainda mais a precisão, funcionando em praticamente qualquer superfície. O universo gamer impulsiona a inovação: DPIs ajustáveis, botões programáveis e iluminação RGB se tornam o padrão para a alta performance.
+          </p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-time">Hoje</span>
+          <h2>O Futuro na Palma da Mão</h2>
+          <img src="./img/mousehist/mousefuturista.webp" class="timeline-img" alt="Mouse sem fio futurista" />
+          <p class="timeline-text">
+            Mouses sem fio com performance igual ou superior aos com fio, sensores com dezenas de milhares de DPI, designs ultraleves e ergonomia avançada. A busca pela latência zero e pela personalização total continua a definir o futuro deste dispositivo essencial.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="section fade-in">
-      <h2>🔵 A Era dos Mouses de Bolinha</h2>
-      <p>
-        Na década de 1980, os mouses com bola mecânica se popularizaram. Esses
-        modelos usavam uma esfera para detectar movimentos em todas as direções,
-        rolando sobre duas rodas internas. Era comum ter que limpar a bolinha
-        regularmente para manter o funcionamento adequado.
-      </p>
-      <img
-        src="./img/mousehist/mousebolinha.jpg" class="history-image"
-        alt="Mouse de Bolinha"
-      />
-      <div class="credit">
-        Imagem: Bola de mouse mecânico
-      </div>
+  <section class="cta-section text-center">
+    <div class="container">
+        <h2 class="h3 fw-bold mb-3">Viu a evolução? Agora encontre o seu mouse perfeito.</h2>
+        <p class="lead text-muted mb-4">Explore nossa coleção com as últimas tecnologias e designs para todos os estilos de jogadores.</p>
+        <a href="product.html" class="btn btn-primary btn-lg">Ver Todos os Produtos <i class="bi bi-arrow-right-circle-fill ms-2"></i></a>
     </div>
+  </section>
 
-    <div class="section fade-in">
-      <h2>🔬 Sensores Ópticos e a Revolução da Precisão</h2>
-      <p>
-        No final da década de 1990, surgiram os mouses ópticos, substituindo a
-        esfera mecânica por sensores de luz LED e tecnologia de imagem. Eles
-        eliminavam a necessidade de manutenção constante e ofereciam maior
-        precisão e durabilidade. A Microsoft lançou um dos primeiros modelos
-        populares, o IntelliMouse Explorer.
-      </p>
-      <img
-        src="./img/mousehist/mouseoptico.webp" class="history-image"
-        alt="Mouse Óptico"
-      />
-      <div class="credit">
-        Imagem: Mouse Óptico
-      </div>
-    </div>
+  <!-- Footer -->
+  <div id="footer-container"></div>
+</body>
 
-    <div class="section fade-in">
-      <h2>🚀 Mouses a Laser e a Nova Geração Gamer</h2>
-      <p>
-        Com o avanço das tecnologias, surgiram os mouses a laser, capazes de
-        rastrear movimentos em praticamente qualquer superfície. Paralelamente,
-        o mundo dos games impulsionou a criação de mouses com DPI ajustável,
-        botões extras programáveis e iluminação RGB personalizável, elevando o
-        nível de performance e estética.
-      </p>
-      <img
-        src="./img/mousehist/mousegamer.avif" class="history-image"
-        alt="Mouse Gamer Atual"
-      />
-      <div class="credit">Imagem: Corsair Scimitar PRO</div>
-    </div>
-
-    <div class="section fade-in">
-      <h2>🔮 O Futuro dos Mouses</h2>
-      <p>
-        Atualmente, os mouses continuam a evoluir com tecnologias como sensores
-        ultrafinos, ergonomia adaptativa, carregamento sem fio e até sensores
-        biométricos. Enquanto novas interfaces surgem, o mouse permanece
-        essencial para produtividade e jogos, mostrando que mesmo após décadas,
-        ele ainda é insubstituível.
-      </p>
-      <img
-        src="./img/mousehist/mousefuturista.webp" class="history-image"
-        alt="Mouse Moderno Logitech MX"
-      />
-      <div class="credit">
-        Imagem: Logitech MX
-      </div>
-    </div>
-
-    <script>
-      // Animações suaves ao rolar a página
-      document.addEventListener("DOMContentLoaded", () => {
-        const elements = document.querySelectorAll(".fade-in");
-
-        function checkVisibility() {
-          elements.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 50) {
-              el.classList.add("visible");
-            }
-          });
-        }
-
-        window.addEventListener("scroll", checkVisibility);
-        checkVisibility();
-      });
-    </script>
-
-    <!-- Footer -->
-    <div id="footer-container"></div>
-  </body>
 </html>

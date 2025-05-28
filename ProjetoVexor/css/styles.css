@@ -1,3 +1,4 @@
+/* Variáveis de Tema */
 :root {
   /* Tema Claro */
   --bg-color: #f4f7fa;
@@ -5,7 +6,10 @@
   --secondary-bg-color: #1873bc;
   --text-color: #212529;
   --muted-text-color: #6c757d;
+  /* Cor padrão para placeholders e texto neutro */
   --span-bg-color: red;
+  --card-bg-light: #ffffff;
+  --card-shadow-light: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
@@ -15,36 +19,13 @@
   --secondary-bg-color: #3390ff;
   --text-color: #f8f9fa;
   --muted-text-color: #b5b5b5;
+  /* Cor padrão para placeholders e texto neutro no dark mode */
   --span-bg-color: red;
+  --card-bg-dark: #2c2c2c;
+  --card-shadow-dark: rgba(0, 0, 0, 0.4);
 }
 
-/* Estilo para o card no tema escuro */
-[data-theme="dark"] .card {
-  background-color: #2c2c2c;/* Fundo cinza claro */
-  color: var(--text-color) !important; /* Texto claro */
-}
-
-/* Estilo para os placeholders no tema escuro */
-[data-theme="dark"] ::placeholder {
-  color: var(--muted-text-color); /* Placeholder com cor mais clara */
-  opacity: 0.7;
-}
-
-/* Estilo para o background dos inputs no tema escuro quando focados */
-[data-theme="dark"] input:focus,
-[data-theme="dark"] textarea:focus {
-  background-color: #2c2c2c; /* Fundo cinza claro para inputs focados */
-  color: var(--text-color); /* Texto claro */
-}
-
-/* Mantém o placeholder visível no foco */
-[data-theme="dark"] input:focus::placeholder,
-[data-theme="dark"] textarea:focus::placeholder {
-  color: var(--muted-text-color); /* Cor do placeholder */
-  opacity: 0.7;
-}
-
-/* Reset básico */
+/* Estilos Globais */
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -52,26 +33,35 @@
 body {
   background: var(--bg-color);
   color: var(--text-color);
+  margin-top: 0 !important;
 }
 
+/* Responsividade Geral */
 @media (max-width: 768px) {
-  body, .container {
+
+  body,
+  .container {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  h1, h2, h3 {
+
+  h1,
+  h2,
+  h3 {
     font-size: 1.5rem;
   }
 
-  p, li, .lead {
+  p,
+  li,
+  .lead {
     font-size: 15px;
   }
 }
 
-/* Cores principais */
+/* Cores Principais Utilizadas */
 .primary-bg-color {
   background-color: var(--primary-bg-color);
 }
@@ -88,97 +78,7 @@ body {
   background-color: #626262;
 }
 
-/* NAVBAR */
-#navbar .navbar-nav {
-  flex-direction: row;
-  justify-content: end;
-}
-
-#navbar .navbar-nav li {
-  margin-left: 16px;
-}
-
-#navbar a,
-#navbar button {
-  color: var(--text-color);
-}
-
-#navbar li {
-  position: relative;
-}
-
-#navbar i {
-  font-size: 20px;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  width: 100%;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .navbar-brand {
-    text-align: left;
-  }
-}
-
-#navbar-items {
-  justify-content: space-between;
-}
-
-@media (min-width: 768px) {
-  #navbar-items {
-    min-width: 80%;
-    display: flex;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-collapse {
-    text-align: center;
-  }
-
-  .navbar-collapse .nav-item {
-    margin-bottom: 10px;
-  }
-}
-
-/* Carousel Index */
-#slider {
-  max-width: 1200px;
-  margin: 20px auto;
-  overflow: hidden;
-}
-
-.carousel-inner {
-  max-height: 550px; /* altura máxima */
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .carousel-inner img {
-    object-fit: cover;
-    height: 200px;
-  }
-
-  .carousel {
-    margin-top: 10px;
-  }
-
-  .carousel-indicators {
-    bottom: 10px;
-  }
-}
-
-/* Mini Banner */
-
+/* Mini Banner Promocional */
 .promo-strip {
   background: var(--secondary-bg-color);
   color: white;
@@ -186,287 +86,419 @@ body {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 30px;
-  border-radius: 8px;
-  max-width: 1200px;
+  max-width: auto;
   margin: 30px auto;
 }
 
-#why-choose-us {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  line-height: 1.8;
+/* Estilos para cards em geral */
+[data-theme="dark"] .card {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color);
+  box-shadow: 0 2px 8px var(--card-shadow-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.img-why {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+/* Seções de Registro (formulários) */
+.registro-section {
+  background: var(--primary-bg-color);
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.text-highlight {
-  color: var(--secondary-bg-color);
-  font-size: 30px;
-  font-weight: 800;
+[data-theme="dark"] .registro-section {
+  background-color: var(--card-bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px var(--card-shadow-dark);
 }
 
-#why-choose-us ul li {
-  font-size: 17px;
-  margin-bottom: 10px;
-}
-
-#why-choose-us .lead {
-  font-size: 18px;
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary-bg-color);
   margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  #why-choose-us {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  #why-choose-us ul {
-    padding-left: 20px;
-    text-align: left;
-  }
-
-  .text-highlight {
-    font-size: 22px;
-  }
-
-  #why-choose-us .lead {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .img-why {
-    max-width: 300px;
-    margin-bottom: 20px;
-  }
-}
-
-.animate-highlight {
-  animation: pulseColor 2s ease infinite;
-}
-
-@keyframes pulseColor {
-  0% {
-    color: var(--secondary-bg-color);
-    transform: scale(1);
-  }
-  50% {
-    color: #0c5f9f;
-    transform: scale(1.05);
-  }
-  100% {
-    color: var(--secondary-bg-color);
-    transform: scale(1);
-  }
-}
-
-/* Botão de pesquisa */
-#navbar .btn {
-  border: 2px solid var(--secondary-bg-color);
-  background-color: transparent;
+  padding-bottom: 5px;
   color: var(--secondary-bg-color);
-  font-weight: bold;
+}
+
+/* Ícones de validação de CPF e CEP */
+#cpf-valid-icon i {
+  font-size: 22px;
+  pointer-events: none;
+}
+
+#cpf.is-valid,
+#cpf.is-invalid,
+#cep.is-valid,
+#cep.is-invalid {
+  background-image: none !important;
+}
+
+/* Animações e Feedback Visual (Login e Registro) */
+/* Animação Shake para campos inválidos */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-8px);
+  }
+
+  40% {
+    transform: translateX(8px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+/* Fade-in para as mensagens de alerta */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Deixa o botão "Cadastrar" mais suave */
+button[type="submit"] {
   transition: all 0.3s ease;
 }
 
-#navbar .btn:hover {
-  background-color: var(--secondary-bg-color);
-  color: white;
+/* Quando botão está carregando */
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-/* Formulário de Busca */
-#search-form {
-  width: 100%;
-  margin: 32px 0;
-  border: 2px solid #626262;
-  padding: 5px 15px;
+/* Melhorias gerais nos alerts */
+.alert {
+  margin-top: 15px;
+  animation: fadeIn 0.5s ease;
 }
 
-@media (min-width: 768px) {
-  #search-form {
-    width: 50%;
-    margin: 0;
-  }
-}
-
-#search-form input {
-  background-color: transparent;
-  border: none;
-  color: var(--text-color);
-}
-
-#search-form input::placeholder {
-  color: var(--text-color);
-  opacity: 1;
-}
-
-#search-form input:focus {
-  box-shadow: none;
-}
-
-/* Navbar Inferior */
-#bottom-navbar-container .container {
-  justify-content: flex-end;
-}
-
-#bottom-navbar-container a {
-  font-weight: 600;
-  color: var(--text-color);
-}
-
-.navbar-toggler {
-  font-size: 24px;
-}
-
-/* Footer */
-#footer {
-  background: var(--primary-bg-color);
-  color: var(--text-color);
-  margin-top: 80px;
-  padding-top: 40px;
-  padding-bottom: 30px;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.footer-top-line {
-  height: 3px;
-  background: var(--secondary-bg-color);
-  margin-bottom: 40px;
-}
-
-.footer-main {
-  padding: 0 40px;
-}
-
-.footer-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.footer-title::after {
-  content: "";
+/* Para as mensagens de feedback dos inputs */
+.invalid-feedback {
   display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--secondary-bg-color);
-  margin: 8px auto 0;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+  color: var(--bs-danger);
 }
 
-.footer-links {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 12px;
-}
-
-.footer-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--secondary-bg-color);
-  transform: translateX(5px);
-}
-
-/* Newsletter */
-.newsletter {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.newsletter h6 {
-  font-size: 19px;
-  margin-bottom: 20px;
-}
-
-.newsletter input {
-  max-width: 300px;
-  border-radius: 5px;
-}
-
-.newsletter button {
-  border-radius: 5px;
-}
-
-/* Redes sociais */
-.social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 32px;
-  color: var(--text-color);
-  transition: transform 0.4s, text-shadow 0.4s, color 0.4s;
-}
-
-.social-icons a:hover {
-  animation: pulse 1s infinite alternate;
-  text-shadow: 0 0 10px var(--secondary-bg-color),
-    0 0 20px var(--secondary-bg-color);
-  color: var(--secondary-bg-color);
-}
-
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.2);
-  }
-}
-
-/* Frase Pensadora */
-.footer-quote blockquote {
-  font-style: italic;
-  font-size: 18px;
-  color: var(--muted-text-color);
-  margin: 0;
-}
-
-.footer-quote cite {
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--secondary-bg-color);
-}
-
-/* Copyright */
-.footer-bottom p {
-  font-size: 15px;
-  margin-top: 20px;
-}
-
-/* Responsividade Footer */
+/* Responsividade em Telas Menores */
 @media (max-width: 768px) {
-  .footer-main {
-    padding: 0 20px;
+
+  /* Imagens do carrossel se ajustam */
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
   }
-  .footer-title,
-  .footer-text,
-  .store-phone,
-  .newsletter h6,
-  .footer-bottom p,
-  .footer-quote blockquote,
-  .footer-quote cite {
+
+  /* Containers com menos padding */
+  .container,
+  .row,
+  .col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Cards ocupam 100% da largura */
+  .card,
+  .promo-card {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* Rodapé em coluna */
+  footer .row {
+    flex-direction: column;
     text-align: center;
+    gap: 10px;
   }
 }
 
-/* Botão de acessibilidade */
+/* Estilos para Inputs (form-control padrão do Bootstrap) */
+/* Focus clean nos inputs */
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--secondary-bg-color);
+}
+
+/* Padroniza o padding e altura dos form-control (inputs e selects) no registro */
+/* Este é o ponto chave para consistência de tamanho */
+.form-control,
+.form-select {
+  padding: 0.375rem 0.75rem;
+  /* Padding padrão do Bootstrap */
+  height: calc(2.25rem + 2px);
+  /* Altura padrão do Bootstrap para form-control */
+  border: 1px solid var(--muted-text-color);
+  /* Garante borda consistente */
+  background-color: transparent;
+  /* Garante fundo transparente no tema claro */
+  color: var(--muted-text-color);
+  /* Garante cor do texto padrão (para inputs) */
+}
+
+/* Ajuste específico para a cor do texto das options do select, incluindo a opção hidden/disabled */
+.form-select option {
+  color: var(--text-color);
+  /* Garante que as opções tenham a cor do texto padrão */
+  background-color: var(--primary-bg-color);
+  /* Fundo da opção para evitar transparência */
+}
+
+/* Para a opção padrão (Selecione seu Sexo) */
+.form-select option[value=""][disabled][hidden] {
+  color: var(--muted-text-color);
+  /* Cor mais clara para o placeholder do select */
+}
+
+
+/* Para os inputs que ainda usam styled-input (CPF, CEP, que precisam da posição para o ícone) */
+.styled-input {
+  /* Mantém as propriedades de position, z-index, etc. */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* As propriedades de border, padding, height, background-color, color, etc. virão de .form-control */
+}
+
+/* REMOVIDO: Regras para .styled-label e seu comportamento de flutuação */
+
+
+/* Estilos para Tema Escuro (elementos específicos de formulário) */
+/* Estilo para inputs (form-control e styled-input) e placeholders no tema escuro */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .styled-input {
+  background-color: var(--card-bg-dark);
+  /* Fundo do input no tema escuro */
+  color: var(--muted-text-color);
+  /* Cor do texto no tema escuro */
+  border-color: var(--muted-text-color);
+  /* Borda para contraste */
+}
+
+/* Placeholder no tema escuro */
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] .form-select::placeholder,
+/* Ajustado */
+[data-theme="dark"] .styled-input::placeholder {
+  color: var(--muted-text-color);
+  opacity: 0.7;
+}
+
+/* Remove a troca de background-color e color no focus para todos os inputs no tema escuro */
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .styled-input:focus {
+  background-color: var(--card-bg-dark);
+  /* Mantém a cor de fundo original do card */
+  color: var(--text-color);
+  /* Mantém a cor do texto original */
+  border-color: var(--secondary-bg-color);
+  /* Apenas a borda muda */
+  box-shadow: none !important;
+  /* Garante que não haja box-shadow */
+  outline: none !important;
+  /* Garante que não haja outline */
+}
+
+/* Ajustes para a cor do texto no tema escuro para selects e datas, quando não estão focados */
+[data-theme="dark"] select,
+[data-theme="dark"] input[type="date"] {
+  color: var(--text-color);
+  /* Texto claro */
+  background-color: var(--card-bg-dark);
+  /* Fundo cinza escuro */
+  border: 1px solid var(--muted-text-color);
+  /* Borda para contraste */
+}
+
+/* Cor das opções do select no tema escuro */
+[data-theme="dark"] .form-select option {
+  color: var(--muted-text-color);
+  /* Cor do texto das opções */
+  background-color: var(--card-bg-dark);
+  /* Fundo das opções */
+}
+
+/* Cor do placeholder do select no tema escuro */
+[data-theme="dark"] .form-select option[value=""][disabled][hidden] {
+  color: var(--muted-text-color);
+  /* Cor do placeholder do select */
+}
+
+
+/* Painel de Usuário (User Panel) */
+/* Ajusta o conteúdo do painel do usuário para ficar abaixo da barra de navegação fixa */
+@media (min-width: 768px) {
+  .user-panel-wrapper {
+    padding-top: 100px;
+    /* Ajuste este valor com base na altura da sua navbar */
+  }
+}
+
+/* Sidebar mobile por padrão em cima */
+.sidebar {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar h4 {
+  color: #1873bc;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar .nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  background-color: #e9f2fc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background-color: #cde4fb;
+  color: #1873bc;
+}
+
+/* Conteúdo principal abaixo da sidebar */
+.main-content {
+  padding: 20px;
+}
+
+/* Cartões e formulários dentro do painel do usuário */
+.config-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+/* Versão desktop do Painel de Usuário */
+@media (min-width: 768px) {
+  .container-fluid {
+    display: flex;
+  }
+
+  .sidebar {
+    width: 250px;
+    height: calc(100vh - 100px);
+    /* Ajuste com base na altura da navbar */
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+    position: fixed;
+    left: 0;
+    top: 100px;
+    /* Posicione abaixo da navbar */
+    overflow-y: auto;
+    /* Habilita rolagem se o conteúdo exceder a altura */
+  }
+
+  .main-content {
+    margin-left: 250px;
+    padding: 40px;
+    width: 100%;
+  }
+
+  .sidebar .nav {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar .nav-link {
+    margin-bottom: 10px;
+  }
+}
+
+/* Estilos de Imagens de Login/Registro */
+[data-theme="dark"] .login-section img {
+  filter: brightness(0.8) contrast(1.2);
+  /* Escurece um pouco e aumenta o contraste */
+  transition: filter 0.3s ease;
+  /* Transição suave para o filtro */
+}
+
+/* Estilos do Offcanvas (Menu Lateral no Login) */
+[data-theme="dark"] .offcanvas {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .offcanvas .offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .offcanvas .offcanvas-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .offcanvas .btn-close {
+  filter: invert(1);
+}
+
+[data-theme="dark"] .offcanvas .list-group-item {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botão de Acessibilidade */
 #accessibility-toggle {
   position: fixed;
   bottom: 10px;
@@ -500,7 +532,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Botão de fechar animado */
+/* Botão de fechar animado do menu de acessibilidade */
 #close-accessibility {
   position: absolute;
   top: -15px;
@@ -520,7 +552,7 @@ body {
   transform: rotate(180deg) scale(1.3);
 }
 
-/* Dropdown de busca */
+/* Dropdown de busca (na Navbar) */
 #search-results {
   position: absolute;
   top: 100%;
@@ -568,286 +600,479 @@ body {
   border-radius: 5px;
 }
 
-/* Registro */
-.registro-section {
+/* NAVBAR */
+@keyframes expandUnderline {
+  to { transform: translateX(-50%) scaleX(1); }
+}
+@keyframes iconGlow {
+  0%, 100% { filter: drop-shadow(0 0 4px var(--secondary-bg-color)); transform: scale(1.1); }
+  50% { filter: drop-shadow(0 0 12px var(--secondary-bg-color)); transform: scale(1.2); }
+}
+@keyframes badgePop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+@keyframes searchResultsFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========== NAVBAR PRINCIPAL (SUPERIOR) ========== */
+#main-navbar {
   background: var(--primary-bg-color);
-  padding: 25px;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid transparent;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 8px 16px !important;
+}
+#main-navbar.hidden-up {
+  transform: translateY(-100%);
+}
+[data-theme="dark"] #main-navbar {
+    background: #1e202c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-bottom: 2px solid var(--secondary-bg-color);
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-  color: var(--secondary-bg-color);
+/* --- Logo Vexor --- */
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  /* Cor para o Tema Claro */
+  background: linear-gradient(45deg, #1873bc, #2a9d8f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
-
-#cpf-valid-icon i {
-  font-size: 22px;
-  pointer-events: none;
+.navbar-brand:hover {
+    transform: scale(1.05);
 }
-
-#cpf.is-valid,
-#cpf.is-invalid,
-#cep.is-valid,
-#cep.is-invalid {
-  background-image: none !important;
-}
-
-/* Login */ 
-/* Animação Shake para campos inválidos */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-8px); }
-  40% { transform: translateX(8px); }
-  60% { transform: translateX(-6px); }
-  80% { transform: translateX(6px); }
-  100% { transform: translateX(0); }
-}
-
-.shake {
-  animation: shake 0.5s;
-}
-
-/* Fade-in para as mensagens de alerta */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Deixa o botão "Cadastrar" mais suave */
-button[type="submit"] {
-  transition: all 0.3s ease;
-}
-
-/* Quando botão está carregando */
-button[type="submit"]:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Melhorias gerais nos alerts */
-.alert {
-  margin-top: 15px;
-  animation: fadeIn 0.5s ease;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-
-  /* Imagens do carrossel se ajustam */
-  .carousel-inner img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Containers com menos padding */
-  .container, .row, .col {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  /* Cards ocupam 100% da largura */
-  .card, .promo-card {
-    width: 100% !important;
-    margin-bottom: 20px;
-  }
-
-  .card-title {
-    font-size: 14px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  /* Rodapé em coluna */
-  footer .row {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-}
-
-/* Focus clean nos inputs */
-input:focus,
-select:focus,
-textarea:focus,
-.form-control:focus,
-.form-select:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border-color: var(--secondary-bg-color);
-}
-
-.styled-input {
-  border: 1px solid var(--muted-text-color);
-  border-radius: 4px;;
-  padding: 22px 12px 8px; /* padding extra no topo pro label */
-  background-color: transparent;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
-
-.styled-label {
-  position: absolute;
-  top: -8px;
-  left: 8px;
-  background-color: var(--primary-bg-color);
-  color: var(--secondary-bg-color);
-  font-size: 12px;
-  padding: 10 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Força selects e datas a terem o mesmo estilo */
-.form-floating.always-float > label {
-  transform: scale(0.85) translateY(-24px) translateX(4px);
-  opacity: 1;
-  background-color: var(--primary-bg-color);
-  padding: 0 4px;
-  z-index: 2;
-}
-
-/* Ajusta a cor do texto nos campos de seleção e data no tema escuro */
-[data-theme="dark"] select,
-[data-theme="dark"] input[type="date"] {
-  color: var(--text-color); /* Texto claro */
-  background-color: #2c2c2c; /* Fundo cinza claro */
-  border: 1px solid var(--muted-text-color); /* Borda para contraste */
-}
-
-/* Ajusta a cor do placeholder nos campos de seleção e data no tema escuro */
-[data-theme="dark"] select::placeholder,
-[data-theme="dark"] input[type="date"]::placeholder {
-  color: var(--muted-text-color); /* Placeholder com cor mais clara */
-  opacity: 0.7;
-}
-
-/* Ajusta o estilo dos campos quando focados */
-[data-theme="dark"] select:focus,
-[data-theme="dark"] input[type="date"]:focus {
-  border-color: var(--secondary-bg-color); /* Destaque na borda ao focar */
-  outline: none;
-}
-
-/* Esconde o placeholder ao focar no input */
-.styled-input:focus::placeholder {
+/* Cor para o Tema Escuro */
+[data-theme="dark"] .navbar-brand {
+  background: linear-gradient(45deg, #3390ff, #00e0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
-/* Campos claros ao focar/hover no tema escuro */
-@media (prefers-color-scheme: dark) {
- #contact-nome:focus,
-  #contact-tel:focus,
-  #contact-email:focus,
-  #contact-comentario:focus,
-  #contact-submit:focus,
-  #password:focus,
-  #login:focus,
-  #seuemail:focus{
-    background-color: #f8f9fa !important; /* branco Bootstrap */
-    color: #212529 !important;            /* texto escuro */
-    border-color: #4c89c6df;
-  }
-
-  /* Botão submit claro ao hover/focus */
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: #e9ecef !important;
-    color: #212529 !important;
-    border-color: #4c89c6df;
-  }
+/* --- Formulário de Busca --- */
+.search-form-modern {
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    padding: 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+[data-theme="dark"] .search-form-modern {
+    background-color: #2a2f34;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+.search-input-modern {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding-left: 35px !important;
+    color: var(--text-color);
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-text-color);
+    font-size: 16px;
+}
+.btn-clear-search {
+    position: absolute;
+    right: 95px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted-text-color);
+    padding: 0 5px;
+    cursor: pointer;
+}
+.search-btn {
+    background-color: var(--secondary-bg-color);
+    color: white;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 6px 16px;
+}
+.search-btn:hover {
+    color: white;
+    filter: brightness(1.1);
 }
 
-/* Painel de Usuário - Vexor */
-/* Sidebar mobile por padrão em cima */
-.sidebar {
-  background-color: #fff;
-  width: 100%;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
+/* --- Resultados da Busca --- */
+#search-results {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: var(--primary-bg-color);
+  border: 1px solid rgba(0,0,0,0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1060;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
 }
-
-.sidebar h4 {
-  color: #1873bc;
-  font-weight: bold;
-  margin-bottom: 20px;
+[data-theme="dark"] #search-results {
+    background: #2a2f34;
+    border-color: rgba(255,255,255,0.15);
 }
-
-.sidebar .nav {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
+#search-results.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
-
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
+.search-result-item {
+  display: flex;
+  align-items: center;
   padding: 8px 12px;
-  background-color: #e9f2fc;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.sidebar .nav-link.active,
-.sidebar .nav-link:hover {
-  background-color: #cde4fb;
-  color: #1873bc;
-}
-
-/* Conteúdo principal abaixo da sidebar */
-.main-content {
-  padding: 20px;
-}
-
-/* Cartões e formulários */
-.config-container {
-  background-color: #ffffff;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background-color 0.2s;
+  font-size: 15px;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  animation: searchResultsFadeIn 0.3s ease-out;
+}
+.search-result-item:hover {
+  background-color: var(--secondary-bg-color);
+  color: #ffffff;
+}
+.search-result-item img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-right: 12px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 2px;
 }
 
-.form-label {
-  font-weight: 500;
+/* --- Ícones da Direita e Badges --- */
+.navbar-nav .nav-link {
+  color: var(--muted-text-color);
+  font-size: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-bg-color);
+  transform: translateY(-2px);
+}
+#cart-total-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.qty-info {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  border: 1px solid var(--primary-bg-color);
+}
+[data-theme="dark"] .qty-info {
+    border-color: #1e202c;
+}
+.qty-info.animated {
+    animation: badgePop 0.4s ease-out;
 }
 
-/* Versão desktop */
-@media (min-width: 768px) {
-  .container-fluid {
-    display: flex;
-  }
-
-  .sidebar {
-    width: 250px;
-    height: 100vh;
-    border-right: 1px solid #ddd;
-    border-bottom: none;
-    position: fixed;
-    left: 0;
+/* ========== NAVBAR INFERIOR (LINKS) ========== */
+#bottom-navbar {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1045;
+  background: var(--primary-bg-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  top: 73px; /* Altura da navbar principal */
+  transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 0 16px !important;
+}
+#main-navbar.hidden-up + #bottom-navbar {
     top: 0;
-  }
+}
+[data-theme="dark"] #bottom-navbar {
+    background: #2a2f34;
+    box-shadow: none;
+}
+#bottom-navbar .nav-link {
+  color: var(--muted-text-color);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 12px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+#bottom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 70%;
+  height: 2px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+#bottom-navbar .nav-link:hover,
+#bottom-navbar .nav-link.active-page-indicator {
+  color: var(--text-color);
+}
+#bottom-navbar .nav-link:hover::after,
+#bottom-navbar .nav-link.active-page-indicator::after {
+  transform: translateX(-50%) scaleX(1);
+}
+[data-theme="dark"] #bottom-navbar .nav-link {
+    color: var(--muted-text-color);
+}
+[data-theme="dark"] #bottom-navbar .nav-link:hover,
+[data-theme="dark"] #bottom-navbar .nav-link.active-page-indicator {
+    color: #fff;
+}
 
-  .main-content {
-    margin-left: 250px;
-    padding: 40px;
+/* ========== MARCADOR DE PÁGINA ATIVA NOS ÍCONES ========== */
+.nav-link.active-page-indicator-icon {
+  color: var(--secondary-bg-color) !important;
+  animation: iconGlow 1.5s infinite ease-in-out;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 767px) {
+    #main-navbar, #bottom-navbar {
+        padding: 12px 16px !important;
+    }
+    #main-navbar .container, #bottom-navbar .container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    #main-navbar {
+        position: static;
+    }
+    #bottom-navbar {
+        position: static;
+        box-shadow: none;
+        background: var(--primary-bg-color);
+    }
+    [data-theme="dark"] #bottom-navbar {
+        background: var(--card-bg-dark);
+    }
+    body {
+        padding-top: 0 !important;
+    }
+    #navbarMain {
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 16px;
+    }
+    [data-theme="dark"] #navbarMain {
+        border-top-color: rgba(255,255,255,0.1);
+    }
+    #main-navbar .navbar-nav {
+        margin-top: 16px;
+        justify-content: center;
+        width: 100%;
+    }
+    .search-form-modern {
+        margin-bottom: 16px;
+    }
+}
+
+/* FOOTER */
+#footer {
+  background: var(--primary-bg-color);
+  color: var(--text-color);
+  margin-top: 80px;
+  padding: 60px 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+[data-theme="dark"] #footer {
+    background: #181a24;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-top-line {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--secondary-bg-color), transparent);
+  animation: footerLineAnimation 15s linear infinite;
+}
+@keyframes footerLineAnimation {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+.footer-main {
+  max-width: 1200px;
+}
+
+.footer-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  color: var(--text-color);
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+.footer-title::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: var(--secondary-bg-color);
+  margin-top: 8px;
+  transition: width 0.4s ease-in-out;
+}
+#footer:hover .footer-title::after {
     width: 100%;
-  }
+}
 
-  .sidebar .nav {
-    flex-direction: column;
-    gap: 0;
-  }
+.footer-text {
+    color: var(--muted-text-color);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
 
-  .sidebar .nav-link {
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 12px;
+}
+.footer-links a {
+  color: var(--muted-text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+.footer-links a:hover {
+  color: var(--secondary-bg-color);
+  transform: translateX(5px);
+  text-shadow: 0 0 5px rgba(var(--secondary-bg-color-rgb), 0.5);
+}
+
+/* --- Newsletter --- */
+.newsletter p {
+    font-size: 0.9rem;
+    color: var(--muted-text-color);
     margin-bottom: 10px;
-  }
+}
+.newsletter .form-control {
+    background-color: var(--bg-color);
+    border-color: rgba(var(--muted-text-color-rgb), 0.3);
+}
+.newsletter .btn {
+    background-color: var(--secondary-bg-color);
+    color: #fff;
+    border: none;
+}
+.newsletter .btn:hover {
+    filter: brightness(1.15);
+}
+
+/* --- Social Icons --- */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.social-icons a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1.5rem;
+  color: var(--muted-text-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--secondary-bg-color);
+  transform: translateY(-5px) scale(1.1);
+  animation: pulse 1s infinite alternate;
+}
+
+/* --- Citação --- */
+.footer-quote blockquote {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted-text-color);
+  margin: 0;
+  border-left: 3px solid var(--secondary-bg-color);
+  padding-left: 15px;
+}
+.footer-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--secondary-bg-color);
+  font-weight: 600;
+}
+
+/* --- Certificados e Copyright --- */
+.footer-bottom {
+    border-top: 1px solid rgba(var(--muted-text-color-rgb), 0.1);
+    padding-top: 30px;
+}
+.footer-certificados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.footer-certificados img {
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.3s ease;
+  max-height: 40px;
+}
+.footer-certificados img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: var(--muted-text-color);
+  margin-top: 30px;
+  margin-bottom: 0;
 }

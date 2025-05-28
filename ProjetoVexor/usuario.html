@@ -1,73 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minha Conta - Vexor</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="js/accessibility.js" defer></script>
-    <script src="js/navbar.js" defer></script>
-    <script src="js/footer.js" defer></script>
-    <script src="js/product.js" defer></script>
-    <script src="js/search.js" defer></script>
-    <script src="js/login.js" defer></script>
-  </head>
-  <body>
-    <!-- JS Navbar -->
-    <div id="navbar-container"></div>
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 sidebar">
-          <h4>Minha Conta</h4>
-          <nav class="nav flex-column" id="navLinks">
-            <a class="nav-link active" data-page="profile">👤 Perfil</a>
-            <a class="nav-link" data-page="favorite.html">❤️ Favoritos</a>
-            <a class="nav-link" data-page="cart.html">🛒 Carrinho</a>
-            <a class="nav-link" data-page="config.html">⚙️ Configurações</a>
-            <a class="nav-link text-danger" href="#" id="logoutBtn">🚪 Sair</a>
-          </nav>
-        </div>
 
-        <!-- Conteúdo Dinâmico -->
-        <div class="col-md-9 main-content" id="mainContent">
-          <h2>Bem-vindo, <span id="userName">Usuário</span>!</h2>
-          <p>Selecione uma opção no menu lateral para ver seus dados.</p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Conta - Vexor</title>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/users.css">
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
+    defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/product.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <script src="js/login.js" defer></script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+  <div class="container-fluid user-panel-wrapper">
+    <div class="row">
+      <div class="col-md-3 sidebar">
+        <h4>Minha Conta</h4>
+        <nav class="nav flex-column" id="navLinks">
+          <a class="nav-link active" data-page="profile">👤 Perfil</a>
+          <a class="nav-link" data-page="favorite.html">❤️ Favoritos</a>
+          <a class="nav-link" data-page="cart.html">🛒 Carrinho</a>
+          <a class="nav-link" data-page="config.html">⚙️ Configurações</a>
+          <a class="nav-link text-danger" href="#" id="logoutBtn">🚪 Sair</a>
+        </nav>
+      </div>
+
+      <div class="col-md-9 main-content" id="mainContent">
+        <h2>Bem-vindo, <span id="userName">Usuário</span>!</h2>
+        <p>Selecione uma opção no menu lateral para ver seus dados.</p>
       </div>
     </div>
-    <!-- Footer -->
-    <div id="footer-container"></div>
-    <script src="js/user-panel.js" defer></script>
-  </body>
+  </div>
+  <div id="footer-container"></div>
+  <script src="js/user-panel.js" defer></script>
+</body>
+
 </html>

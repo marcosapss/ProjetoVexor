@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="img/gamer-mouse.png" width="110" alt="Vexor Mouse">
   <h1>🖱️ Projeto Vexor</h1>
   <p>
     <strong>E-commerce de Mouses</strong> <br>
@@ -170,8 +171,6 @@ Sempre que possível, os arquivos se comunicam por meio de funções simples e a
 
 - **users-database.json**  
   > Cadastro de todos os usuários (simulado): username, senha (hash ou texto puro), favoritos, histórico de compras e configurações.
-
----
 
 ### 📃 Documentação & Regras
 

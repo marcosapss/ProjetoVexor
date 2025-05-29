@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="img/gamer-mouse.png" width="110" alt="Vexor Mouse">
   <h1>🖱️ Projeto Vexor</h1>
   <p>
     <strong>E-commerce de Mouses</strong> <br>

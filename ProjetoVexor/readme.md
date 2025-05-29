@@ -1,96 +1,88 @@
-# Vexor - Documentação Oficial do Projeto
+# 📄 Documentação Completa dos Arquivos do Projeto Vexor
 
-Seja bem-vindo à documentação do **Vexor**, uma loja virtual especializada em mouses gamers. Este projeto foi desenvolvido com foco em boas práticas de organização de arquivos, responsividade e experiência do usuário, buscando aprender e aplicar conceitos de HTML, CSS e JavaScript de forma prática.
-
----
-
-## 📄 Estrutura de Páginas HTML
-
-- `index.html` — Página principal da loja.
-- `base-page.html` — Template base para reaproveitamento de layout.
-- `cart.html` — Carrinho de compras.
-- `favorite.html` — Lista de produtos favoritados.
-- `login.html` — Tela de login.
-- `register.html` — Tela de cadastro.
-- `product.html` — Catálogo de produtos.
-- `product-page.html` — Detalhes de um produto específico.
-- `mouse.html` — Página dedicada à categoria de mouses.
-
-> Observação: O projeto utiliza componentes dinâmicos para Navbar e Footer, evitando repetição de código.
+Este documento fornece uma descrição detalhada de cada arquivo no projeto Vexor, explicando seu propósito e funcionalidade.
 
 ---
 
-## 🌈 Folhas de Estilo (CSS)
+## 📂 Estrutura de Arquivos
 
-- `styles.css` — Estilos globais (tipografia, navbar, rodapé, responsividade geral).
-- `cart.css` — Estilos específicos para o carrinho.
-- `favorite.css` — Estilos específicos para a página de favoritos.
-- `product-page.css` — Estilização dos detalhes de produto.
-- `promotion.css` — Estilos de produtos em promoção (com efeitos especiais).
-
-> Cada página carrega apenas o CSS necessário, visando otimização de desempenho.
-
----
-
-## 🛠️ Scripts JavaScript
-
-- `accessibility.js` — Permite alterar o tema do site (claro/escuro), ajustar tamanho de fonte e esconder o menu de acessibilidade. As preferências são salvas no `localStorage`.
-
-- `cart.js` — Controla o carrinho de compras, adicionando, listando e removendo produtos usando o `localStorage`.
-
-- `favorite.js` — Gerencia produtos favoritados, permitindo adicionar e remover favoritos de forma persistente.
-
-- `footer.js` — Gera dinamicamente o rodapé em todas as páginas.
-
-- `login.js` — Faz a validação de login, simulando uma autenticação com base em um banco de dados local.
-
-- `navbar.js` — Torna a navbar responsiva, mudando seu comportamento com base no scroll da página.
-
-- `product.js` — Lista os produtos do banco de dados e gera seus respectivos cards na página.
-
-- `product-page.js` — Exibe dinamicamente as informações de um produto individual.
-
-- `promotion.js` — Exibe promoções de produtos aleatoriamente, com efeitos visuais especiais.
-
-- `register.js` — Faz a validação e cadastro de novos usuários localmente.
-
-- `search.js` — Permite a busca de produtos cadastrados de forma simples e eficaz.
-
-> Todos os scripts utilizam boas práticas de DOM manipulation e persistência de dados básica com `localStorage`.
+/Vexor
+├── css/
+├── db/
+├── img/
+├── js/
+├── *.html
+└── readme.md
 
 ---
 
-## 📂 Banco de Dados Simulados (JSON)
+## 🌐 Páginas HTML
 
-- `products-database.json` — Contém as informações dos produtos (nome, preço, imagem, descrição).
-- `users-database.json` — Simula uma base de usuários para fins de login e registro.
+As páginas HTML são a espinha dorsal do site, estruturando o conteúdo que o usuário vê.
+
+* **`index.html`**: A página inicial (homepage) do e-commerce. Apresenta uma seção de "herói", banners promocionais, uma introdução aos diferenciais da loja e uma vitrine com produtos em destaque.
+* **`product.html`**: A página de listagem de produtos. Exibe todos os mouses disponíveis em formato de grade, com funcionalidades de filtro, ordenação e paginação.
+* **`product-page.html`**: Página de detalhes de um produto específico. Contém uma galeria de imagens, descrição completa, especificações técnicas, preço e botões de ação (comprar, adicionar ao carrinho, favoritar).
+* **`cart.html`**: A página do carrinho de compras. Lista os produtos adicionados, permitindo que o usuário ajuste quantidades, remova itens e veja o total da compra.
+* **`favorite.html`**: Exibe a lista de produtos que o usuário marcou como favoritos, oferecendo um atalho para a página do produto ou a remoção da lista.
+* **`login.html`**: Formulário para que usuários existentes possam entrar em suas contas. Inclui links para a página de cadastro e um menu oculto para gerenciamento de cadastros locais (simulação).
+* **`register.html`**: Formulário de cadastro para novos usuários, com múltiplos campos e validações em tempo real.
+* **`usuario.html`**: O painel do usuário, acessível após o login. Funciona como um hub central com navegação para perfil, favoritos, carrinho e configurações.
+* **`config.html`**: Uma página de exemplo dentro do painel do usuário para alterar dados da conta (simulação).
+* **`mouse.html`**: Página institucional que conta a "História do Mouse" através de uma timeline interativa e visual.
+* **`contact.html`**: Página de contato com informações como e-mail, telefone, redes sociais e um formulário para envio de mensagens.
+* **`policy-privacy.html`**: Página com o texto da Política de Privacidade do site, formatada em um acordeão para fácil leitura.
+* **`delivery-policy.html`**: Detalha a Política de Entregas, incluindo informações sobre prazos, custos e métodos de envio.
+* **`tracking.html`**: Página que permite ao usuário inserir um código de rastreamento para verificar o status de um pedido (simulação).
+* **`base-page.html`**: Um template HTML básico que serve como esqueleto para a criação de novas páginas, já incluindo as estruturas principais como `head` e os contêineres para `navbar` e `footer`.
 
 ---
 
-## 🖼️ Recursos Visuais (Imagens)
+## 🎨 Folhas de Estilo (CSS)
 
-- `banner1.png`, `banner2.png`, `banner3.png` — Imagens promocionais principais.
-- `favicon.ico` — Ícone do site.
-- `login.png`, `register.png` — Ilustrações para as telas de login e cadastro.
-- `gamer-mouse.png` — Arte genérica para mouses gamers.
-- `mousehist/` — Pasta com imagens sobre a história dos mouses, desde o primeiro modelo com bolinha até os sensores ópticos modernos.
+Os arquivos CSS são responsáveis por toda a aparência visual do site, desde o layout geral até os detalhes de cada componente.
 
-> O projeto preza por imagens otimizadas para manter a performance.
+* **`styles.css`**: O arquivo de estilo principal. Define variáveis de tema (claro/escuro), estilos globais (tipografia, cores), e os estilos da `navbar` e `footer`, além de regras de responsividade gerais.
+* **`auth.css`**: Estiliza as páginas de `login.html` e `register.html`, criando o layout dos formulários, os cards de autenticação e o fundo animado.
+* **`cart.css`**: Contém os estilos para a página do carrinho, definindo a aparência dos itens, do resumo da compra e da mensagem de carrinho vazio.
+* **`contact.css`**: Estiliza a página de contato, incluindo os cards de informação e o formulário de mensagem.
+* **`favorite.css`**: Define o visual da página de favoritos, os cards dos produtos e a mensagem de "sem favoritos".
+* **`index.css`**: Estilos específicos para a página `index.html`, incluindo a seção de herói com vídeo, a seção "Por que escolher a Vexor?" e a seção de gamificação.
+* **`mouse.css`**: CSS para a página `mouse.html`, focado na estilização da timeline da história do mouse.
+* **`policy.css`**: Estilos para as páginas de políticas (`policy-privacy.html` e `delivery-policy.html`), formatando os títulos e o componente de acordeão.
+* **`product.css`**: Estilização da página de listagem de produtos, incluindo os cards de produto, o banner de promoção, os controles de filtro/ordenação e o menu offcanvas de filtros.
+* **`product-page.css`**: Estilos para a página de detalhes do produto, focando na galeria de imagens, no painel de informações, na caixa de preço e nas abas de descrição/especificações.
+* **`promotion.css`**: Define os estilos especiais para os cards de produtos em promoção, incluindo a borda animada com gradiente RGB e o efeito de "skeleton loading".
+* **`users.css`**: CSS para o painel do usuário (`usuario.html`), definindo o layout da sidebar lateral e da área de conteúdo principal.
 
 ---
 
-## 📊 Resumo Rápido
+## 🛠️ Scripts (JavaScript)
 
-| Arquivo | Função | Observação |
-|:---|:---|:---|
-| `accessibility.js` | Acessibilidade | Tema, fonte, menu |
-| `cart.js` | Carrinho | `localStorage`, dinâmico |
-| `favorite.js` | Favoritos | Gestão de favoritos |
-| `footer.js` | Rodapé dinâmico | Atualização automática |
-| `login.js` | Login | Simula login local |
-| `navbar.js` | Navbar responsiva | Comportamento no scroll |
-| `product.js` | Listagem de produtos | Cards dinâmicos |
-| `product-page.js` | Detalhes do produto | Info carregadas dinâmicas |
-| `promotion.js` | Promoções | Cards aleatórios |
-| `register.js` | Cadastro | Validação e criação de usuário |
-| `search.js` | Busca de produtos | Filtro dinâmico |
+Os arquivos JavaScript dão vida ao site, adicionando interatividade, lógica de negócios e manipulação dinâmica do conteúdo.
+
+* **`navbar.js`**: Injeta dinamicamente o código da barra de navegação dupla (principal e de links) em todas as páginas. Controla seu comportamento responsivo e a animação de ocultar/mostrar durante o scroll. Também inicializa a funcionalidade de busca e a atualização dos ícones do carrinho e favoritos.
+* **`footer.js`**: Injeta dinamicamente o `footer` (rodapé) em todas as páginas, garantindo consistência e facilitando a manutenção.
+* **`accessibility.js`**: Gerencia o menu de acessibilidade. Permite ao usuário alternar entre os temas claro e escuro, aumentar, diminuir e resetar o tamanho da fonte. As preferências são salvas no `localStorage` para persistirem entre as visitas. Também controla a visibilidade do botão de acessibilidade quando outros menus (como o de filtros) estão abertos.
+* **`product.js`**: Responsável por buscar os produtos do `products-database.json` e renderizá-los dinamicamente na página `product.html`. Controla toda a lógica de filtragem, ordenação e paginação.
+* **`product-page.js`**: Busca os dados de um produto específico (baseado no ID da URL) e popula a página `product-page.html` com todas as suas informações: galeria de imagens, detalhes, especificações, etc. Também carrega produtos sugeridos.
+* **`promotion.js`**: Na `index.html`, busca produtos que estão em promoção e os exibe de forma aleatória em cards com efeitos visuais especiais, incluindo um "skeleton screen" enquanto os dados são carregados.
+* **`search.js`**: Implementa a funcionalidade de busca ao vivo na `navbar`. Conforme o usuário digita, o script filtra os produtos cacheados e exibe os resultados em um dropdown.
+* **`login.js`**: Gerencia o processo de autenticação. Ele valida as credenciais do usuário contra o `users-database.json` e os usuários cadastrados localmente. Exibe mensagens de sucesso ou erro e redireciona o usuário após um login bem-sucedido.
+* **`login-redirect.js`**: Um script simples que verifica se um usuário comum já está logado e, em caso afirmativo, o redireciona da página de login para o painel do usuário, evitando que ele precise fazer login novamente.
+* **`register.js`**: Controla o formulário de registro, implementando validações em tempo real para cada campo (formato, idade, força da senha, etc.), consultando a API ViaCEP para preenchimento de endereço e salvando o novo usuário no `localStorage`.
+* **`cart.js`**: Gerencia o estado do carrinho de compras. Ele lê/salva os produtos no `localStorage`, renderiza os itens na página `cart.html`, e permite a alteração de quantidade e a remoção de itens.
+* **`favorite.js`**: Lida com a funcionalidade de favoritos. Lê os "likes" do `localStorage`, busca os dados dos produtos favoritados e os exibe na página `favorite.html`, permitindo também a remoção.
+* **`user-panel.js`**: Script do painel do usuário. Verifica se há um usuário logado, exibe seu nome e gerencia a navegação interna do painel, carregando dinamicamente o conteúdo de `favorite.html`, `cart.html`, etc., na área principal.
+* **`index.js`**: Contém scripts específicos para a `index.html`, como a inicialização das animações de "scroll" que revelam os elementos da página conforme o usuário rola a tela.
+* **`mouse.js`**: Ativa as animações de entrada para os itens da timeline na página `mouse.html`, fazendo-os aparecer de forma suave à medida que entram no campo de visão do usuário.
+* **`tracking.js`**: Simula a funcionalidade de rastreamento de pedidos na página `tracking.html`. Ele "busca" um pedido com base no código inserido e exibe diferentes status (em trânsito, erro, não encontrado).
+
+---
+
+## 🗂️ Bancos de Dados Simulados (JSON)
+
+Como este é um projeto front-end, arquivos JSON são usados para simular um banco de dados.
+
+* **`products-database.json`**: Contém um array de objetos, onde cada objeto representa um produto com todos os seus detalhes: ID, nome, descrição, preços, marca, especificações, imagens, etc.
+* **`users-database.json`**: Armazena um array com usuários e senhas pré-cadastrados para simular uma base de usuários existente para a funcionalidade de login.

@@ -1662,3 +1662,8 @@ textarea:focus,
     max-width: 280px;
   }
 }
+
+/* aumentar altura do campo de texto do tracking, para ficar com a mesma altura do botão */
+#trackingCode {
+  height: 48px;
+}

@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } else {
       limparCamposEndereco();
-      aplicarFeedbackCampo(cepInput, false, 'O CEP deve ter 8 dígitos.');
       cepInput.classList.remove('is-valid', 'is-invalid');
       cepIcon.innerHTML = '';
     }

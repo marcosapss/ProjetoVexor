@@ -112,13 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
           aplicarFeedbackCampo(cepInput, true);
           cepIcon.innerHTML = '<i class="bi bi-check-circle-fill text-success"></i>';
         } else {
-          mostrarCepInvalido();
-          aplicarFeedbackCampo(cepInput, false);
+          aplicarFeedbackCampo(cepInput, false, 'CEP não encontrado. Preencha manualmente.');
           cepIcon.innerHTML = '<i class="bi bi-x-circle-fill text-danger"></i>';
         }
       } catch {
-        mostrarCepInvalido();
-        aplicarFeedbackCampo(cepInput, false);
+        aplicarFeedbackCampo(cepInput, false, 'Erro ao consultar CEP. Preencha manualmente.');
         cepIcon.innerHTML = '<i class="bi bi-x-circle-fill text-danger"></i>';
       }
     } else {

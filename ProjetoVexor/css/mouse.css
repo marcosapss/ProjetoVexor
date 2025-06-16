@@ -9,7 +9,7 @@
 }
 
 .history-hero .hero-icon {
-  font-size: 64px;
+  font-size: 4rem;
   color: var(--secondary-bg-color);
   margin-bottom: 16px;
   display: inline-block;
@@ -18,13 +18,13 @@
 
 .history-hero .main-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 48px;
+  font-size: 3rem;
   color: var(--text-color);
   text-transform: uppercase;
 }
 
 .history-hero .subtitle {
-  font-size: 19px;
+  font-size: 1.1875rem;
   color: var(--muted-text-color);
   max-width: 700px;
   margin: 0 auto;
@@ -146,7 +146,7 @@
 /* --- CONTEÚDO INTERNO DO CARD --- */
 .timeline-content h2 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--secondary-bg-color);
   margin-top: 0;
 }
@@ -157,7 +157,7 @@
   background-color: var(--secondary-bg-color);
   color: #fff;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -170,7 +170,7 @@
 }
 
 .timeline-text {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--muted-text-color);
 }
@@ -191,7 +191,7 @@
 .cta-section .btn {
   font-family: 'Orbitron', sans-serif;
   padding: 12px 30px;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   background-color: var(--secondary-bg-color);
@@ -245,16 +245,16 @@
   }
 
   .history-hero .hero-icon {
-    font-size: 48px;
+    font-size: 3rem;
     margin-bottom: 12px;
   }
 
   .history-hero .main-title {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   .history-hero .subtitle {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .timeline-section {
@@ -291,17 +291,17 @@
   }
 
   .timeline-content h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .timeline-time {
-    font-size: 13px;
+    font-size: 0.8125rem;
     padding: 4px 8px;
     margin-bottom: 12px;
   }
 
   .timeline-text {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.6;
   }
 
@@ -310,15 +310,15 @@
   }
 
   .cta-section h2 {
-    font-size: 19px;
+    font-size: 1.1875rem;
   }
 
   .cta-section .lead {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .cta-section .btn {
     padding: 10px 24px;
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 }

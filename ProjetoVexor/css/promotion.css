@@ -119,7 +119,7 @@
 
 /* Estilo de Texto */
 .product-name-promo {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin-top: 10px;
   color: var(--text-color);
@@ -141,13 +141,13 @@
 }
 
 .price-original-promo {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted-text-color);
   text-decoration: line-through;
 }
 
 .price-promo-promo {
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--secondary-bg-color);
   /* Cor de destaque para preço promo */
   font-weight: bold;
@@ -292,16 +292,16 @@
   }
 
   .product-name-promo {
-    font-size: 14px;
+    font-size: 0.875rem;
     height: 42px;
   }
 
   .price-original-promo {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .price-promo-promo {
-    font-size: 19px;
+    font-size: 1.1875rem;
   }
 
   .skeleton-text {

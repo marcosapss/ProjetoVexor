@@ -24,7 +24,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
     defer></script>
-  <script src="js/accessibility.js" defer></script>
   <script src="js/navbar.js" defer></script>
   <script src="js/register.js" defer></script>
   <script src="js/product.js" defer></script>
@@ -33,104 +32,106 @@
 </head>
 
 <body class="auth-page">
-  <div class="auth-page-background"></div>
+  <main class="content-wrapper">
+    <div class="auth-page-background"></div>
 
-  <div id="navbar-container"></div>
+    <div id="navbar-container"></div>
 
-  <main class="container d-flex align-items-center justify-content-center" style="flex-grow: 1; padding: 20px 0;">
-    <div class="auth-card auth-card-register shadow-lg">
-      <h2 class="auth-title">Crie sua Conta Vexor</h2>
-      <form id="registerForm">
-        <div class="registro-section mb-4">
-          <h5 class="section-title">Dados Pessoais</h5>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="fullName" placeholder="Nome completo" required />
+    <main class="container d-flex align-items-center justify-content-center" style="flex-grow: 1; padding: 20px 0;">
+      <div class="auth-card auth-card-register shadow-lg">
+        <h2 class="auth-title">Crie sua Conta Vexor</h2>
+        <form id="registerForm">
+          <div class="registro-section mb-4">
+            <h5 class="section-title">Dados Pessoais</h5>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="fullName" placeholder="Nome completo" required />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="birthDate" placeholder="Data de Nascimento" required
+                onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <select class="form-select" id="gender" required>
+                <option value="" disabled selected hidden>Selecione seu Sexo</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="motherName" placeholder="Nome Materno" required />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control pe-5" id="cpf" placeholder="CPF" required />
+              <span id="cpf-valid-icon" class="position-absolute top-50 end-0 translate-middle-y me-3"></span>
+            </div>
           </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="birthDate" placeholder="Data de Nascimento" required
-              onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" />
+
+          <div class="registro-section mb-4">
+            <h5 class="section-title">Contato</h5>
+            <div class="form-group mb-3 position-relative">
+              <input type="email" class="form-control" id="email" placeholder="E-mail" required />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="tel" class="form-control" id="cellPhone" placeholder="Telefone Celular" required />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="tel" class="form-control" id="homePhone" placeholder="Telefone Fixo" />
+            </div>
           </div>
-          <div class="form-group mb-3 position-relative">
-            <select class="form-select" id="gender" required>
-              <option value="" disabled selected hidden>Selecione seu Sexo</option>
-              <option>Masculino</option>
-              <option>Feminino</option>
-              <option>Outro</option>
-            </select>
+
+          <div class="registro-section mb-4">
+            <h5 class="section-title">Endereço</h5>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control pe-5" id="cep" placeholder="CEP Ex. 21041-020" required />
+              <span id="cep-valid-icon" class="position-absolute top-50 end-0 translate-middle-y me-3"></span>
+              <div id="cep-error" class="small text-danger mt-1"></div>
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="logradouro" placeholder="Logradouro" />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="bairro" placeholder="Bairro" />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="cidade" placeholder="Cidade" />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="estado" placeholder="Estado" />
+            </div>
           </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="motherName" placeholder="Nome Materno" required />
+
+          <div class="registro-section mb-4">
+            <h5 class="section-title">Dados da Conta</h5>
+            <div class="form-group mb-3 position-relative">
+              <input type="text" class="form-control" id="loginUser" placeholder="Login (6 letras)" required />
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="password" class="form-control" id="passwordUser" placeholder="Senha (8 letras)" required />
+              <div id="password-strength" class="mt-2 small"></div>
+            </div>
+            <div class="form-group mb-3 position-relative">
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Senha" required />
+              <div id="password-match-error" class="small text-danger mt-1"></div>
+            </div>
           </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control pe-5" id="cpf" placeholder="CPF" required />
-            <span id="cpf-valid-icon" class="position-absolute top-50 end-0 translate-middle-y me-3"></span>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg"><i
+                class="bi bi-person-plus-fill me-2"></i>Cadastrar</button>
           </div>
+          <div id="register-message" class="text-center mt-3"></div>
+        </form>
+
+        <div class="text-center mt-4">
+          Já tem uma conta?
+          <a href="login.html" class="link-primary fw-semibold">Faça login</a>
         </div>
-
-        <div class="registro-section mb-4">
-          <h5 class="section-title">Contato</h5>
-          <div class="form-group mb-3 position-relative">
-            <input type="email" class="form-control" id="email" placeholder="E-mail" required />
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="tel" class="form-control" id="cellPhone" placeholder="Telefone Celular" required />
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="tel" class="form-control" id="homePhone" placeholder="Telefone Fixo" />
-          </div>
-        </div>
-
-        <div class="registro-section mb-4">
-          <h5 class="section-title">Endereço</h5>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control pe-5" id="cep" placeholder="CEP Ex. 21041-020" required />
-            <span id="cep-valid-icon" class="position-absolute top-50 end-0 translate-middle-y me-3"></span>
-            <div id="cep-error" class="small text-danger mt-1"></div>
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="logradouro" placeholder="Logradouro" />
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="bairro" placeholder="Bairro" />
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="cidade" placeholder="Cidade" />
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="estado" placeholder="Estado" />
-          </div>
-        </div>
-
-        <div class="registro-section mb-4">
-          <h5 class="section-title">Dados da Conta</h5>
-          <div class="form-group mb-3 position-relative">
-            <input type="text" class="form-control" id="loginUser" placeholder="Login (6 letras)" required />
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="password" class="form-control" id="passwordUser" placeholder="Senha (8 letras)" required />
-            <div id="password-strength" class="mt-2 small"></div>
-          </div>
-          <div class="form-group mb-3 position-relative">
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Senha" required />
-            <div id="password-match-error" class="small text-danger mt-1"></div>
-          </div>
-        </div>
-
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary btn-lg"><i
-              class="bi bi-person-plus-fill me-2"></i>Cadastrar</button>
-        </div>
-        <div id="register-message" class="text-center mt-3"></div>
-      </form>
-
-      <div class="text-center mt-4">
-        Já tem uma conta?
-        <a href="login.html" class="link-primary fw-semibold">Faça login</a>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <div id="toast-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999"></div>
+    <div id="toast-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999"></div>
+  </main>
   <div id="footer-container"></div>
 </body>
 

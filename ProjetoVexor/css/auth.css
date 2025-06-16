@@ -76,7 +76,7 @@ body.auth-page {
 .auth-title {
     font-family: 'Orbitron', sans-serif;
     color: var(--secondary-bg-color);
-    font-size: 32px;
+    font-size: 2rem;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -87,7 +87,7 @@ body.auth-page {
     background-color: var(--bg-color);
     border-color: var(--border-color);
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .auth-card .form-floating>.form-control:focus,
@@ -98,7 +98,7 @@ body.auth-page {
 
 .auth-card .form-floating>label {
     color: var(--muted-text-color);
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .auth-card .btn-primary {
@@ -106,7 +106,7 @@ body.auth-page {
     background-color: var(--secondary-bg-color);
     border-color: var(--secondary-bg-color);
     padding: 12px 20px;
-    font-size: 17px;
+    font-size: 1.0625rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
@@ -120,7 +120,7 @@ body.auth-page {
 
 .auth-card .btn-outline-secondary {
     padding: 12px 20px;
-    font-size: 17px;
+    font-size: 1.0625rem;
     border-color: var(--muted-text-color);
     color: var(--muted-text-color);
 }
@@ -147,7 +147,7 @@ body.auth-page {
 /* Para a página de registro, os títulos das seções */
 .auth-card-register .section-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     border-bottom-width: 2px;
     padding-bottom: 8px;
     margin-bottom: 24px;
@@ -176,18 +176,18 @@ body.auth-page {
     }
 
     .auth-title {
-        font-size: 26px;
+        font-size: 1.625rem;
         margin-bottom: 20px;
     }
 
     .auth-card .btn-primary,
     .auth-card .btn-outline-secondary {
-        font-size: 15px;
+        font-size: 0.9375rem;
         padding: 10px 15px;
     }
 
     .auth-card-register .section-title {
-        font-size: 16px;
+        font-size: 1rem;
         padding-bottom: 6px;
         margin-bottom: 20px;
     }
@@ -204,7 +204,7 @@ body.auth-page {
 
     .form-floating>label {
         padding: 16px 12px;
-        font-size: 14px;
+        font-size: 0.875rem;
         /* Tamanho da label quando não flutuando */
     }
 
@@ -214,7 +214,7 @@ body.auth-page {
         /* Label flutuante */
         opacity: 0.65;
         transform: scale(0.80) translateY(-8px) translateX(2px);
-        font-size: 12px;
+        font-size: 0.75rem;
         /* Tamanho da label quando flutuando, opcional */
     }
 }

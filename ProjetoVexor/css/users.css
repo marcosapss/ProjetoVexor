@@ -23,7 +23,7 @@
   color: var(--secondary-bg-color);
   font-weight: bold;
   margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 1.375rem;
   /* Ajuste */
 }
 
@@ -44,7 +44,7 @@
   border-radius: 8px;
   text-align: center;
   transition: all 0.2s ease;
-  font-size: 14px;
+  font-size: 0.875rem;
   /* Ajuste */
 }
 
@@ -73,7 +73,7 @@
 .main-content>h2 {
   /* Estilo para o H2 de boas-vindas */
   color: var(--text-color);
-  font-size: 28px;
+  font-size: 1.75rem;
   /* Ajuste */
   margin-bottom: 10px;
 }
@@ -81,7 +81,7 @@
 .main-content>p {
   /* Estilo para o parágrafo de boas-vindas */
   color: var(--muted-text-color);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 
@@ -97,7 +97,7 @@
 
 .main-content .config-container h3 {
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 1.25rem;
   /* Ajuste */
   margin-bottom: 20px;
   /* Ajuste */
@@ -170,7 +170,7 @@
   }
 
   .sidebar h4 {
-    font-size: 21px;
+    font-size: 1.3125rem;
     margin-bottom: 15px;
   }
 
@@ -180,7 +180,7 @@
   }
 
   .sidebar .nav-link {
-    font-size: 13px;
+    font-size: 0.8125rem;
     padding: 6px 10px;
   }
 
@@ -189,11 +189,11 @@
   }
 
   .main-content>h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   .main-content>p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .main-content .config-container {
@@ -201,6 +201,6 @@
   }
 
   .main-content .config-container h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }

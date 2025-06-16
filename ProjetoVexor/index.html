@@ -26,7 +26,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
     defer></script>
-  <script src="js/accessibility.js" defer></script>
   <script src="js/navbar.js" defer></script>
   <script src="js/product.js" defer></script>
   <script src="js/search.js" defer></script>
@@ -40,11 +39,13 @@
   <!-- JS Navbar -->
   <div id="navbar-container"></div>
   <!-- Escolha seu Estilo -->
-  <section class="game-style-selection-section">
+  <main class="content-wrapper">
+    <section class="game-style-selection-section">
       <div class="container text-center">
         <h1 class="game-style-title display-4 mb-3 animate-on-scroll">QUAL É O SEU ESTILO DE CAMPEÃO?</h1>
-        <p class="game-style-subtitle lead mb-5 animate-on-scroll delay-1">Selecione seu playstyle e descubra os mouses perfeitos para suas batalhas!</p>
-        
+        <p class="game-style-subtitle lead mb-5 animate-on-scroll delay-1">Selecione seu playstyle e descubra os mouses
+          perfeitos para suas batalhas!</p>
+
         <div class="row g-4 justify-content-center">
           <div class="col-11 col-sm-10 col-md-6 col-lg-3 d-flex align-items-stretch animate-on-scroll delay-2">
             <a href="product.html?style=fps" class="game-style-card fps-card text-decoration-none h-100">
@@ -53,7 +54,7 @@
               <p class="game-style-card-desc">Precisão cirúrgica para headshots certeiros em FPS.</p>
             </a>
           </div>
-          
+
           <div class="col-11 col-sm-10 col-md-6 col-lg-3 d-flex align-items-stretch animate-on-scroll delay-3">
             <a href="product.html?style=moba_mmo" class="game-style-card moba-card text-decoration-none h-100">
               <div class="game-style-icon"><i class="bi bi-stars"></i></div>
@@ -80,74 +81,76 @@
         </div>
       </div>
     </section>
-  <!-- Mini Banner -->
-  <section class="promo-strip text-center">
-    <p class="mb-0">
-  <span class="animated-emoji rocket">🚀</span>
-  Frete Grátis para compras acima de R$199!
-  <span class="animated-emoji truck">🚚</span>
-</p>
-  </section>
-  <!-- Por que a gente -->
-  <section class="container my-5 py-5 why-vexor-section">
-    <div class="text-center mb-5">
-      <h2 class="section-title-modern animate-on-scroll">POR QUE ESCOLHER A <span class="vexor-highlight">VEXOR</span>?
-      </h2>
-      <p class="lead animate-on-scroll delay-1">Sua jornada para a vitória começa com o equipamento certo.
+    <!-- Mini Banner -->
+    <section class="promo-strip text-center">
+      <p class="mb-0">
+        <span class="animated-emoji rocket">🚀</span>
+        Frete Grátis para compras acima de R$199!
+        <span class="animated-emoji truck">🚚</span>
       </p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4 animate-on-scroll delay-2">
-        <div class="why-card text-center p-4 h-100">
-          <div class="why-icon mb-3"><i class="bi bi-lightning-charge-fill"></i></div>
-          <h5 class="mb-2">Performance Imbatível</h5>
-          <p class="mb-0">Mouses de alta precisão e resposta ultra-rápida para você não perder nenhum movimento.</p>
+    </section>
+    <!-- Por que a gente -->
+    <section class="container my-5 py-5 why-vexor-section">
+      <div class="text-center mb-5">
+        <h2 class="section-title-modern animate-on-scroll">POR QUE ESCOLHER A <span
+            class="vexor-highlight">VEXOR</span>?
+        </h2>
+        <p class="lead animate-on-scroll delay-1">Sua jornada para a vitória começa com o equipamento certo.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 animate-on-scroll delay-2">
+          <div class="why-card text-center p-4 h-100">
+            <div class="why-icon mb-3"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h5 class="mb-2">Performance Imbatível</h5>
+            <p class="mb-0">Mouses de alta precisão e resposta ultra-rápida para você não perder nenhum movimento.</p>
+          </div>
+        </div>
+        <div class="col-md-4 animate-on-scroll delay-3">
+          <div class="why-card text-center p-4 h-100">
+            <div class="why-icon mb-3"><i class="bi bi-shield-check"></i></div>
+            <h5 class="mb-2">Qualidade Garantida</h5>
+            <p class="mb-0">Trabalhamos apenas com as melhores marcas e produtos originais com garantia.</p>
+          </div>
+        </div>
+        <div class="col-md-4 animate-on-scroll delay-4">
+          <div class="why-card text-center p-4 h-100">
+            <div class="why-icon mb-3"><i class="bi bi-truck"></i></div>
+            <h5 class="mb-2">Entrega VEXPRESS</h5>
+            <p class="mb-0">Receba seus produtos rapidamente em qualquer lugar do Brasil.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 animate-on-scroll delay-3">
-        <div class="why-card text-center p-4 h-100">
-          <div class="why-icon mb-3"><i class="bi bi-shield-check"></i></div>
-          <h5 class="mb-2">Qualidade Garantida</h5>
-          <p class="mb-0">Trabalhamos apenas com as melhores marcas e produtos originais com garantia.</p>
-        </div>
-      </div>
-      <div class="col-md-4 animate-on-scroll delay-4">
-        <div class="why-card text-center p-4 h-100">
-          <div class="why-icon mb-3"><i class="bi bi-truck"></i></div>
-          <h5 class="mb-2">Entrega VEXPRESS</h5>
-          <p class="mb-0">Receba seus produtos rapidamente em qualquer lugar do Brasil.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const highlight = document.querySelector(".text-highlight");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const highlight = document.querySelector(".text-highlight");
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            highlight.classList.add("animate-highlight");
-          }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              highlight.classList.add("animate-highlight");
+            }
+          });
         });
+
+        observer.observe(highlight);
       });
+    </script>
 
-      observer.observe(highlight);
-    });
-  </script>
-
-  <!-- Produtos em Promoção -->
-  <section class="container my-5 promotion-section" id="promotion-grid-section">
+    <!-- Produtos em Promoção -->
+    <section class="container my-5 promotion-section" id="promotion-grid-section">
       <h2 class="text-center mb-5 section-title-modern animate-on-scroll">
         <span class="fire-emoji">🔥</span> OFERTAS QUE QUEIMAM O ESTOQUE! <span class="fire-emoji">🔥</span>
       </h2>
       <div class="row limit-on-mobile" id="promotion-grid" data-limit="4">
       </div>
     </section>
+  </main>
 
-  <!-- Footer -->
-  <div id="footer-container"></div>
+    <!-- Footer -->
+    <div id="footer-container"></div>
 </body>
 
 </html>

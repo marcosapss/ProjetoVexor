@@ -146,25 +146,25 @@ body {
 .actions #product-reviews-stars .stars i {
   color: #ffc107;
   /* Cor padrão do Bootstrap para estrelas */
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .actions #product-reviews-stars .review-count-text {
   /* Nome da classe do JS */
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted-text-color) !important;
 }
 
 .actions .action-divider {
   color: var(--muted-text-color);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1;
 }
 
 .actions .btn-action {
   background: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--muted-text-color);
   padding: 4px;
   transition: all 0.3s ease;
@@ -229,7 +229,7 @@ body {
   top: 16px;
   right: 16px;
   padding: 8px 14px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   border-radius: 6px;
   z-index: 10;
@@ -258,7 +258,7 @@ body {
 }
 
 .product-title {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--text-color);
   line-height: 1.2;
@@ -266,12 +266,12 @@ body {
 
 #product-model {
   /* Span para o modelo */
-  font-size: 14px;
+  font-size: 0.875rem;
   /* Ajuste */
 }
 
 .features-title {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-color);
   border-bottom: 2px solid var(--secondary-bg-color);
@@ -290,7 +290,7 @@ body {
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--muted-text-color);
   /* Cor do texto das features */
 }
@@ -302,7 +302,7 @@ body {
 
 .key-features i {
   color: var(--secondary-bg-color);
-  font-size: 19px;
+  font-size: 1.1875rem;
 }
 
 /* --- CAIXA DE PREÇO --- */
@@ -314,13 +314,13 @@ body {
 }
 
 .price-original {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--muted-text-color);
   text-decoration: line-through;
 }
 
 .price-promo {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--secondary-bg-color);
 }
@@ -332,13 +332,13 @@ body {
 /* Para alinhar melhor os preços */
 
 .pix-discount {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--success-color);
 }
 
 .installments {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted-text-color);
   margin-top: 8px;
 }
@@ -354,7 +354,7 @@ body {
   font-weight: 700;
   padding: 12px 20px;
   /* Ajuste de padding para botões grandes */
-  font-size: 18px;
+  font-size: 1.125rem;
   /* Ajuste */
 }
 
@@ -390,7 +390,7 @@ body {
   border: none;
   border-bottom: 2px solid transparent;
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .product-details-tabs .nav-link.active {
@@ -415,7 +415,7 @@ body {
 
 #specs-table {
   color: var(--text-color);
-  font-size: 15px;
+  font-size: 0.9375rem;
   /* Ajuste */
 }
 
@@ -451,7 +451,7 @@ body {
 
 /* --- PRODUTOS SUGERIDOS --- */
 .suggested-products .section-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 24px;
   border-bottom: 2px solid var(--secondary-bg-color);
@@ -493,8 +493,7 @@ body {
 }
 
 .suggested-card .card-title {
-  font-size: 14px;
-  /* Antigo 0.9em */
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 8px;
   color: var(--text-color);
@@ -509,8 +508,7 @@ body {
 }
 
 .suggested-card .card-price {
-  font-size: 18px;
-  /* Antigo 1.1em */
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--secondary-bg-color);
 }
@@ -598,11 +596,11 @@ body {
 
   /* Mobile small */
   .product-title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .price-promo {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .thumbnails-container .thumbnail {
@@ -620,23 +618,23 @@ body {
   }
 
   .actions .btn-action {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .actions #product-reviews-stars .stars i {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .actions #product-reviews-stars .review-count-text {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .key-features li {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .key-features i {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -644,7 +642,7 @@ body {
 @media (max-width: 575.98px) {
   #breadcrumb-nav .breadcrumb {
     padding: 10px 12px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .main-image-container {
@@ -686,48 +684,48 @@ body {
   }
 
   .actions .btn-action {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 3px;
   }
 
   .actions #product-reviews-stars .stars i {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .actions #product-reviews-stars .review-count-text {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .product-badge {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .product-title {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   #product-model {
-    font-size: 13px;
+    font-size: 0.8125rem;
     margin-bottom: 16px;
   }
 
   .features-title {
-    font-size: 16px;
+    font-size: 1rem;
     padding-bottom: 3px;
     margin-bottom: 10px;
   }
 
   .key-features li {
-    font-size: 13px;
+    font-size: 0.8125rem;
     gap: 8px;
     margin-bottom: 6px;
   }
 
   .key-features i {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .price-box {
@@ -735,16 +733,16 @@ body {
   }
 
   .price-original {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .price-promo {
-    font-size: 29px;
+    font-size: 1.8125rem;
   }
 
   .pix-discount,
   .installments {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .action-buttons {
@@ -753,28 +751,28 @@ body {
 
   .action-buttons .btn-lg {
     /* Reestiliza btn-lg para mobile */
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 9px 16px;
   }
 
   .product-details-tabs .nav-link {
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 9px 13px;
   }
 
   .product-details-tabs .tab-content {
     padding: 16px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   #specs-table th,
   #specs-table td {
-    font-size: 13px;
+    font-size: 0.8125rem;
     padding: 6px;
   }
 
   .suggested-products .section-title {
-    font-size: 21px;
+    font-size: 1.3125rem;
     margin-bottom: 18px;
     padding-bottom: 6px;
   }
@@ -789,18 +787,18 @@ body {
   }
 
   .suggested-card .card-title {
-    font-size: 13px;
+    font-size: 0.8125rem;
     height: 36px;
     /* ~2 linhas */
   }
 
   .suggested-card .card-price {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   #toast {
     padding: 8px 18px;
-    font-size: 14px;
+    font-size: 0.875rem;
     border-radius: 20px;
   }
 }

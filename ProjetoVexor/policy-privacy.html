@@ -16,7 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
         defer></script>
-    <script src="js/accessibility.js" defer></script>
     <script src="js/navbar.js" defer></script>
     <script src="js/footer.js" defer></script>
 </head>
@@ -25,234 +24,254 @@
     <!-- JS Navbar -->
     <div id="navbar-container"></div>
     <!-- Conteudo -->
-    <div class="container privacy-policy-container">
-        <div class="privacy-policy-header">
-            <h1>Política de Privacidade</h1>
-            <p>Última atualização: <span id="last-updated-date">[Inserir Data Aqui]</span></p>
-        </div>
-
-        <div class="accordion" id="privacyAccordion">
-            <!-- Item 1: Introdução -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        1. Introdução e Nosso Compromisso
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Bem-vindo à Política de Privacidade da <strong>Vexor</strong>. Sua privacidade é fundamental
-                        para nós. Esta política descreve como coletamos, usamos, protegemos e compartilhamos suas
-                        informações pessoais quando você utiliza nossos serviços, visita nosso site ou interage conosco.
-                        <br><br>
-                        Ao utilizar os serviços da Vexor, você concorda com a coleta e uso de informações de acordo com
-                        esta política.
-                    </div>
-                </div>
+    <main class="content-wrapper">
+        <div class="container privacy-policy-container">
+            <div class="privacy-policy-header">
+                <h1>Política de Privacidade</h1>
+                <p>Última atualização: <span id="last-updated-date">[Inserir Data Aqui]</span></p>
             </div>
 
-            <!-- Item 2: Informações que Coletamos -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        2. Quais Informações Coletamos?
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Podemos coletar os seguintes tipos de informações:
-                        <ul>
-                            <li><strong>Informações de Identificação Pessoal:</strong> Nome, endereço de e-mail, número
-                                de telefone, CPF, endereço de entrega e cobrança, data de nascimento, etc., fornecidos
-                                durante o cadastro, compra ou contato.</li>
-                            <li><strong>Informações de Pagamento:</strong> Dados do cartão de crédito/débito
-                                (processados de forma segura por nossos parceiros de pagamento), informações bancárias
-                                para transações.</li>
-                            <li><strong>Informações de Navegação e Uso:</strong> Endereço IP, tipo de navegador, páginas
-                                visitadas, tempo de permanência, interações com o site, cookies e tecnologias similares.
-                            </li>
-                            <li><strong>Informações de Dispositivo:</strong> Tipo de dispositivo, sistema operacional,
-                                identificadores únicos de dispositivo.</li>
-                            <li><strong>Comunicações:</strong> Registros de suas comunicações conosco, incluindo
-                                e-mails, chats e chamadas telefônicas (quando aplicável e informado).</li>
-                        </ul>
+            <div class="accordion" id="privacyAccordion">
+                <!-- Item 1: Introdução -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1. Introdução e Nosso Compromisso
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Bem-vindo à Política de Privacidade da <strong>Vexor</strong>. Sua privacidade é fundamental
+                            para nós. Esta política descreve como coletamos, usamos, protegemos e compartilhamos suas
+                            informações pessoais quando você utiliza nossos serviços, visita nosso site ou interage
+                            conosco.
+                            <br><br>
+                            Ao utilizar os serviços da Vexor, você concorda com a coleta e uso de informações de acordo
+                            com
+                            esta política.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 3: Como Usamos Suas Informações -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3. Como Usamos Suas Informações?
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Utilizamos suas informações para:
-                        <ul>
-                            <li>Processar seus pedidos e fornecer nossos produtos e serviços.</li>
-                            <li>Gerenciar sua conta e fornecer suporte ao cliente.</li>
-                            <li>Personalizar sua experiência em nosso site.</li>
-                            <li>Enviar comunicações de marketing (com seu consentimento), como newsletters e promoções.
-                            </li>
-                            <li>Melhorar nosso site, produtos e serviços.</li>
-                            <li>Prevenir fraudes e garantir a segurança de nossas operações.</li>
-                            <li>Cumprir obrigações legais e regulatórias.</li>
-                        </ul>
+                <!-- Item 2: Informações que Coletamos -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2. Quais Informações Coletamos?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Podemos coletar os seguintes tipos de informações:
+                            <ul>
+                                <li><strong>Informações de Identificação Pessoal:</strong> Nome, endereço de e-mail,
+                                    número
+                                    de telefone, CPF, endereço de entrega e cobrança, data de nascimento, etc.,
+                                    fornecidos
+                                    durante o cadastro, compra ou contato.</li>
+                                <li><strong>Informações de Pagamento:</strong> Dados do cartão de crédito/débito
+                                    (processados de forma segura por nossos parceiros de pagamento), informações
+                                    bancárias
+                                    para transações.</li>
+                                <li><strong>Informações de Navegação e Uso:</strong> Endereço IP, tipo de navegador,
+                                    páginas
+                                    visitadas, tempo de permanência, interações com o site, cookies e tecnologias
+                                    similares.
+                                </li>
+                                <li><strong>Informações de Dispositivo:</strong> Tipo de dispositivo, sistema
+                                    operacional,
+                                    identificadores únicos de dispositivo.</li>
+                                <li><strong>Comunicações:</strong> Registros de suas comunicações conosco, incluindo
+                                    e-mails, chats e chamadas telefônicas (quando aplicável e informado).</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 4: Compartilhamento de Informações -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        4. Com Quem Compartilhamos Suas Informações?
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Não vendemos suas informações pessoais. Podemos compartilhar suas informações com:
-                        <ul>
-                            <li><strong>Prestadores de Serviços:</strong> Empresas que nos auxiliam na operação do
-                                negócio, como processadores de pagamento, transportadoras, plataformas de marketing,
-                                provedores de hospedagem e análise de dados. Exigimos que esses parceiros protejam suas
-                                informações.</li>
-                            <li><strong>Autoridades Legais:</strong> Quando exigido por lei, processo legal ou para
-                                proteger nossos direitos, segurança ou propriedade, ou a de terceiros.</li>
-                            <li><strong>Em caso de Transações Societárias:</strong> Em caso de fusão, aquisição ou venda
-                                de ativos, suas informações podem ser transferidas como parte da transação.</li>
-                        </ul>
+                <!-- Item 3: Como Usamos Suas Informações -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3. Como Usamos Suas Informações?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Utilizamos suas informações para:
+                            <ul>
+                                <li>Processar seus pedidos e fornecer nossos produtos e serviços.</li>
+                                <li>Gerenciar sua conta e fornecer suporte ao cliente.</li>
+                                <li>Personalizar sua experiência em nosso site.</li>
+                                <li>Enviar comunicações de marketing (com seu consentimento), como newsletters e
+                                    promoções.
+                                </li>
+                                <li>Melhorar nosso site, produtos e serviços.</li>
+                                <li>Prevenir fraudes e garantir a segurança de nossas operações.</li>
+                                <li>Cumprir obrigações legais e regulatórias.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 5: Cookies e Tecnologias Semelhantes -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        5. Cookies e Tecnologias de Rastreamento
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Utilizamos cookies e tecnologias similares para coletar informações sobre sua navegação,
-                        personalizar sua experiência, analisar o tráfego do site e para fins de publicidade. Você pode
-                        gerenciar suas preferências de cookies através das configurações do seu navegador.
-                        <br><br>
-                        Para mais detalhes, consulte nossa <a href="/politica-de-cookies.html">Política de Cookies</a>
-                        (se você tiver uma separada).
+                <!-- Item 4: Compartilhamento de Informações -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            4. Com Quem Compartilhamos Suas Informações?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Não vendemos suas informações pessoais. Podemos compartilhar suas informações com:
+                            <ul>
+                                <li><strong>Prestadores de Serviços:</strong> Empresas que nos auxiliam na operação do
+                                    negócio, como processadores de pagamento, transportadoras, plataformas de marketing,
+                                    provedores de hospedagem e análise de dados. Exigimos que esses parceiros protejam
+                                    suas
+                                    informações.</li>
+                                <li><strong>Autoridades Legais:</strong> Quando exigido por lei, processo legal ou para
+                                    proteger nossos direitos, segurança ou propriedade, ou a de terceiros.</li>
+                                <li><strong>Em caso de Transações Societárias:</strong> Em caso de fusão, aquisição ou
+                                    venda
+                                    de ativos, suas informações podem ser transferidas como parte da transação.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 6: Segurança dos Seus Dados -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        6. Segurança dos Seus Dados
-                    </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Implementamos medidas de segurança técnicas, administrativas e físicas para proteger suas
-                        informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. No
-                        entanto, nenhum método de transmissão pela Internet ou armazenamento eletrônico é 100% seguro.
+                <!-- Item 5: Cookies e Tecnologias Semelhantes -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            5. Cookies e Tecnologias de Rastreamento
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Utilizamos cookies e tecnologias similares para coletar informações sobre sua navegação,
+                            personalizar sua experiência, analisar o tráfego do site e para fins de publicidade. Você
+                            pode
+                            gerenciar suas preferências de cookies através das configurações do seu navegador.
+                            <br><br>
+                            Para mais detalhes, consulte nossa <a href="/politica-de-cookies.html">Política de
+                                Cookies</a>
+                            (se você tiver uma separada).
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 7: Seus Direitos (LGPD) -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSeven">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                        7. Seus Direitos como Titular dos Dados
-                    </button>
-                </h2>
-                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        De acordo com a Lei Geral de Proteção de Dados (LGPD) e outras legislações aplicáveis, você tem
-                        o direito de:
-                        <ul>
-                            <li>Confirmar a existência de tratamento de seus dados.</li>
-                            <li>Acessar seus dados.</li>
-                            <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
-                            <li>Anonimizar, bloquear ou eliminar dados desnecessários, excessivos ou tratados em
-                                desconformidade com a LGPD.</li>
-                            <li>Solicitar a portabilidade dos seus dados a outro fornecedor de serviço ou produto.</li>
-                            <li>Eliminar dados pessoais tratados com seu consentimento.</li>
-                            <li>Obter informações sobre as entidades públicas ou privadas com as quais compartilhamos
-                                seus dados.</li>
-                            <li>Revogar seu consentimento, quando o tratamento de dados se basear nele.</li>
-                        </ul>
-                        Para exercer seus direitos, entre em contato conosco através dos canais informados no final
-                        desta política.
+                <!-- Item 6: Segurança dos Seus Dados -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            6. Segurança dos Seus Dados
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Implementamos medidas de segurança técnicas, administrativas e físicas para proteger suas
+                            informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. No
+                            entanto, nenhum método de transmissão pela Internet ou armazenamento eletrônico é 100%
+                            seguro.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 8: Alterações nesta Política -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingEight">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                        8. Alterações nesta Política de Privacidade
-                    </button>
-                </h2>
-                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre
-                        quaisquer alterações publicando a nova política em nosso site e atualizando a data da "Última
-                        atualização". Recomendamos que você revise esta política regularmente.
+                <!-- Item 7: Seus Direitos (LGPD) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            7. Seus Direitos como Titular dos Dados
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            De acordo com a Lei Geral de Proteção de Dados (LGPD) e outras legislações aplicáveis, você
+                            tem
+                            o direito de:
+                            <ul>
+                                <li>Confirmar a existência de tratamento de seus dados.</li>
+                                <li>Acessar seus dados.</li>
+                                <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+                                <li>Anonimizar, bloquear ou eliminar dados desnecessários, excessivos ou tratados em
+                                    desconformidade com a LGPD.</li>
+                                <li>Solicitar a portabilidade dos seus dados a outro fornecedor de serviço ou produto.
+                                </li>
+                                <li>Eliminar dados pessoais tratados com seu consentimento.</li>
+                                <li>Obter informações sobre as entidades públicas ou privadas com as quais
+                                    compartilhamos
+                                    seus dados.</li>
+                                <li>Revogar seu consentimento, quando o tratamento de dados se basear nele.</li>
+                            </ul>
+                            Para exercer seus direitos, entre em contato conosco através dos canais informados no final
+                            desta política.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 9: Contato -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingNine">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                        9. Entre em Contato
-                    </button>
-                </h2>
-                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
-                    data-bs-parent="#privacyAccordion">
-                    <div class="accordion-body">
-                        Se você tiver alguma dúvida sobre esta Política de Privacidade ou sobre como tratamos suas
-                        informações, entre em contato conosco:
-                        <br><br>
-                        <strong>Vexor - Atendimento ao Cliente</strong><br>
-                        E-mail: <a href="mailto:privacidade@vexor.com.br">privacidade@vexor.com.br</a><br>
-                        Telefone: (XX) XXXX-XXXX<br>
-                        Endereço: [Seu Endereço Completo Aqui]
+                <!-- Item 8: Alterações nesta Política -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            8. Alterações nesta Política de Privacidade
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre
+                            quaisquer alterações publicando a nova política em nosso site e atualizando a data da
+                            "Última
+                            atualização". Recomendamos que você revise esta política regularmente.
+                        </div>
                     </div>
                 </div>
+
+                <!-- Item 9: Contato -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            9. Entre em Contato
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            Se você tiver alguma dúvida sobre esta Política de Privacidade ou sobre como tratamos suas
+                            informações, entre em contato conosco:
+                            <br><br>
+                            <strong>Vexor - Atendimento ao Cliente</strong><br>
+                            E-mail: <a href="mailto:privacidade@vexor.com.br">privacidade@vexor.com.br</a><br>
+                            Telefone: (XX) XXXX-XXXX<br>
+                            Endereço: [Seu Endereço Completo Aqui]
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Fim do .accordion -->
+
+            <div class="last-updated">
+                Esta política foi revisada e publicada em <span id="publish-date">[Inserir Data Aqui]</span>.
             </div>
 
-        </div> <!-- Fim do .accordion -->
-
-        <div class="last-updated">
-            Esta política foi revisada e publicada em <span id="publish-date">[Inserir Data Aqui]</span>.
-        </div>
-
-    </div> <!-- Fim do .container -->
+        </div> <!-- Fim do .container -->
+    </main>
     <div id="footer-container"></div>
     <script>
         // Simples script para atualizar as datas (opcional)
